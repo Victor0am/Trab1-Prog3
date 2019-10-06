@@ -1,5 +1,5 @@
 #include "../Bibliotecas/Midia.hpp"
-
+using namespace std;
 string Midia::getnome(){
     return this->nome;
 }
@@ -21,11 +21,14 @@ void Midia::setduracao(int duracao){
 int Midia::getanoLancamento(){
     return this->anoLancamento;
 }
-void Midia::setanoLancameot(int anoLancamento){
+void Midia::setanoLancamento(int anoLancamento){
     this->anoLancamento = anoLancamento;
 }
-Midia();
-Midia(string nome, int codigo, Genero genero);
-void imprimeInfoProduto();
-imprimeNoArquivo(ofstream &outfile);
-string getnome();
+Midia::Midia(){
+    cout << "Midia criada com sucesso... nem tanto né..."
+}
+Midia::Midia(string nome, int codigo, Genero genero){
+
+}
+void Midia::imprimeInfoProduto();
+void Midia::imprimeNoArquivo(ofstream &outfile);

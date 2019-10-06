@@ -2,7 +2,7 @@
 #define _MIDIA_HPP
 #include <iostream>
 #include <string>
-
+using namespace std;
 class Midia{
     protected:
         string nome;
@@ -23,7 +23,7 @@ class Midia{
         int getduracao();
         void setduracao(int duracao);
         int getanoLancamento();
-        void setanoLancameot(int anoLancamento);
+        void setanoLancamento(int anoLancamento);
 };
 
 #endif
