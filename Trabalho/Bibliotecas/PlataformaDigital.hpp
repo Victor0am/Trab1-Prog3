@@ -2,7 +2,12 @@
 #define _PLATAFORMADIGITAL_HPP
 #include <string>
 #include <iostream>
+#include <fstream>
 #include <vector>
+#include "Assinante.hpp"
+#include "Produtor.hpp"
+#include "Genero.hpp"
+#include "Midia.hpp"
 
 class PlataformaDigital{
     private:

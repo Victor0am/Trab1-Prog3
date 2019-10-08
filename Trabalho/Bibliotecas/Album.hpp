@@ -3,6 +3,8 @@
 #include<iostream>
 #include <string>
 #include "Artista.hpp"
+#include "Musica.hpp"
+#include <vector>
 using namespace std;
 
 class Album{
@@ -12,6 +14,7 @@ class Album{
         int anoLancamento;
         int qtdMusicas;
         Artista artista;
+        vector<Musica*> Musicas;
     public:
         Album();
         Album(string nome, int duracao, int anoLancamento, int qtdMusicas);
