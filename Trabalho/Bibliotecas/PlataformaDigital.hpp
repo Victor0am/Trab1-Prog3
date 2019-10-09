@@ -27,6 +27,8 @@ class PlataformaDigital{
         void exportarBiblioteca();
         void gerarRelatorios();
         void carregaArquivoFavoritos(ifstream &infile);
+        string getnome();
+        void setnome(string nome);
 };
 
 #endif
