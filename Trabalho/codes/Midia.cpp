@@ -1,4 +1,4 @@
-#include "../Bibliotecas/Midia.hpp"
+#include "../bibliotecas/Midia.hpp"
 using namespace std;
 string Midia::getnome(){
     return this->nome;

@@ -15,6 +15,7 @@ class Produtor:Usuario{
         Produtor(string nome,int codigo);
         void imprimeNoArquivo(ofstream &outfile);
         void imprimeProdutosDesenvolvidos();
+        void desenvolverProdutos(Midia* midia);
 };
 
 

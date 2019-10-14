@@ -1,6 +1,7 @@
 #ifndef _USUARIO_HPP
 #define _USUARIO_HPP
 #include <iostream>
+#include <string>
 using namespace std;
 class Usuario{
     protected:
@@ -12,6 +13,8 @@ class Usuario{
         int getcodigo();
         void setnome(string nome);
         string getnome();
+        Usuario();
+        Usuario(string _nome, int codigo);
 };
 
 #endif

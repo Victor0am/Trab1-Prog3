@@ -1,4 +1,4 @@
-#include "../Bibliotecas/Musica.hpp"
+#include "../bibliotecas/Musica.hpp"
 
 Musica::Musica(){
     cout << "Musica Publicada"<<endl;

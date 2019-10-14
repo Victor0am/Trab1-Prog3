@@ -1,4 +1,4 @@
-#include <../Bibliotecas/Usuario.hpp>
+#include <../bibliotecas/Usuario.hpp>
 using namespace std;
 string Usuario::getnome(){
     return this->nome;
@@ -7,10 +7,17 @@ string Usuario::getnome(){
 void Usuario::setnome(string nome){
     this->nome = nome;
 }
-string Usuario::getcodigo(){
+int Usuario::getcodigo(){
     return this->codigo;
 }
 
-void Usuario::setcodigo(string codigo){
+void Usuario::setcodigo(int codigo){
     this->codigo = codigo;
+}
+Usuario::Usuario(){
+    //colocar algo que não sabemos ainda se precisa.
+}
+Usuario::Usuario(string _nome, int codigo){
+    this->setnome(_nome);
+    this->setcodigo(codigo);
 }

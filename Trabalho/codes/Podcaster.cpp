@@ -1,5 +1,5 @@
-#include "../Bibliotecas/Podcaster.hpp"
-void Podcaster:Podcaster(string nome, int codigo){
-    Podcaster:Produtor(nome, codigo);
+#include "../bibliotecas/Podcaster.hpp"
+Podcaster::Podcaster(string nome, int codigo){
+    Podcaster::Produtor(nome, codigo);
 }
-void Podcaster:imprimirNoArquivo(ofstream &outfile);
+//void Podcaster::imprimirNoArquivo(ofstream &outfile);

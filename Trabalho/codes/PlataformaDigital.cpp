@@ -1,4 +1,4 @@
-#include "../Bibliotecas/PlataformaDigital.hpp"
+#include "../bibliotecas/PlataformaDigital.hpp"
 
 
 void carregaArquivoUsuários(ifstream &infile){

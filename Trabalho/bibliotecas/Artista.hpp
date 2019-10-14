@@ -11,6 +11,7 @@ class Artista:Produtor{
     public:
         Artista(string nome, int codigo);
         void imprimirNoArquivo(ofstream &outfile);
+        void lancarAlbum(Album* album);
 };
 
 #endif
