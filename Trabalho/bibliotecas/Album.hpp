@@ -10,14 +10,22 @@ using namespace std;
 class Album{
     private:
         string nome;
-        int duracao;
+        float duracao;
         int anoLancamento;
         int qtdMusicas;
         Artista artista;
         vector<Musica*> Musicas;
     public:
+        string getnome();
+        void setnome(string nome);
+        float setduracao();
+        void setduracao(float duracao);
+        int getqtdMusicas();
+        void setqtdMusicas(int qtdMusicas);
+        int getanoLancamento();
+        void setanoLancamento(int anoLancamento);
         Album();
-        Album(string nome, int duracao, int anoLancamento, int qtdMusicas);
+        Album(string nome, float duracao, int anoLancamento, int qtdMusicas);
         imprimeNoArquivo(ofstream &outfile);
 };
 

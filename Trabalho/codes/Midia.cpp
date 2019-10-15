@@ -28,7 +28,16 @@ Midia::Midia(){
     cout << "Midia criada com sucesso... nem tanto né..."
 }
 Midia::Midia(string nome, int codigo, Genero genero){
-
+    this->setgenero(genero);
+    this->setnome(nome);
+    this->setcodigo(codigo);
+    this->formataDuracao();
+    qtdProdutos++;
 }
-void Midia::imprimeInfoProduto();
-void Midia::imprimeNoArquivo(ofstream &outfile);
+void Midia::imprimeInfoProduto(){
+    //prints na ordem que quiser depois...
+}
+void formataDuracao(){
+    //this->duracao= algo
+}
+//void Midia::imprimeNoArquivo(ofstream &outfile);

@@ -25,7 +25,7 @@ class Midia{
         Midia();
         Midia(string nome, int codigo, Genero genero);
         void imprimeInfoProduto();
-        imprimeNoArquivo(ofstream &outfile);
+        void imprimeNoArquivo(ofstream &outfile);
         string getnome();
         void setnome(string nome);
         int getcodigo();
@@ -34,6 +34,7 @@ class Midia{
         void setduracao(int duracao);
         int getanoLancamento();
         void setanoLancamento(int anoLancamento);
+        void formataDuracao();
 };
 
 #endif
