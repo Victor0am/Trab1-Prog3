@@ -8,6 +8,7 @@
 #include "Produtor.hpp"
 #include "Genero.hpp"
 #include "Midia.hpp"
+using namespace std;
 
 class PlataformaDigital{
     private:
