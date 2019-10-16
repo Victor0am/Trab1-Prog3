@@ -2,18 +2,18 @@
 #define _GENERO_HPP
 #include <string>
 #include <iostream>
-
+//using namespace std;
 class Genero{
     private:
-        string nome;
-        string sigla;
+        std::string nome;
+        std::string sigla;
     public:
+        Genero(std::string nome, std::string sigla);
         Genero();
-        Genero(string nome, string sigla);
-        string getnome();
-        void setnome(string nome);
-        string getsigla();
-        void setsigla(string sigla);
+        std::string getnome();
+        void setnome(std::string nome);
+        std::string getsigla();
+        void setsigla(std::string sigla);
 };
 
 #endif

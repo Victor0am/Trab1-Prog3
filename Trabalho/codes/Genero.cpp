@@ -13,10 +13,8 @@ string Genero::getsigla(){
 void Genero::setsigla(string sigla){
     this->sigla = sigla;
 }
-Genero::Genero(){
-
-}
+Genero::Genero(){}
 Genero::Genero(string nome, string sigla){
-    this->setnome(nome);
-    this->setsigla(sigla);
+    this->nome = nome;
+    this->sigla = sigla;
 }

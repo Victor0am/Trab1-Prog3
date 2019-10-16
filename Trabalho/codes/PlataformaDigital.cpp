@@ -9,7 +9,7 @@ void PlataformaDigital::carregaArquivoGeneros(ifstream &infile){
     while(!infile.eof()){
         getline(infile, sigla, ';');
         getline(infile, nome);
-        Genero::Genero(nome, sigla);
+        Genero *gen =  new Genero(nome, sigla);
     }
 }
 
