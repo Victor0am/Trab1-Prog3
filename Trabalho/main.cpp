@@ -18,12 +18,15 @@ int main(){
     string nome;
     string sigla;
     Genero* genre;
-    vector<Genero *>gen;
+    vector<Genero *> gen;
     vector<Genero*>::iterator it; 
     getline(generos, sigla, ';');
     getline(generos, nome);
-    while(!generos.eof()){
+    while(/*!generos.eof*/ generos.good()){
         getline(generos, sigla, ';');
+        if(generos.eof()){
+            break;
+        }
         getline(generos, nome);
         genre = new Genero(nome, sigla);
         gen.push_back(genre);

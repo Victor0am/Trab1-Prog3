@@ -11,4 +11,3 @@ EL;Eletrônica
 GK;Geek
 AT;Atualidades
 NT;Noticias
-;Noticias
