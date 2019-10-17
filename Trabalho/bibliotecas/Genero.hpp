@@ -14,6 +14,7 @@ class Genero{
         void setnome(std::string nome);
         std::string getsigla();
         void setsigla(std::string sigla);
+        void imprimeGenero();
 };
 
 #endif

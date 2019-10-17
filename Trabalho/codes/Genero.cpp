@@ -18,3 +18,6 @@ Genero::Genero(string nome, string sigla){
     this->nome = nome;
     this->sigla = sigla;
 }
+void Genero::imprimeGenero(){
+    cout << this->nome << " " << this->sigla << endl;
+}

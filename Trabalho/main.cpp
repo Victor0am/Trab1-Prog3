@@ -8,6 +8,8 @@ using namespace std;
 
 int main(){
     ifstream generos;
+    ofstream saida;
+    saida.open("saida.txt");
     generos.open("entradas/generos.csv", ios::in);
     if(!generos.is_open()){
         cerr << "Erro ao abrir arquivo, o mesmo não existe"<< endl;
@@ -17,7 +19,7 @@ int main(){
     string sigla;
     Genero* genre;
     vector<Genero *>gen;
-    vector<Genero*>::iterator it = gen.begin();
+    vector<Genero*>::iterator it; 
     getline(generos, sigla, ';');
     getline(generos, nome);
     while(!generos.eof()){
@@ -28,10 +30,19 @@ int main(){
         //it++;
         i++;
     }
-    while(it!= gen.end()){
-        //printar os negócios do jeito que ela pedir
-        cout << "it = " << i << endl;
-        it++;
+    // i = 0;
+    // it = gen.begin();
+    // while(it!= gen.end()){
+    //     //printar os negócios do jeito que ela pedir
+    //     cout << gen.at(i)->getnome() <<endl;
+    //     cout << gen.at(i)->getsigla() << endl;
+    //     it++;
+    //     i++;
+    // }
+    for(Genero* g : gen){
+        saida << g->getsigla() << ";";
+        saida << g->getnome() << endl;
     }
-    cout << "it = " << i << endl;
+    //for_each(gen.begin(), gen.end(), gen->imprimirGenero());
+    //cout << "it = " << i << endl;
 }
