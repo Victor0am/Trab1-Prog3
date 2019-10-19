@@ -25,9 +25,9 @@ class PlataformaDigital{
         void carregaArquivoUsuarios(ifstream &infile);
         void carregaArquivoGeneros(ifstream &infile);
         void carregaArquivoMidia(ifstream &infile);
+        void carregaArquivoFavoritos(ifstream &infile);
         void exportarBiblioteca();
         void gerarRelatorios();
-        void carregaArquivoFavoritos(ifstream &infile);
         string getnome();
         void setnome(string nome);
 };

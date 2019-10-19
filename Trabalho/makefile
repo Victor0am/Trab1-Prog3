@@ -2,14 +2,14 @@ all: compile clean exec showresult
 
 compile:
 	@echo "Compilando . . ."
-	g++ -c main.cpp codes/Genero.cpp
-	g++ -o trabalho main.o Genero.o
+	g++ -c main.cpp codes/*.cpp
+	g++ -o trabalho *.o
 
 clean:
 	rm *.o
 
 exec: 
-	./trabalho
+	./trabalho -g entradas/generos.csv
 
 showresult:
 	@echo "Tada:"
