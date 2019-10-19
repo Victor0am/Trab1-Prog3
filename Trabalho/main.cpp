@@ -6,13 +6,26 @@
 #include "bibliotecas/Genero.hpp"
 using namespace std;
 
-int main(){
+int main(int argc, char** argv){
+    vector <string> flags;
+    if (argc == 1 || argc != 9){
+        cerr << "Erro de I/O" << endl;
+        exit(1);
+    }
+    for (int i = 0; i < argc; i++){
+        flags.push_back(string(argv[i]));
+        cout << argv[i] << endl;
+    }
+    if (flags[1] == "-g"){
+        cout << "Funcionou !!!" << endl;
+    }
     ifstream generos;
     ofstream saida;
     saida.open("saida.txt");
     generos.open("entradas/generos.csv", ios::in);
-    if(!generos.is_open()){
+    if(/*!generos.is_open()*/ generos.fail()){
         cerr << "Erro ao abrir arquivo, o mesmo não existe"<< endl;
+        exit(1);
     }
     int i = 0;
     string nome;
