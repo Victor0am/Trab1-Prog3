@@ -13,23 +13,27 @@ using namespace std;
 class PlataformaDigital{
     private:
         string nome;
+        // vector<Produtor*> produtoresCadastrados;
+        // vector<Assinante*> assinantesCadastrados;
+        // vector<Midia*> midiasCadastradas;
+        // vector<Genero*> generosCadastrados;
     public:
         PlataformaDigital();
         PlataformaDigital(string nome);
-        void imprimeProdutos(string genero);
-        void imprimeAssinantes();
-        void inserirAssinante(Assinante* a);
-        void removerAssinante(Assinante* a);
-        void inserirProduto(Midia* novoProduto, vector<Produtor*>produtores);
-        void imprimeNoArquivo(ofstream &outfile);
-        void carregaArquivoUsuarios(ifstream &infile);
-        void carregaArquivoGeneros(ifstream &infile);
-        void carregaArquivoMidia(ifstream &infile);
-        void carregaArquivoFavoritos(ifstream &infile);
-        void exportarBiblioteca();
-        void gerarRelatorios();
-        string getnome();
         void setnome(string nome);
+        string getnome();
+        // void imprimeProdutos(string genero);
+        // void imprimeAssinantes();
+        // void inserirAssinante(Assinante* a);
+        // void removerAssinante(Assinante* a);
+        // void inserirProduto(Midia* novoProduto, vector<Produtor*> produtores);
+        // void imprimeNoArquivo(ofstream &outfile);
+        // void carregaArquivoUsuarios(ifstream &infile);
+        // void carregaArquivoGeneros(ifstream &infile);
+        // void carregaArquivoMidia(ifstream &infile);
+        // void carregaArquivoFavoritos(ifstream &infile);
+        // void exportarBiblioteca();
+        // void gerarRelatorios();
 };
 
 #endif

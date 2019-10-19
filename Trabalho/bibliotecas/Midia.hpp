@@ -2,23 +2,21 @@
 #define _MIDIA_HPP
 #include <iostream>
 #include <string>
-#include "Produtor.hpp"
-#include "Genero.hpp"
-#include "Assinante.hpp"
-#include "PlataformaDigital.hpp"
 #include <vector>
+//#include "Produtor.hpp"
+#include "Genero.hpp"
+//#include "Assinante.hpp"
+//#include "PlataformaDigital.hpp"
 using namespace std;
-
 class Midia{
     protected:
         string nome;
         int codigo;
         int duracao;
         int anoLancamento;
-        vector <Produtor*> produtores;
-        vector <Assinate*> assinantes;
-        PlataformaDigital plat;
-        Genero genre;
+        //vector<Produtor *> produtores;
+        //vector<Assinante *> assinantes;
+        Genero genero;
     public:
         static int qtdProdutos;
         static void imprimeQtdProdutos();
@@ -29,12 +27,13 @@ class Midia{
         string getnome();
         void setnome(string nome);
         int getcodigo();
-        void getcodigo(int codigo);
+        void setcodigo(int codigo);
         int getduracao();
         void setduracao(int duracao);
         int getanoLancamento();
         void setanoLancamento(int anoLancamento);
-        void formataDuracao();
+        // void formataDuracao();
 };
+// int Midia::qtdProdutos = 0;
 
 #endif

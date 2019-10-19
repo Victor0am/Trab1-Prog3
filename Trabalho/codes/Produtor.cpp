@@ -4,8 +4,8 @@ Produtor::Produtor(){
 
 }
 Produtor::Produtor(string nome, int codigo){
-    Usuario::setnome(nome);
-    Usuario::setcodigo(codigo);
+    this->nome = nome;
+    this->codigo = codigo;
 }
 //void Produtor::imprimeNoArquivo(ofstream &outfile);
 void Produtor::imprimeProdutosDesenvolvidos(){

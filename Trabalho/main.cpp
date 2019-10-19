@@ -5,7 +5,7 @@
 #include <vector>
 #include "bibliotecas/PlataformaDigital.hpp"
 #include "bibliotecas/Genero.hpp"
-
+int Midia::qtdProdutos = 0;
 using namespace std;
 
 int main(int argc, char** argv){

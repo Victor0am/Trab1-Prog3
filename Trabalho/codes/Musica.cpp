@@ -4,11 +4,11 @@ Musica::Musica(){
     cout << "Musica Publicada"<<endl;
 }
 Musica::Musica(string nome, Genero gen, int duracao, int anoLancamento){
-    Midia::setnome(nome);
-    Midia::setduracao(duracao);
-    Midia::setanoLancamento(anoLancamento);
-    Midia
+    this->nome = nome;
+    this->duracao = duracao;
+    this->anoLancamento = anoLancamento;
+    this->genero = gen;
 }
-void Musica::imprimeinfoProduto();
-void Musica::imprimeNoArquivo(ofstream &outfile);
-void Musica::formataDuracao();
+// void Musica::imprimeinfoProduto();
+// void Musica::imprimeNoArquivo(ofstream &outfile);
+// void Musica::formataDuracao();

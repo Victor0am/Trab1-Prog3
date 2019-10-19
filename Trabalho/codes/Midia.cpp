@@ -25,19 +25,19 @@ void Midia::setanoLancamento(int anoLancamento){
     this->anoLancamento = anoLancamento;
 }
 Midia::Midia(){
-    cout << "Midia criada com sucesso... nem tanto né..."
+    cout << "Midia criada com sucesso... nem tanto né...";
 }
 Midia::Midia(string nome, int codigo, Genero genero){
-    this->setgenero(genero);
-    this->setnome(nome);
-    this->setcodigo(codigo);
-    this->formataDuracao();
+    this->genero = genero;
+    this->nome = nome;
+    this->codigo = codigo;
+    // formataDuracao();
     qtdProdutos++;
 }
 void Midia::imprimeInfoProduto(){
     //prints na ordem que quiser depois...
 }
-void formataDuracao(){
-    //this->duracao= algo
-}
+// void formataDuracao(){
+//     //this->duracao= algo
+// }
 //void Midia::imprimeNoArquivo(ofstream &outfile);

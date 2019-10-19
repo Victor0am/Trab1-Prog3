@@ -6,10 +6,10 @@ string Album::getnome(){
 void Album::setnome(string nome){
     this->nome = nome;
 }
-float Album::getduracao(){
+int Album::getduracao(){
     return this->duracao;
 }
-void Album::setDuracao(float duracao){
+void Album::setduracao(int duracao){
     this->duracao = duracao;//olhar como que faz para colocar musicas no album e entao a duracao será a soma das duracoes...
 }
 int Album::getqtdMusicas(){

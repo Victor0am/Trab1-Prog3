@@ -4,8 +4,9 @@ Assinante::Assinante(){
 
 }
 Assinante::Assinante(string nome, int codigo){
-    Usuario::setnome(nome);
-    Usuario::setcodigo(codigo);//Perguntar pra jordana
+    this->nome = nome;
+    this->codigo = codigo;
+
 }
 void Assinante::imprimeFavoritos(){
     vector<Midia*>::iterator it = this->Favoritos.begin();
@@ -14,7 +15,7 @@ void Assinante::imprimeFavoritos(){
         it++;
     }
 }
-void Assinante::inserirFavorito(Midia * favorito){
+void Assinante::inserirFavorito(Midia* favorito){
     this->Favoritos.push_back(favorito);
 }
 void Assinante::removerFavorito(){
