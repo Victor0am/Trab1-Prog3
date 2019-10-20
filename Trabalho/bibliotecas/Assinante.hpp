@@ -4,10 +4,10 @@
 #include <string>
 #include "Usuario.hpp"
 #include "Midia.hpp"
-#include "PlataformaDigital.hpp"
+
 using namespace std;
 
-class Assinante:Usuario{
+class Assinante: public Usuario{
     private:
         vector<Midia*> Favoritos;
     public:

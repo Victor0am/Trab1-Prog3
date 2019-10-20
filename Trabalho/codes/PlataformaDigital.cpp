@@ -36,21 +36,44 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &infile){
     int codigo;
     char tipo;
     string nome;
+    string code;
     Usuario* user;
-    infile >> codigo;
-    infile >> tipo;
-    getline(infile, nome, ';');
+    string tipo0;
+    getline(infile, code, ';');
+    getline(infile, tipo0, ';');
+    getline(infile, nome);
+    // cout << code << "," << tipo0 << "," << nome << endl;
     while(infile.good()){
             infile >> codigo;
+            infile.ignore(1);
+            // cout << codigo;
             infile >> tipo;
+            // cout << tipo << endl;
             getline(infile, nome, ';');
             if(infile.eof()){
                 break;
             }
             getline(infile, nome);
-            user = new Usuario(nome, codigo);
-            usuariosCadastrados.push_back(user);
+            if (tipo == 'U'){
+                // cout << "Teste" << endl;
+                user = new Assinante(nome, codigo);
+                inserirAssinante((Assinante*)user);
+            }
+            if (tipo == 'P'){
+                user = new Produtor(nome, codigo);
+            }
     }
+}
+
+void PlataformaDigital::imprimeAssinantes(){
+    for(Assinante *a: assinantesCadastrados){
+        cout << a->getcodigo() << " ";
+        cout << a->getnome() << endl;
+    }
+}
+
+void PlataformaDigital::inserirAssinante(Assinante* a){
+    assinantesCadastrados.push_back(a);
 }
 
 PlataformaDigital::PlataformaDigital(){}

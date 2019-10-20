@@ -15,7 +15,7 @@ class PlataformaDigital{
     private:
         string nome;
         // vector<Produtor*> produtoresCadastrados;
-        // vector<Assinante*> assinantesCadastrados;
+        vector<Assinante*> assinantesCadastrados;
         // vector<Midia*> midiasCadastradas;
         vector<Genero*> generosCadastrados;
         vector<Usuario*> usuariosCadastrados;
@@ -26,11 +26,12 @@ class PlataformaDigital{
         string getnome();
         vector<Genero*> getgenero();
         vector<Usuario*> getusuario();
+        // vector<Assinante*> getassinante();
         void carregaArquivoUsuarios(ifstream &infile);
         void carregaArquivoGeneros(ifstream &infile);
         // void imprimeProdutos(string genero);
-        // void imprimeAssinantes();
-        // void inserirAssinante(Assinante* a);
+        void imprimeAssinantes();
+        void inserirAssinante(Assinante* a);
         // void removerAssinante(Assinante* a);
         // void inserirProduto(Midia* novoProduto, vector<Produtor*> produtores);
         // void imprimeNoArquivo(ofstream &outfile);

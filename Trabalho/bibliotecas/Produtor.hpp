@@ -6,7 +6,7 @@
 //#include "PlataformaDigital.hpp"
 using namespace std;
 
-class Produtor:Usuario{
+class Produtor: public Usuario{
     private:
         vector<Midia*> produtosDesenvolvidos;
         //PlataformaDigital Plat;

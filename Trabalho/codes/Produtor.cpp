@@ -3,10 +3,9 @@ using namespace std;
 Produtor::Produtor(){
 
 }
-Produtor::Produtor(string nome, int codigo){
-    this->nome = nome;
-    this->codigo = codigo;
+Produtor::Produtor(string nome, int codigo):Usuario(nome, codigo){
 }
+
 //void Produtor::imprimeNoArquivo(ofstream &outfile);
 void Produtor::imprimeProdutosDesenvolvidos(){
     vector<Midia*>::iterator it = this->produtosDesenvolvidos.begin();

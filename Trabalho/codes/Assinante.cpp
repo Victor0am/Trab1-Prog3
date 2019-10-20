@@ -3,10 +3,7 @@ using namespace std;
 Assinante::Assinante(){
 
 }
-Assinante::Assinante(string nome, int codigo){
-    this->nome = nome;
-    this->codigo = codigo;
-
+Assinante::Assinante(string nome, int codigo):Usuario(nome, codigo){
 }
 void Assinante::imprimeFavoritos(){
     vector<Midia*>::iterator it = this->Favoritos.begin();
