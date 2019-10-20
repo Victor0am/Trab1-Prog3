@@ -25,15 +25,15 @@ class PlataformaDigital{
         void setnome(string nome);
         string getnome();
         vector<Genero*> getgenero();
-        vector<Usuario*> getusuario()
+        vector<Usuario*> getusuario();
+        void carregaArquivoUsuarios(ifstream &infile);
+        void carregaArquivoGeneros(ifstream &infile);
         // void imprimeProdutos(string genero);
         // void imprimeAssinantes();
         // void inserirAssinante(Assinante* a);
         // void removerAssinante(Assinante* a);
         // void inserirProduto(Midia* novoProduto, vector<Produtor*> produtores);
         // void imprimeNoArquivo(ofstream &outfile);
-        void carregaArquivoUsuarios(ifstream &infile);
-        void carregaArquivoGeneros(ifstream &infile);
         // void carregaArquivoMidia(ifstream &infile);
         // void carregaArquivoFavoritos(ifstream &infile);
         // void exportarBiblioteca();
