@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-class Artista:Produtor{
+class Artista: public Produtor{
     private:
         //vector<Album*> AlbumsLancados;
     public:

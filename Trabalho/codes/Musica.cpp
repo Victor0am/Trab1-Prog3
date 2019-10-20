@@ -3,7 +3,7 @@
 Musica::Musica(){
     cout << "Musica Publicada"<<endl;
 }
-Musica::Musica(string nome, Genero gen, int duracao, int anoLancamento){
+Musica::Musica(string nome, Genero gen, int duracao, int anoLancamento): Midia(nome, duracao, genero){
     this->nome = nome;
     this->duracao = duracao;
     this->anoLancamento = anoLancamento;

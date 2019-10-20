@@ -60,7 +60,12 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &infile){
                 inserirAssinante((Assinante*)user);
             }
             if (tipo == 'P'){
-                user = new Produtor(nome, codigo);
+                user = new Podcaster(nome, codigo);
+                cadastrarPodcaster((Podcaster*)user);
+            }
+            if(tipo == 'A'){
+                user = new Artista(nome, codigo);
+                cadastrarArtista((Artista*)user);
             }
     }
 }
@@ -75,7 +80,24 @@ void PlataformaDigital::imprimeAssinantes(){
 void PlataformaDigital::inserirAssinante(Assinante* a){
     assinantesCadastrados.push_back(a);
 }
-
+void PlataformaDigital::cadastrarPodcaster(Podcaster* p){
+    podcastersCadastrados.push_back(p);
+}
+void PlataformaDigital::cadastrarArtista(Artista* a){
+    artistasCadastrados.push_back(a);
+}
+void PlataformaDigital::imprimePodcasters(){
+    for(Podcaster *p: podcastersCadastrados){
+        cout << p->getcodigo() << " ";
+        cout << p->getnome() << endl;
+    }
+}
+void PlataformaDigital::imprimeArtistas(){
+    for(Artista *a: artistasCadastrados){
+        cout << a->getcodigo() << " ";
+        cout << a->getnome() << endl;
+    }
+}
 PlataformaDigital::PlataformaDigital(){}
 PlataformaDigital::PlataformaDigital(string nome){//lembrar que os arquivos vao estar em ordem "aleatória" nos arv lá
     this->nome = nome;

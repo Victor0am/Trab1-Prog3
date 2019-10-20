@@ -4,17 +4,20 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include "Artista.hpp"
 #include "Assinante.hpp"
 #include "Produtor.hpp"
 #include "Genero.hpp"
 #include "Midia.hpp"
+#include "Podcaster.hpp"
 #include "Usuario.hpp"
 using namespace std;
 
 class PlataformaDigital{
     private:
         string nome;
-        // vector<Produtor*> produtoresCadastrados;
+        vector<Artista*> artistasCadastrados;
+        vector<Podcaster*> podcastersCadastrados;
         vector<Assinante*> assinantesCadastrados;
         // vector<Midia*> midiasCadastradas;
         vector<Genero*> generosCadastrados;
@@ -33,6 +36,10 @@ class PlataformaDigital{
         void imprimeAssinantes();
         void inserirAssinante(Assinante* a);
         // void removerAssinante(Assinante* a);
+        void imprimePodcasters();
+        void cadastrarPodcaster(Podcaster* p);
+        void imprimeArtistas();
+        void cadastrarArtista(Artista* a);
         // void inserirProduto(Midia* novoProduto, vector<Produtor*> produtores);
         // void imprimeNoArquivo(ofstream &outfile);
         // void carregaArquivoMidia(ifstream &infile);

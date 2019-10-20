@@ -70,6 +70,10 @@ int main(int argc, char** argv){
     spotify->carregaArquivoGeneros(generos);
     spotify->carregaArquivoUsuarios(usuarios);
     spotify->imprimeAssinantes();
+    cout << "====================Artistas" << endl;
+    spotify->imprimeArtistas();
+    cout << "====================Podcasters" << endl;
+    spotify->imprimePodcasters();
     saida.open("saida.txt");
     saida2.open("saida2.txt");
     for(Genero* g : spotify->getgenero()){

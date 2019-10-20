@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-class Podcaster:Produtor{
+class Podcaster: public Produtor{
     private:
         vector<Podcast*> PodcastsLancados;
     public:

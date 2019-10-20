@@ -3,7 +3,7 @@
 #include "Midia.hpp"
 using namespace std;
 
-class Musica:Midia{
+class Musica: public Midia{
     private:
         void formataDuracao();
     public:
