@@ -8,6 +8,7 @@
 #include "Produtor.hpp"
 #include "Genero.hpp"
 #include "Midia.hpp"
+#include "Usuario.hpp"
 using namespace std;
 
 class PlataformaDigital{
@@ -16,20 +17,23 @@ class PlataformaDigital{
         // vector<Produtor*> produtoresCadastrados;
         // vector<Assinante*> assinantesCadastrados;
         // vector<Midia*> midiasCadastradas;
-        // vector<Genero*> generosCadastrados;
+        vector<Genero*> generosCadastrados;
+        vector<Usuario*> usuariosCadastrados;
     public:
         PlataformaDigital();
         PlataformaDigital(string nome);
         void setnome(string nome);
         string getnome();
+        vector<Genero*> getgenero();
+        vector<Usuario*> getusuario()
         // void imprimeProdutos(string genero);
         // void imprimeAssinantes();
         // void inserirAssinante(Assinante* a);
         // void removerAssinante(Assinante* a);
         // void inserirProduto(Midia* novoProduto, vector<Produtor*> produtores);
         // void imprimeNoArquivo(ofstream &outfile);
-        // void carregaArquivoUsuarios(ifstream &infile);
-        // void carregaArquivoGeneros(ifstream &infile);
+        void carregaArquivoUsuarios(ifstream &infile);
+        void carregaArquivoGeneros(ifstream &infile);
         // void carregaArquivoMidia(ifstream &infile);
         // void carregaArquivoFavoritos(ifstream &infile);
         // void exportarBiblioteca();

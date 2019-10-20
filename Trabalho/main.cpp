@@ -24,8 +24,8 @@ int main(int argc, char** argv){
         //Genero
         if (flags[i] == "-g"){
             cout << "Genero" << endl;
-            cout << flags[i+1] << endl;
             generos.open(flags[i+1]);
+            cout << flags[i+1] << endl;
             if(generos.fail()){
                 cerr << "Erro de I/O"<< endl;
                 exit(1);
@@ -54,6 +54,7 @@ int main(int argc, char** argv){
             }
             i++;
         }
+        //Midias
         if (flags[i] == "-m"){
             cout << "Midias" << endl;
             cout << flags[i+1] << endl;
@@ -65,32 +66,34 @@ int main(int argc, char** argv){
             i++;
         }
     }
-    ofstream saida;
+    ofstream saida, saida2;
+    spotify->carregaArquivoGeneros(generos);
+    spotify->carregaArquivoUsuarios(usuarios);
     saida.open("saida.txt");
-    if(generos.fail()){
-        cerr << "Erro ao abrir arquivo, o mesmo não existe"<< endl;
-        exit(1);
-    }
-    int i = 0;
-    string nome;
-    string sigla;
-    Genero* genre;
-    vector<Genero *> gen;
-    vector<Genero*>::iterator it; 
-    getline(generos, sigla, ';');
-    getline(generos, nome);
-    while(generos.good()){
-        getline(generos, sigla, ';');
-        if(generos.eof()){
-            break;
-        }
-        getline(generos, nome);
-        genre = new Genero(nome, sigla);
-        gen.push_back(genre);
-        i++;
-    }
-    for(Genero* g : gen){
+    saida2.open("saida2.txt");
+    for(Genero* g : spotify->getgenero()){
         saida << g->getsigla() << ";";
         saida << g->getnome() << endl;
     }
+    for(Usuario* u : spotify->getusuario()){
+        saida2 << u->getcodigo() << ";";
+        saida2 << u->getnome() << endl;
+    }
+
+    // string nome;
+    // string sigla;
+    // Genero* genre;
+    // vector<Genero *> gen;
+    // vector<Genero*>::iterator it; 
+    // getline(generos, sigla, ';');
+    // getline(generos, nome);
+    // while(generos.good()){
+    //     getline(generos, sigla, ';');
+    //     if(generos.eof()){
+    //         break;
+    //     }
+    //     getline(generos, nome);
+    //     genre = new Genero(nome, sigla);
+    //     gen.push_back(genre);
+    // }
 }
