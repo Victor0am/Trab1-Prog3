@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
+//Classe usuario está "pronta" -- falta consertar o método de imprimir no arquivo
 class Usuario{
     protected:
         string nome; 
