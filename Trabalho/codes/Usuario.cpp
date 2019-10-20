@@ -22,6 +22,6 @@ Usuario::Usuario(string _nome, int codigo){
     this->setcodigo(codigo);
 }
 void Usuario::imprimeNoArquivo(ofstream &outfile){
-    outfile << getcodigo() << ";";
-    outfile << getnome() << endl;
+    outfile << this->codigo << ";";
+    outfile << this->nome << endl;
 }

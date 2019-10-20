@@ -2,6 +2,7 @@
 #define _USUARIO_HPP
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 //Classe usuario está "pronta" -- falta consertar o método de imprimir no arquivo
 class Usuario{
