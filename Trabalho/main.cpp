@@ -69,6 +69,7 @@ int main(int argc, char** argv){
     ofstream saida, saida2;
     spotify->carregaArquivoGeneros(generos);
     spotify->carregaArquivoUsuarios(usuarios);
+    spotify->carregaArquivoMidia(midias);
     spotify->imprimeAssinantes();
     cout << "====================Artistas" << endl;
     spotify->imprimeArtistas();
@@ -80,6 +81,9 @@ int main(int argc, char** argv){
         saida << g->getsigla() << ";";
         saida << g->getnome() << endl;
     }
+    cout << "===========---------------Midias" << endl;
+    spotify->imprimeMidias();
+
     // for(Usuario* u : spotify->getusuario()){
     //     u->imprimeNoArquivo(saida2);
     //     // saida2 << u->getcodigo() << ";";

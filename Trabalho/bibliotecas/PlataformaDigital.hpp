@@ -42,6 +42,7 @@ class PlataformaDigital{
         void imprimeArtistas();
         void cadastrarArtista(Artista* a);
         Genero sigla_genero(string sigla);
+        void imprimeMidias();
         // void inserirProduto(Midia* novoProduto, vector<Produtor*> produtores);
         // void imprimeNoArquivo(ofstream &outfile);
         // void carregaArquivoFavoritos(ifstream &infile);

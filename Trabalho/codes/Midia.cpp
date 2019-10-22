@@ -27,11 +27,11 @@ void Midia::setanoLancamento(int anoLancamento){
 Midia::Midia(){
     cout << "Midia criada com sucesso... nem tanto né...";
 }
-Midia::Midia(string nome, int codigo, Genero genero){
+Midia::Midia(string nome, int codigo, Genero genero, float duracao){
     this->genero = genero;
     this->nome = nome;
     this->codigo = codigo;
-    // formataDuracao();
+    this->duracao = duracao;
     qtdProdutos++;
 }
 // void Midia::imprimeInfoMidia(){

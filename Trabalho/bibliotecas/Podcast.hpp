@@ -3,13 +3,13 @@
 #include "Midia.hpp"
 using namespace std;
 
-class Podcast:Midia{
+class Podcast:public Midia{
     private:
         int qtdTemporadas;
     public:
         Podcast();
-        Podcast(string nome, Genero gen, int duracao, int anoLancamento);
-        void imprimeinfoProduto();
+        Podcast(int codigo, string nome, Genero gen, float duracao, int anoLancamento, int qtdTemporadas);
+        void imprimeInfoMidia();
         void imprimeNoArquivo(ofstream &outfile);
 };
 

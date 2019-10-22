@@ -21,9 +21,9 @@ class Midia{
         static int qtdProdutos;
         static void imprimeQtdProdutos();
         Midia();
-        Midia(string nome, int codigo, Genero genero);
-        void imprimeInfoMidia() = 0;
-        void imprimeNoArquivo(ofstream &outfile) = 0;
+        Midia(string nome, int codigo, Genero genero, float duracao);
+        virtual void imprimeInfoMidia() = 0;
+        // virtual void imprimeNoArquivo(ofstream &outfile) = 0;
         string getnome();
         void setnome(string nome);
         int getcodigo();

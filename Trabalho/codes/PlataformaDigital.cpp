@@ -98,10 +98,16 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         getline(infile, album, ';');
         infile >> publicacao;
         if (tipo == 'M'){
-            Musica * musica = new Musica(nome, sigla_genero(genero), duracao, publicacao);
+            cout << "iiiiiiiiiiiiii" <<endl;
+            Musica * musica = new Musica( nome, sigla_genero(genero), duracao, publicacao);
+            musica->setcodigo(codigo);
+            midiasCadastradas.push_back(musica);
+        }
+        if(tipo == 'P'){
+            Podcast * podcast = new Podcast(codigo, nome, sigla_genero(genero), duracao, publicacao, temporada);
+            midiasCadastradas.push_back(podcast);
         }
     }
-
 }
 
 void PlataformaDigital::imprimeAssinantes(){
@@ -110,7 +116,12 @@ void PlataformaDigital::imprimeAssinantes(){
         cout << a->getnome() << endl;
     }
 }
-
+void PlataformaDigital::imprimeMidias(){
+    for(Midia* m: midiasCadastradas){
+        cout << "ooooooooo"<<endl;
+        m->imprimeInfoMidia();
+    }
+}
 void PlataformaDigital::inserirAssinante(Assinante* a){
     assinantesCadastrados.push_back(a);
 }
@@ -134,9 +145,9 @@ void PlataformaDigital::imprimeArtistas(){
 }
 
 Genero PlataformaDigital::sigla_genero(string sigla){
-    for (Genero *g: generosCadastrados){
-        if (sigla == g->getsigla()){
-            return g;
+    for (Genero* g: generosCadastrados){
+        if (sigla.substr(0,2) == g->getsigla()){
+            return *g;
         }
     }
 }
