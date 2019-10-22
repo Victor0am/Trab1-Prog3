@@ -70,6 +70,40 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &infile){
     }
 }
 
+void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
+    int codigo;
+    string nome;
+    string lixo;
+    char tipo;
+    int produtor;
+    float duracao;
+    string genero;
+    int temporada;
+    string album;
+    int publicacao;
+    
+    getline(infile, lixo);
+    while(infile.good()){
+        infile >> codigo;
+        getline(infile, nome, ';');
+        infile.ignore(1);
+        infile >> tipo;
+        infile.ignore(1);
+        infile >> produtor;
+        infile.ignore(1);
+        infile >> duracao;
+        getline(infile, genero, ';');
+        infile >> temporada;
+        infile.ignore(1);
+        getline(infile, album, ';');
+        infile >> publicacao;
+        if (tipo == 'M'){
+            Musica * musica = new Musica(nome, sigla_genero(genero), duracao, publicacao);
+        }
+    }
+
+}
+
 void PlataformaDigital::imprimeAssinantes(){
     for(Assinante *a: assinantesCadastrados){
         cout << a->getcodigo() << " ";
@@ -98,6 +132,15 @@ void PlataformaDigital::imprimeArtistas(){
         cout << a->getnome() << endl;
     }
 }
+
+Genero PlataformaDigital::sigla_genero(string sigla){
+    for (Genero *g: generosCadastrados){
+        if (sigla == g->getsigla()){
+            return g;
+        }
+    }
+}
+
 PlataformaDigital::PlataformaDigital(){}
 PlataformaDigital::PlataformaDigital(string nome){//lembrar que os arquivos vao estar em ordem "aleatória" nos arv lá
     this->nome = nome;

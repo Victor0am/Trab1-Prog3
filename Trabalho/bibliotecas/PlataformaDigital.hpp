@@ -19,7 +19,7 @@ class PlataformaDigital{
         vector<Artista*> artistasCadastrados;
         vector<Podcaster*> podcastersCadastrados;
         vector<Assinante*> assinantesCadastrados;
-        // vector<Midia*> midiasCadastradas;
+        vector<Midia*> midiasCadastradas;
         vector<Genero*> generosCadastrados;
         vector<Usuario*> usuariosCadastrados;
     public:
@@ -32,6 +32,7 @@ class PlataformaDigital{
         // vector<Assinante*> getassinante();
         void carregaArquivoUsuarios(ifstream &infile);
         void carregaArquivoGeneros(ifstream &infile);
+        void carregaArquivoMidia(ifstream &infile);
         // void imprimeProdutos(string genero);
         void imprimeAssinantes();
         void inserirAssinante(Assinante* a);
@@ -40,9 +41,9 @@ class PlataformaDigital{
         void cadastrarPodcaster(Podcaster* p);
         void imprimeArtistas();
         void cadastrarArtista(Artista* a);
+        Genero sigla_genero(string sigla);
         // void inserirProduto(Midia* novoProduto, vector<Produtor*> produtores);
         // void imprimeNoArquivo(ofstream &outfile);
-        // void carregaArquivoMidia(ifstream &infile);
         // void carregaArquivoFavoritos(ifstream &infile);
         // void exportarBiblioteca();
         // void gerarRelatorios();

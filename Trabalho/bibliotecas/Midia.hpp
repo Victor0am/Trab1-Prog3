@@ -12,7 +12,7 @@ class Midia{
     protected:
         string nome;
         int codigo;
-        int duracao;
+        float duracao;
         int anoLancamento;
         //vector<Produtor *> produtores;
         //vector<Assinante *> assinantes;
@@ -22,14 +22,14 @@ class Midia{
         static void imprimeQtdProdutos();
         Midia();
         Midia(string nome, int codigo, Genero genero);
-        void imprimeInfoProduto();
-        void imprimeNoArquivo(ofstream &outfile);
+        void imprimeInfoMidia() = 0;
+        void imprimeNoArquivo(ofstream &outfile) = 0;
         string getnome();
         void setnome(string nome);
         int getcodigo();
         void setcodigo(int codigo);
-        int getduracao();
-        void setduracao(int duracao);
+        float getduracao();
+        void setduracao(float duracao);
         int getanoLancamento();
         void setanoLancamento(int anoLancamento);
         // void formataDuracao();

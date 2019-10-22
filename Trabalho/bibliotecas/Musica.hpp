@@ -8,8 +8,8 @@ class Musica: public Midia{
         void formataDuracao();
     public:
         Musica();
-        Musica(string nome, Genero gen, int duracao, int anoLancamento);
-        void imprimeinfoProduto();
+        Musica(string nome, Genero gen, float duracao, int anoLancamento);
+        void imprimeinfoMidia();
         void imprimeNoArquivo(ofstream &outfile);
 };
 

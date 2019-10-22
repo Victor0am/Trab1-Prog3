@@ -12,10 +12,10 @@ int Midia::getcodigo(){
 void Midia::setcodigo(int codigo){
     this->codigo = codigo;
 }
-int Midia::getduracao(){
+float Midia::getduracao(){
     return this->duracao;
 }
-void Midia::setduracao(int duracao){
+void Midia::setduracao(float duracao){
     this->duracao = duracao;
 }
 int Midia::getanoLancamento(){
@@ -34,9 +34,9 @@ Midia::Midia(string nome, int codigo, Genero genero){
     // formataDuracao();
     qtdProdutos++;
 }
-void Midia::imprimeInfoProduto(){
+// void Midia::imprimeInfoMidia(){
     //prints na ordem que quiser depois...
-}
+// }
 // void formataDuracao(){
 //     //this->duracao= algo
 // }

@@ -9,7 +9,7 @@ clean:
 	rm *.o
 
 exec: 
-	./trabalho -g entradas/generos.csv -u entradas/usuarios.csv 
+	./trabalho -g entradas/generos.csv -u entradas/usuarios.csv -m entradas/midias_corrigidas.csv
 
 showresult:
 	@echo "Tada:"
