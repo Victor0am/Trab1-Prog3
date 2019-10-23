@@ -86,18 +86,18 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
     string fim;
     
     getline(infile, lixo);
-    cout << lixo << endl;
+    // cout << lixo << endl;
     while(infile.good()){
         infile >> codigo;
         infile.ignore(1);
-        cout << codigo << endl;
+        // cout << codigo << endl;
         getline(infile, nome, ';');
-        cout << nome << endl;
+        // cout << nome << endl;
         infile >> tipo;
-        cout << tipo << endl;
+        // cout << tipo << endl;
         infile.ignore(1);
         getline(infile, produtor, ';');
-        cout << produtor << endl;
+        // cout << produtor << endl;
         getline(infile, dtemp, ';');
         for (int i = 0; i < dtemp.size(); i++){
             if (dtemp[i] == ',')
@@ -105,19 +105,19 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         }
         duracao = atof(dtemp.c_str());
         // infile >> duracao;
-        cout << duracao << endl;
+        // cout << duracao << endl;
         getline(infile, genero, ';');
-        cout << genero << endl;
+        // cout << genero << endl;
         getline(infile, ttemp, ';');
         if (!ttemp.empty()){
             temporada = atoi(ttemp.c_str());
-            cout << temporada << endl;
+            // cout << temporada << endl;
         }
         getline(infile, album, ';');
         if (!album.empty())
-            cout << album << endl;
+            // cout << album << endl;
         infile >> publicacao;
-        cout << publicacao << endl;
+        // cout << publicacao << endl;
         if (tipo == 'M'){
             Musica * musica = new Musica(nome, codigo, duracao, publicacao);
             musica->imprimeInfoMidia();
@@ -175,9 +175,41 @@ Genero PlataformaDigital::sigla_genero(string sigla){
     cout << t << endl;
     for (Genero* g: generosCadastrados){
         if (t == g->getsigla()){
-            cout << "aaaa" << endl;
+            // cout << "aaaa" << endl;
             g->imprimeGenero();
             return *g;
+        }
+    }
+}
+
+void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
+    string codigo;
+    string favoritos;
+    vector <int>;
+    getline(infile, codigo, ';');
+    getline(infile, favoritos, ';');
+    int code;
+    while(infile.good()){
+        cout << "**************" << endl;
+        infile >> code;
+        cout << code << endl;
+        infile.ignore(1);
+        getline(infile, favoritos);
+        if (!favoritos.empty()){
+            //particionar a string entre o vetor de inteiros
+        }
+        for (int i = 0; i < assinantesCadastrados.size(); i++){
+
+        }
+        cout << favoritos << endl;
+    }
+
+}
+
+Midia* PlataformaDigital::ProcuraMidia(int codigo){
+    for (Midia *m : midiasCadastradas){
+        if (codigo == m->getcodigo()){
+            return m;
         }
     }
 }
@@ -186,3 +218,4 @@ PlataformaDigital::PlataformaDigital(){}
 PlataformaDigital::PlataformaDigital(string nome){//lembrar que os arquivos vao estar em ordem "aleatória" nos arv lá
     this->nome = nome;
 }
+

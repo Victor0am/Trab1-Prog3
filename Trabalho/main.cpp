@@ -70,19 +70,20 @@ int main(int argc, char** argv){
     spotify->carregaArquivoGeneros(generos);
     spotify->carregaArquivoUsuarios(usuarios);
     spotify->carregaArquivoMidia(midias);
-    spotify->imprimeAssinantes();
-    cout << "====================Artistas" << endl;
-    spotify->imprimeArtistas();
-    cout << "====================Podcasters" << endl;
-    spotify->imprimePodcasters();
-    saida.open("saida.txt");
-    saida2.open("saida2.txt");
-    for(Genero* g : spotify->getgenero()){
-        saida << g->getsigla() << ";";
-        saida << g->getnome() << endl;
-    }
-    cout << "===========---------------Midias" << endl;
-    spotify->imprimeMidias();
+    spotify->carregaArquivoFavoritos(favoritos);
+    // spotify->imprimeAssinantes();
+    // cout << "====================Artistas" << endl;
+    // spotify->imprimeArtistas();
+    // cout << "====================Podcasters" << endl;
+    // spotify->imprimePodcasters();
+    // saida.open("saida.txt");
+    // saida2.open("saida2.txt");
+    // for(Genero* g : spotify->getgenero()){
+    //     saida << g->getsigla() << ";";
+    //     saida << g->getnome() << endl;
+    // }
+    // cout << "===========---------------Midias" << endl;
+    // spotify->imprimeMidias();
 
     // for(Usuario* u : spotify->getusuario()){
     //     u->imprimeNoArquivo(saida2);

@@ -33,6 +33,7 @@ class PlataformaDigital{
         void carregaArquivoUsuarios(ifstream &infile);
         void carregaArquivoGeneros(ifstream &infile);
         void carregaArquivoMidia(ifstream &infile);
+        void carregaArquivoFavoritos(ifstream &infile);
         // void imprimeProdutos(string genero);
         void imprimeAssinantes();
         void inserirAssinante(Assinante* a);
@@ -43,9 +44,9 @@ class PlataformaDigital{
         void cadastrarArtista(Artista* a);
         Genero sigla_genero(string sigla);
         void imprimeMidias();
+        Midia* ProcuraMidia(int codigo);
         // void inserirProduto(Midia* novoProduto, vector<Produtor*> produtores);
         // void imprimeNoArquivo(ofstream &outfile);
-        // void carregaArquivoFavoritos(ifstream &infile);
         // void exportarBiblioteca();
         // void gerarRelatorios();
 };
