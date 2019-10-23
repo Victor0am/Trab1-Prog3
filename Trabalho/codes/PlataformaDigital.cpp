@@ -75,30 +75,50 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
     string nome;
     string lixo;
     char tipo;
-    int produtor;
+    string produtor;
     float duracao;
+    string dtemp;
     string genero;
     int temporada;
+    string ttemp;
     string album;
     int publicacao;
+    string fim;
     
     getline(infile, lixo);
+    cout << lixo << endl;
     while(infile.good()){
         infile >> codigo;
+        infile.ignore(1);
+        cout << codigo << endl;
         getline(infile, nome, ';');
-        infile.ignore(1);
+        cout << nome << endl;
         infile >> tipo;
+        cout << tipo << endl;
         infile.ignore(1);
-        infile >> produtor;
-        infile.ignore(1);
-        infile >> duracao;
+        getline(infile, produtor, ';');
+        cout << produtor << endl;
+        getline(infile, dtemp, ';');
+        for (int i = 0; i < dtemp.size(); i++){
+            if (dtemp[i] == ',')
+                dtemp[i] = '.';
+        }
+        duracao = atof(dtemp.c_str());
+        // infile >> duracao;
+        cout << duracao << endl;
         getline(infile, genero, ';');
-        infile >> temporada;
-        infile.ignore(1);
+        cout << genero << endl;
+        getline(infile, ttemp, ';');
+        if (!ttemp.empty()){
+            temporada = atoi(ttemp.c_str());
+            cout << temporada << endl;
+        }
         getline(infile, album, ';');
+        if (!album.empty())
+            cout << album << endl;
         infile >> publicacao;
+        cout << publicacao << endl;
         if (tipo == 'M'){
-            cout << "iiiiiiiiiiiiii" <<endl;
             Musica * musica = new Musica( nome, sigla_genero(genero), duracao, publicacao);
             musica->setcodigo(codigo);
             midiasCadastradas.push_back(musica);
@@ -107,6 +127,9 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
             Podcast * podcast = new Podcast(codigo, nome, sigla_genero(genero), duracao, publicacao, temporada);
             midiasCadastradas.push_back(podcast);
         }
+        getline(infile, fim);
+        if (fim == ";;;")
+            break;
     }
 }
 
@@ -116,9 +139,9 @@ void PlataformaDigital::imprimeAssinantes(){
         cout << a->getnome() << endl;
     }
 }
+
 void PlataformaDigital::imprimeMidias(){
     for(Midia* m: midiasCadastradas){
-        cout << "ooooooooo"<<endl;
         m->imprimeInfoMidia();
     }
 }

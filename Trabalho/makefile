@@ -12,7 +12,7 @@ exec:
 	./trabalho -g entradas/generos.csv -u entradas/usuarios.csv -m entradas/midias_corrigidas.csv
 
 showresult:
-	@echo "Tada:"
-	@cat saida.txt
-	@echo "==========================="
-	@cat saida2.txt
+	#@echo "Tada:"
+	#@cat saida.txt
+	#@echo "==========================="
+	#@cat saida2.txt
