@@ -168,14 +168,14 @@ void PlataformaDigital::imprimeArtistas(){
     }
 }
 
-Genero* PlataformaDigital::sigla_genero(string sigla){
+Genero PlataformaDigital::sigla_genero(string sigla){
     string t = sigla.substr(0,2);
     cout << t << endl;
     for (Genero* g: generosCadastrados){
         if (t == g->getsigla()){
             cout << "aaaa" << endl;
             g->imprimeGenero();
-            return g;
+            return *g;
         }
     }
 }

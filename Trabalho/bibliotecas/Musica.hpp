@@ -10,7 +10,7 @@ class Musica: public Midia{
         
     public:
         Musica();
-        Musica(string nome, int codigo, Genero* gen, float duracao, int anoLancamento);
+        Musica(string nome, int codigo, Genero gen, float duracao, int anoLancamento);
         void imprimeInfoMidia();
         void imprimeNoArquivo(ofstream &outfile);
 };
