@@ -16,12 +16,12 @@ class Midia{
         int anoLancamento;
         //vector<Produtor *> produtores;
         //vector<Assinante *> assinantes;
-        Genero genero;
+        Genero* genero;
     public:
         static int qtdProdutos;
         static void imprimeQtdProdutos();
         Midia();
-        Midia(string nome, int codigo, Genero genero, float duracao);
+        Midia(string nome, int codigo, Genero* genero, float duracao);
         virtual void imprimeInfoMidia() = 0;
         // virtual void imprimeNoArquivo(ofstream &outfile) = 0;
         string getnome();
@@ -32,6 +32,8 @@ class Midia{
         void setduracao(float duracao);
         int getanoLancamento();
         void setanoLancamento(int anoLancamento);
+        Genero getgenero();
+        void setgenero();
         // void formataDuracao();
 };
 // int Midia::qtdProdutos = 0;

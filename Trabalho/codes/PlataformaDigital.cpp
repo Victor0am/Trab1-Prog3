@@ -119,8 +119,9 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         infile >> publicacao;
         cout << publicacao << endl;
         if (tipo == 'M'){
-            Musica * musica = new Musica( nome, sigla_genero(genero), duracao, publicacao);
-            musica->setcodigo(codigo);
+            Musica * musica = new Musica(nome, codigo, sigla_genero(genero), duracao, publicacao);
+            cout << musica->getgenero().getsigla() << endl;
+            // musica->setcodigo(codigo);
             midiasCadastradas.push_back(musica);
         }
         if(tipo == 'P'){
@@ -167,10 +168,14 @@ void PlataformaDigital::imprimeArtistas(){
     }
 }
 
-Genero PlataformaDigital::sigla_genero(string sigla){
+Genero* PlataformaDigital::sigla_genero(string sigla){
+    string t = sigla.substr(0,2);
+    cout << t << endl;
     for (Genero* g: generosCadastrados){
-        if (sigla.substr(0,2) == g->getsigla()){
-            return *g;
+        if (t == g->getsigla()){
+            cout << "aaaa" << endl;
+            g->imprimeGenero();
+            return g;
         }
     }
 }
