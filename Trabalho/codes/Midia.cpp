@@ -25,7 +25,7 @@ void Midia::setanoLancamento(int anoLancamento){
     this->anoLancamento = anoLancamento;
 }
 Midia::Midia(){
-    cout << "Midia criada com sucesso... nem tanto né...";
+    // cout << "Midia criada com sucesso... nem tanto né...";
 }
 Midia::Midia(string nome, int codigo, Genero genero, float duracao){
     this->genero = genero;
@@ -37,6 +37,9 @@ Midia::Midia(string nome, int codigo, Genero genero, float duracao){
 
 Genero Midia::getgenero(){
     return this->genero;
+}
+void Midia::setgenero(Genero genero){
+    this->genero = genero;
 }
 // void Midia::imprimeInfoMidia(){
     //prints na ordem que quiser depois...

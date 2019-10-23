@@ -33,7 +33,7 @@ class Midia{
         int getanoLancamento();
         void setanoLancamento(int anoLancamento);
         Genero getgenero();
-        void setgenero();
+        void setgenero(Genero genero);
         // void formataDuracao();
 };
 // int Midia::qtdProdutos = 0;

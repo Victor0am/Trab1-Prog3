@@ -8,7 +8,7 @@ class Podcast:public Midia{
         int qtdTemporadas;
     public:
         Podcast();
-        Podcast(int codigo, string nome, Genero gen, float duracao, int anoLancamento, int qtdTemporadas);
+        Podcast(int codigo, string nome, float duracao, int anoLancamento, int qtdTemporadas);
         void imprimeInfoMidia();
         void imprimeNoArquivo(ofstream &outfile);
 };

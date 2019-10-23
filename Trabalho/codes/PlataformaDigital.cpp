@@ -119,13 +119,15 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         infile >> publicacao;
         cout << publicacao << endl;
         if (tipo == 'M'){
-            Musica * musica = new Musica(nome, codigo, sigla_genero(genero), duracao, publicacao);
-            cout << musica->getgenero().getsigla() << endl;
+            Musica * musica = new Musica(nome, codigo, duracao, publicacao);
+            musica->imprimeInfoMidia();
+            musica->setgenero(sigla_genero(genero));
             // musica->setcodigo(codigo);
             midiasCadastradas.push_back(musica);
         }
         if(tipo == 'P'){
-            Podcast * podcast = new Podcast(codigo, nome, sigla_genero(genero), duracao, publicacao, temporada);
+            Podcast * podcast = new Podcast(codigo, nome, duracao, publicacao, temporada);
+            podcast->setgenero(sigla_genero(genero));
             midiasCadastradas.push_back(podcast);
         }
         getline(infile, fim);
