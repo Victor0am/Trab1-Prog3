@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <sstream>
 #include "Artista.hpp"
 #include "Assinante.hpp"
 #include "Produtor.hpp"

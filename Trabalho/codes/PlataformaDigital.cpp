@@ -184,26 +184,40 @@ Genero PlataformaDigital::sigla_genero(string sigla){
 
 void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
     string codigo;
-    string favoritos;
-    vector <int>;
+    string favoritos, aux, linha;
     getline(infile, codigo, ';');
-    getline(infile, favoritos, ';');
+    getline(infile, favoritos);
     int code;
     while(infile.good()){
+        vector <int> favs;
         cout << "**************" << endl;
         infile >> code;
-        cout << code << endl;
         infile.ignore(1);
-        getline(infile, favoritos);
-        if (!favoritos.empty()){
-            //particionar a string entre o vetor de inteiros
+        getline(infile, linha);
+        stringstream convert(linha);
+        while(getline(convert, aux, ',')){
+            favs.push_back(stoi(aux));
         }
+        // cout << "AQUI =========== " << endl;
+        // for (int i = 0; i < favs.size(); i++){
+        //     cout << favs[i] << endl;
+        // }
+        // cout << "AQUI =========== " << endl;
+        /******** importanteee *********/
         for (int i = 0; i < assinantesCadastrados.size(); i++){
-
+            if (assinantesCadastrados[i]->getcodigo() == code){
+                for (int j = 0; j < favs.size(); j++){
+                    assinantesCadastrados[i]->inserirFavorito(ProcuraMidia(favs[j]));
+                }
+            }
+            assinantesCadastrados[i]->imprimeFavoritos();
         }
-        cout << favoritos << endl;
     }
-
+    /******************************************** 
+     FALTA TRATAMENTO DE ERRO PARA O CASO DE NÃO TER UM USUARIO COM AQUELE CODIGO,
+     LINHA TERMINADA COM VIRGULA, 2 VIRGULAS SEGUIDAS, E NÃO TER UM FAVORITO CADASTRADO,
+     2 OU MAIS FAVORITOS DE MESMO CODIGO, ESPAÇO EM BRANCO
+     ********************************************/
 }
 
 Midia* PlataformaDigital::ProcuraMidia(int codigo){

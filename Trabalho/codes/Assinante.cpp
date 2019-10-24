@@ -6,10 +6,13 @@ Assinante::Assinante(){
 Assinante::Assinante(string nome, int codigo):Usuario(nome, codigo){
 }
 void Assinante::imprimeFavoritos(){
+    int i = 1;
     vector<Midia*>::iterator it = this->Favoritos.begin();
     while(it!= this->Favoritos.end()){
-        //printar os negócios do jeito que ela pedir
+        cout << i << "************" << endl;
+        (*it)->imprimeInfoMidia();
         it++;
+        i++;
     }
 }
 void Assinante::inserirFavorito(Midia* favorito){
