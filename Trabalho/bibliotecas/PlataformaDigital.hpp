@@ -50,6 +50,8 @@ class PlataformaDigital{
         // void imprimeNoArquivo(ofstream &outfile);
         // void exportarBiblioteca();
         // void gerarRelatorios();
+        // Calculos
+        float Horas_consumidas();
 };
 
 #endif

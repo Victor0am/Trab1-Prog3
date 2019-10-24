@@ -84,7 +84,6 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
     string album;
     int publicacao;
     string fim;
-    
     getline(infile, lixo);
     // cout << lixo << endl;
     while(infile.good()){
@@ -148,21 +147,26 @@ void PlataformaDigital::imprimeMidias(){
         m->imprimeInfoMidia();
     }
 }
+
 void PlataformaDigital::inserirAssinante(Assinante* a){
     assinantesCadastrados.push_back(a);
 }
+
 void PlataformaDigital::cadastrarPodcaster(Podcaster* p){
     podcastersCadastrados.push_back(p);
 }
+
 void PlataformaDigital::cadastrarArtista(Artista* a){
     artistasCadastrados.push_back(a);
 }
+
 void PlataformaDigital::imprimePodcasters(){
     for(Podcaster *p: podcastersCadastrados){
         cout << p->getcodigo() << " ";
         cout << p->getnome() << endl;
     }
 }
+
 void PlataformaDigital::imprimeArtistas(){
     for(Artista *a: artistasCadastrados){
         cout << a->getcodigo() << " ";
@@ -205,6 +209,7 @@ void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
         // cout << "AQUI =========== " << endl;
         /******** importanteee *********/
         for (int i = 0; i < assinantesCadastrados.size(); i++){
+            cout << "============================================== Divisao" << endl;
             if (assinantesCadastrados[i]->getcodigo() == code){
                 for (int j = 0; j < favs.size(); j++){
                     assinantesCadastrados[i]->inserirFavorito(ProcuraMidia(favs[j]));
@@ -228,8 +233,26 @@ Midia* PlataformaDigital::ProcuraMidia(int codigo){
     }
 }
 
+
+/***********************
+ * Saidas
+ *************************/
+
+float PlataformaDigital::Horas_consumidas(){
+    float total = 0;
+    for (int i = 0; i < assinantesCadastrados.size(); i++){
+        for (int j = 0; j < assinantesCadastrados[i]->getFavoritos().size(); j++){
+            cout << total << endl;
+            total = assinantesCadastrados[i]->getFavoritos()[j]->getduracao() + total;
+        }
+    }
+    return total;
+}
+
+
 PlataformaDigital::PlataformaDigital(){}
 PlataformaDigital::PlataformaDigital(string nome){//lembrar que os arquivos vao estar em ordem "aleatória" nos arv lá
     this->nome = nome;
 }
+
 

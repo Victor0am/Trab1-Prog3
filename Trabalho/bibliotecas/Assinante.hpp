@@ -17,6 +17,7 @@ class Assinante: public Usuario{
         void inserirFavorito(Midia* favorito);
         void removerFavorito();
         void imprimeNoArquivo(ofstream &outfile);
+        vector<Midia*> getFavoritos();
 };
 
 #endif

@@ -6,6 +6,9 @@ Assinante::Assinante(){
 Assinante::Assinante(string nome, int codigo):Usuario(nome, codigo){
 }
 void Assinante::imprimeFavoritos(){
+    if (Favoritos.empty()){
+        return;
+    }
     int i = 1;
     vector<Midia*>::iterator it = this->Favoritos.begin();
     while(it!= this->Favoritos.end()){
@@ -22,4 +25,9 @@ void Assinante::removerFavorito(){
     Midia* favorito;
     this->Favoritos.pop_back();
 }
+
+vector <Midia*> Assinante::getFavoritos(){
+    return this->Favoritos;
+}
+
 // void Assinante::imprimeNoArquivo(ofstream &outfile);
