@@ -71,9 +71,10 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &infile){
 }
 
 void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
-    int codigo;
+    int codigo, codigo_album;
     string nome;
     string lixo;
+    string codigo_albums;
     char tipo;
     string produtor;
     float duracao;
@@ -113,8 +114,12 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
             // cout << temporada << endl;
         }
         getline(infile, album, ';');
-        if (!album.empty())
-            // cout << album << endl;
+        getline(infile, codigo_albums, ';');
+        // cout << album << endl;
+        if (!codigo_albums.empty()){
+            codigo_album = atoi(codigo_albums.c_str());
+        }
+        // cout << codigo_album << endl;
         infile >> publicacao;
         // cout << publicacao << endl;
         if (tipo == 'M'){
@@ -129,9 +134,7 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
             podcast->setgenero(sigla_genero(genero));
             midiasCadastradas.push_back(podcast);
         }
-        getline(infile, fim);
-        if (fim == ";;;")
-            break;
+        tipo = 'z';
     }
 }
 
@@ -180,7 +183,7 @@ Genero PlataformaDigital::sigla_genero(string sigla){
     for (Genero* g: generosCadastrados){
         if (t == g->getsigla()){
             // cout << "aaaa" << endl;
-            g->imprimeGenero();
+            // g->imprimeGenero();
             return *g;
         }
     }
@@ -194,13 +197,19 @@ void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
     int code;
     while(infile.good()){
         vector <int> favs;
-        cout << "**************" << endl;
         infile >> code;
+        // cout << code << endl;
         infile.ignore(1);
         getline(infile, linha);
-        stringstream convert(linha);
-        while(getline(convert, aux, ',')){
-            favs.push_back(stoi(aux));
+        if (linha.size()!= 1){
+            stringstream convert(linha);
+            while(getline(convert, aux, ',')){
+                favs.push_back(stoi(aux));
+            }
+        }
+        else{
+            cout << "Assinante sem midias favoritas." << endl;
+            continue;
         }
         // cout << "AQUI =========== " << endl;
         // for (int i = 0; i < favs.size(); i++){
@@ -209,13 +218,12 @@ void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
         // cout << "AQUI =========== " << endl;
         /******** importanteee *********/
         for (int i = 0; i < assinantesCadastrados.size(); i++){
-            cout << "============================================== Divisao" << endl;
-            if (assinantesCadastrados[i]->getcodigo() == code){
+            // cout << "============================================== Divisao" << endl;
+            if (assinantesCadastrados[i]->getcodigo() == code && !favs.empty()){
                 for (int j = 0; j < favs.size(); j++){
                     assinantesCadastrados[i]->inserirFavorito(ProcuraMidia(favs[j]));
                 }
             }
-            assinantesCadastrados[i]->imprimeFavoritos();
         }
     }
     /******************************************** 
@@ -233,6 +241,10 @@ Midia* PlataformaDigital::ProcuraMidia(int codigo){
     }
 }
 
+PlataformaDigital::PlataformaDigital(){}
+PlataformaDigital::PlataformaDigital(string nome){//lembrar que os arquivos vao estar em ordem "aleatória" nos arv lá
+    this->nome = nome;
+}
 
 /***********************
  * Saidas
@@ -242,7 +254,7 @@ float PlataformaDigital::Horas_consumidas(){
     float total = 0;
     for (int i = 0; i < assinantesCadastrados.size(); i++){
         for (int j = 0; j < assinantesCadastrados[i]->getFavoritos().size(); j++){
-            cout << total << endl;
+            // cout << total << endl;
             total = assinantesCadastrados[i]->getFavoritos()[j]->getduracao() + total;
         }
     }
@@ -250,9 +262,6 @@ float PlataformaDigital::Horas_consumidas(){
 }
 
 
-PlataformaDigital::PlataformaDigital(){}
-PlataformaDigital::PlataformaDigital(string nome){//lembrar que os arquivos vao estar em ordem "aleatória" nos arv lá
-    this->nome = nome;
-}
+
 
 

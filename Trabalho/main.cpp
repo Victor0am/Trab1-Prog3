@@ -72,6 +72,7 @@ int main(int argc, char** argv){
     spotify->carregaArquivoMidia(midias);
     spotify->carregaArquivoFavoritos(favoritos);
     cout << spotify->Horas_consumidas();
+    cout << endl;
     // spotify->imprimeAssinantes();
     // cout << "====================Artistas" << endl;
     // spotify->imprimeArtistas();
