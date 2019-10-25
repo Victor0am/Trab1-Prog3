@@ -55,6 +55,9 @@ class PlataformaDigital{
         float Horas_consumidas();
         string G_mais_ouvido();
         int midias_por_g();
+
+        //arquivos
+        void Backup();
 };
 
 #endif

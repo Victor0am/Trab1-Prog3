@@ -272,5 +272,15 @@ int PlataformaDigital::midias_por_g(){
 }
 
 
+void PlataformaDigital::Backup(){
+    cout << "Usuarios" << endl;
+    cout << usuariosCadastrados.size() << endl;
+    for (int i = 0; i < usuariosCadastrados.size(); i++){
+        cout << usuariosCadastrados[i]->getnome() << endl;
+    }
+}
+
+
+
 
 
