@@ -54,6 +54,8 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &infile){
                 break;
             }
             getline(infile, nome);
+            user = new Usuario(nome, codigo);
+            usuariosCadastrados.push_back(user);
             if (tipo == 'U'){
                 // cout << "Teste" << endl;
                 user = new Assinante(nome, codigo);
@@ -123,14 +125,14 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         infile >> publicacao;
         // cout << publicacao << endl;
         if (tipo == 'M'){
-            Musica * musica = new Musica(nome, codigo, duracao, publicacao);
+            Musica * musica = new Musica(nome, codigo, duracao, publicacao, tipo);
             // musica->imprimeInfoMidia();
             musica->setgenero(sigla_genero(genero));
             // musica->setcodigo(codigo);
             midiasCadastradas.push_back(musica);
         }
         if(tipo == 'P'){
-            Podcast * podcast = new Podcast(codigo, nome, duracao, publicacao, temporada);
+            Podcast * podcast = new Podcast(codigo, nome, duracao, publicacao, temporada, tipo);
             podcast->setgenero(sigla_genero(genero));
             midiasCadastradas.push_back(podcast);
         }
@@ -273,11 +275,26 @@ int PlataformaDigital::midias_por_g(){
 
 
 void PlataformaDigital::Backup(){
-    cout << "Usuarios" << endl;
-    cout << usuariosCadastrados.size() << endl;
+    ofstream outfile("backup.txt");
+    outfile << "Usuarios" << endl;
     for (int i = 0; i < usuariosCadastrados.size(); i++){
-        cout << usuariosCadastrados[i]->getnome() << endl;
+        outfile << usuariosCadastrados[i]->getnome() << endl;
     }
+
+    outfile << "Midias" << endl;
+    for (int i = 0; i < midiasCadastradas.size(); i++){
+        outfile << midiasCadastradas[i]->getnome() << ';';
+        outfile << midiasCadastradas[i]->gettipo() << ';';
+        //Tipo
+        //falta produtores
+        outfile << midiasCadastradas[i]->getduracao() << ';';
+        outfile << midiasCadastradas[i]->getgenero().getsigla() << ';';
+        //temporada
+        //codigo album
+        outfile << midiasCadastradas[i]->getanoLancamento() << ';';
+        outfile << endl;
+    }
+    outfile.close();
 }
 
 

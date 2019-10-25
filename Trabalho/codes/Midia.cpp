@@ -24,6 +24,13 @@ int Midia::getanoLancamento(){
 void Midia::setanoLancamento(int anoLancamento){
     this->anoLancamento = anoLancamento;
 }
+
+char Midia::gettipo(){
+    return this->tipo;
+}
+void Midia::settipo(char tipo){
+    this->tipo = tipo;
+}
 Midia::Midia(){
     // cout << "Midia criada com sucesso... nem tanto né...";
 }
@@ -32,6 +39,15 @@ Midia::Midia(string nome, int codigo, Genero genero, float duracao){
     this->nome = nome;
     this->codigo = codigo;
     this->duracao = duracao;
+    qtdProdutos++;
+}
+
+Midia::Midia(string nome, int codigo, Genero genero, float duracao, char tipo){
+    this->genero = genero;
+    this->nome = nome;
+    this->codigo = codigo;
+    this->duracao = duracao;
+    this->tipo = tipo;
     qtdProdutos++;
 }
 

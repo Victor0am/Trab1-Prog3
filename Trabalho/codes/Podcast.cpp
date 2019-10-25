@@ -1,10 +1,11 @@
 #include "../bibliotecas/Podcast.hpp"
 
 Podcast::Podcast(){}
-Podcast::Podcast(int codigo, string nome, float duracao, int anoLancamento, int qtdTemporadas)/*:Midia(nome, codigo, gen, duracao)*/{
+Podcast::Podcast(int codigo, string nome, float duracao, int anoLancamento, int qtdTemporadas, char tipo)/*:Midia(nome, codigo, gen, duracao)*/{
     this->codigo = codigo;
     this->nome = nome;
     this->duracao = duracao;
+    this->tipo = tipo;
     this->anoLancamento = anoLancamento;
     this->qtdTemporadas = qtdTemporadas;
 }

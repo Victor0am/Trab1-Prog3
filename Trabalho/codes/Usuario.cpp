@@ -16,8 +16,8 @@ void Usuario::setcodigo(int codigo){
     this->codigo = codigo;
 }
 Usuario::Usuario(){
-    //colocar algo que não sabemos ainda se precisa.
 }
+
 Usuario::Usuario(string _nome, int codigo){
     this->setnome(_nome);
     this->setcodigo(codigo);

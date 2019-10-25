@@ -9,6 +9,7 @@ class Usuario{
     protected:
         string nome; 
         int codigo;
+        char tipo;
     public:
         void imprimeNoArquivo(ofstream &outfile);
         void setcodigo(int codigo);
