@@ -124,7 +124,7 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         // cout << publicacao << endl;
         if (tipo == 'M'){
             Musica * musica = new Musica(nome, codigo, duracao, publicacao);
-            musica->imprimeInfoMidia();
+            // musica->imprimeInfoMidia();
             musica->setgenero(sigla_genero(genero));
             // musica->setcodigo(codigo);
             midiasCadastradas.push_back(musica);
@@ -179,7 +179,6 @@ void PlataformaDigital::imprimeArtistas(){
 
 Genero PlataformaDigital::sigla_genero(string sigla){
     string t = sigla.substr(0,2);
-    cout << t << endl;
     for (Genero* g: generosCadastrados){
         if (t == g->getsigla()){
             // cout << "aaaa" << endl;
@@ -201,24 +200,19 @@ void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
         // cout << code << endl;
         infile.ignore(1);
         getline(infile, linha);
+        if (!infile.good())
+            break;
         if (linha.size()!= 1){
             stringstream convert(linha);
             while(getline(convert, aux, ',')){
                 favs.push_back(stoi(aux));
             }
         }
-        else{
-            cout << "Assinante sem midias favoritas." << endl;
+        else
             continue;
-        }
-        // cout << "AQUI =========== " << endl;
-        // for (int i = 0; i < favs.size(); i++){
-        //     cout << favs[i] << endl;
-        // }
-        // cout << "AQUI =========== " << endl;
+
         /******** importanteee *********/
         for (int i = 0; i < assinantesCadastrados.size(); i++){
-            // cout << "============================================== Divisao" << endl;
             if (assinantesCadastrados[i]->getcodigo() == code && !favs.empty()){
                 for (int j = 0; j < favs.size(); j++){
                     assinantesCadastrados[i]->inserirFavorito(ProcuraMidia(favs[j]));
@@ -254,13 +248,28 @@ float PlataformaDigital::Horas_consumidas(){
     float total = 0;
     for (int i = 0; i < assinantesCadastrados.size(); i++){
         for (int j = 0; j < assinantesCadastrados[i]->getFavoritos().size(); j++){
-            // cout << total << endl;
             total = assinantesCadastrados[i]->getFavoritos()[j]->getduracao() + total;
         }
     }
     return total;
 }
 
+string PlataformaDigital::G_mais_ouvido(){
+    
+}
+
+int PlataformaDigital::midias_por_g(){
+    for (int i = 0; i < generosCadastrados.size(); i++){
+        cout << generosCadastrados[i]->getnome();
+        int total = 0;
+        for (int j = 0; j < midiasCadastradas.size(); j++){
+            if (midiasCadastradas[j]->getgenero().getnome() == generosCadastrados[i]->getnome()){
+                total++;
+            }
+        }
+        cout << ":" << total << endl;
+    }
+}
 
 
 

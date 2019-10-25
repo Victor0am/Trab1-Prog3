@@ -50,8 +50,11 @@ class PlataformaDigital{
         // void imprimeNoArquivo(ofstream &outfile);
         // void exportarBiblioteca();
         // void gerarRelatorios();
+
         // Calculos
         float Horas_consumidas();
+        string G_mais_ouvido();
+        int midias_por_g();
 };
 
 #endif
