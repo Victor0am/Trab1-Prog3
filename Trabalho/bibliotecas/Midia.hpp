@@ -10,8 +10,8 @@
 using namespace std;
 class Midia{
     protected:
-        string nome;
         int codigo;
+        string nome;
         float duracao;
         int anoLancamento;
         char tipo;
@@ -38,6 +38,7 @@ class Midia{
         void setgenero(Genero genero);
         char gettipo();
         void settipo(char tipo);
+        void imprime_duracao_com_virgula();
         // void formataDuracao();
 };
 // int Midia::qtdProdutos = 0;

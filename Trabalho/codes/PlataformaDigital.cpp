@@ -298,15 +298,30 @@ void PlataformaDigital::Backup(){
     outfile.close();
 }
 
-void PlataformaDigital::lista_favoritos(){
+// void PlataformaDigital::lista_favoritos(){
+//     ofstream outfile("3-favoritos.csv");
+//     for (int i = 0; i < assinantesCadastrados.size(); i++){
+//         for (int j = 0; j < assinantesCadastrados[i]->getFavoritos().size(); j++){
+//             outfile << assinantesCadastrados[i]->getcodigo() << ';';
+//             outfile << assinantesCadastrados[i]->getFavoritos()[j]->gettipo() << ';';
+//             outfile << assinantesCadastrados[i]->getFavoritos()[j]->getcodigo() << ';';
+//             outfile << assinantesCadastrados[i]->getFavoritos()[j]->getgenero().getnome() << ';';
+//             outfile << assinantesCadastrados[i]->getFavoritos()[j]->getduracao() << endl;
+//         }
+//     }
+//     outfile.close();
+// }
+void PlataformaDigital::lista_favoritos(){ // V.Victor
     ofstream outfile("3-favoritos.csv");
-    for (int i = 0; i < assinantesCadastrados.size(); i++){
-        for (int j = 0; j < assinantesCadastrados[i]->getFavoritos().size(); j++){
-            outfile << assinantesCadastrados[i]->getcodigo() << ';';
-            outfile << assinantesCadastrados[i]->getFavoritos()[j]->gettipo() << ';';
-            outfile << assinantesCadastrados[i]->getFavoritos()[j]->getcodigo() << ';';
-            outfile << assinantesCadastrados[i]->getFavoritos()[j]->getgenero().getnome() << ';';
-            outfile << assinantesCadastrados[i]->getFavoritos()[j]->getduracao() << endl;
+    outfile << "CódigoAssinante;Tipo Mídia;Código Mídia;Gênero;Duração" << endl;
+    for (Assinante* a : assinantesCadastrados){
+        a->ordenaFavoritos();
+        for(Midia* m : a->getFavoritos2()){
+            outfile << a->getcodigo() << ';';
+            outfile << m->gettipo() << ';';
+            outfile << m->getcodigo() << ';';
+            outfile << m->getgenero().getnome() << ';';
+            outfile << m->getduracao() << endl;
         }
     }
     outfile.close();
