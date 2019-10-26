@@ -64,6 +64,9 @@ string Midia::getduracao_virgula(){
 void Midia::setduracao_virgula(string duracao){
     this->duracao_virgula = duracao;
 }
+// void Midia:: setprodutores(Produtor * p){
+//     produtores.push_back(p);
+// }
 
 // string Midia::duracao_virgula(){
 //     string s = to_string(duracao);

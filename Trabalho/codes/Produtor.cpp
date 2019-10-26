@@ -17,3 +17,6 @@ void Produtor::imprimeProdutosDesenvolvidos(){
 void Produtor::desenvolverProdutos(Midia* midia){
     this->produtosDesenvolvidos.push_back(midia);
 }
+vector<Midia*> Produtor::getprodutosDesenvolvidos(){
+    return this->produtosDesenvolvidos;
+}

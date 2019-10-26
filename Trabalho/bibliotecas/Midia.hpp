@@ -3,8 +3,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-//#include "Produtor.hpp"
 #include "Genero.hpp"
+// #include "Produtor.hpp"
 //#include "Assinante.hpp"
 //#include "PlataformaDigital.hpp"
 using namespace std;
@@ -16,7 +16,7 @@ class Midia{
         int anoLancamento;
         char tipo;
         string duracao_virgula;
-        //vector<Produtor *> produtores;
+        // vector<Produtor*> produtores;
         //vector<Assinante *> assinantes;
         Genero genero;
     public:
@@ -38,6 +38,7 @@ class Midia{
         int getanoLancamento();
         void setanoLancamento(int anoLancamento);
         Genero getgenero();
+        // void setprodutores(Produtor * p);
         void setgenero(Genero genero);
         char gettipo();
         void settipo(char tipo);

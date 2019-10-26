@@ -50,20 +50,26 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &infile){
             // cout << codigo;
             infile >> tipo;
             // cout << tipo << endl;
-            getline(infile, nome, ';');
+            // getline(infile, nome, ';');
+            infile.ignore(1);
             if(infile.eof()){
                 break;
             }
             getline(infile, nome);
+            fix_string(&nome);
             user = new Usuario(nome, codigo);
             usuariosCadastrados.push_back(user);
             if (tipo == 'U'){
                 // cout << "Teste" << endl;
                 user = new Assinante(nome, codigo);
                 inserirAssinante((Assinante*)user);
+            }else{
+                user = new Produtor(nome, codigo);
+                cadastrarProdutor((Produtor*)user);
             }
             if (tipo == 'P'){
                 user = new Podcaster(nome, codigo);
+
                 cadastrarPodcaster((Podcaster*)user);
             }
             if(tipo == 'A'){
@@ -86,7 +92,7 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
     string genero;
     int temporada;
     string ttemp;
-    string album;
+    string nome_album;
     int publicacao;
     string fim;
     getline(infile, lixo);
@@ -118,14 +124,15 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
             temporada = atoi(ttemp.c_str());
             // cout << temporada << endl;
         }
-        getline(infile, album, ';');
+        getline(infile, nome_album, ';');
         getline(infile, codigo_albums, ';');
         // cout << album << endl;
-        if (!codigo_albums.empty()){
-            codigo_album = atoi(codigo_albums.c_str());
-        }
-        // cout << codigo_album << endl;
         infile >> publicacao;
+        // if (!codigo_albums.empty()){
+        //     codigo_album = atoi(codigo_albums.c_str());
+        //     Album *album = new Album(nome_album, codigo_album, publicacao);
+        // }
+        // cout << codigo_album << endl;
         // cout << publicacao << endl;
         if (tipo == 'M'){
             Musica * musica = new Musica(nome, codigo, duracao, publicacao, tipo);
@@ -134,12 +141,19 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
             musica->setgenero(sigla_genero(genero));
             // musica->setcodigo(codigo);
             midiasCadastradas.push_back(musica);
+            codigo_produtor(produtor, musica);
+            if (!codigo_albums.empty()){
+                codigo_album = atoi(codigo_albums.c_str());
+                Album *album = new Album(nome_album, codigo_album, publicacao);
+                album->musicaNoAlbum(musica);
+            }
         }
         if(tipo == 'P'){
             Podcast * podcast = new Podcast(codigo, nome, duracao, publicacao, temporada, tipo);
             podcast->setduracao_virgula(duracao_virgula);
             podcast->setgenero(sigla_genero(genero));
             midiasCadastradas.push_back(podcast);
+            codigo_produtor(produtor, podcast);
         }
         tipo = 'z';
     }
@@ -157,7 +171,9 @@ void PlataformaDigital::imprimeMidias(){
         m->imprimeInfoMidia();
     }
 }
-
+void PlataformaDigital::cadastrarProdutor(Produtor*p){
+    produtoresCadastrados.push_back(p);
+}
 void PlataformaDigital::inserirAssinante(Assinante* a){
     assinantesCadastrados.push_back(a);
 }
@@ -188,13 +204,37 @@ Genero PlataformaDigital::sigla_genero(string sigla){
     string t = sigla.substr(0,2);
     for (Genero* g: generosCadastrados){
         if (t == g->getsigla()){
-            // cout << "aaaa" << endl;
-            // g->imprimeGenero();
             return *g;
         }
     }
 }
-
+void PlataformaDigital::codigo_produtor(string codigos, Midia * midia){
+    int codigo;
+    vector <int> codigos_produtores;
+    string aux;
+    stringstream convert(codigos);
+    while(getline(convert, aux, ',')){
+        // bool check = false;
+        // for (int i = 0 ; i < codigos_produtores.size(); i++){
+        //     if (stoi(aux) == codigos_produtores[i]){
+        //         check = true;
+        //         break;   
+        //     }
+        // }
+        // if (!check)
+        // codigos_produtores.push_back(stoi(aux));
+        codigo = stoi(aux);
+        break;
+    }
+    // for(int codigo : codigos_produtores){
+    for(Produtor* p : produtoresCadastrados){
+        if(p->getcodigo()==codigo){
+            // midia->setprodutores(p);
+            p->desenvolverProdutos(midia);
+        }
+    }
+    // }
+}
 void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
     string codigo;
     string favoritos, aux, linha;
@@ -280,6 +320,7 @@ void PlataformaDigital::fix_string(string *s){
 void PlataformaDigital::gerarRelatorios(){
     Estatisticas();
     lista_favoritos();
+    lista_produtores();
     Backup();
 }
 
@@ -448,5 +489,22 @@ void PlataformaDigital::lista_favoritos(){ // V.Victor
 }
 
 
-
+void PlataformaDigital::lista_produtores(){ // V.Victor
+    ofstream outfile("2-produtores.csv");
+    int aux;
+    sort(produtoresCadastrados.begin(), produtoresCadastrados.end(), [](Produtor * lhs, Produtor * rhs) {return lhs->getnome() < rhs->getnome();});
+    for (Produtor* p : produtoresCadastrados){
+        outfile << p->getnome() << ";";
+        aux = 12-p->getprodutosDesenvolvidos().size();
+        for(Midia* m : p->getprodutosDesenvolvidos()){
+            outfile << m->getnome() << ';';
+        }
+        while(aux>0){
+            outfile << ';';
+            aux--;
+        }
+        outfile << endl;
+    }
+    outfile.close();
+}
 

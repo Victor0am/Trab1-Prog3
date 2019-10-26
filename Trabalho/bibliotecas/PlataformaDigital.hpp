@@ -12,12 +12,14 @@
 #include "Midia.hpp"
 #include "Podcaster.hpp"
 #include "Usuario.hpp"
+#include "Album.hpp"
 using namespace std;
 
 class PlataformaDigital{
     private:
         string nome;
         vector<Artista*> artistasCadastrados;
+        vector<Produtor*> produtoresCadastrados;
         vector<Podcaster*> podcastersCadastrados;
         vector<Assinante*> assinantesCadastrados;
         vector<Midia*> midiasCadastradas;
@@ -43,7 +45,10 @@ class PlataformaDigital{
         void cadastrarPodcaster(Podcaster* p);
         void imprimeArtistas();
         void cadastrarArtista(Artista* a);
+        void cadastrarProdutor(Produtor* p);
+        void lista_produtores();
         Genero sigla_genero(string sigla);
+        void codigo_produtor(string codigos, Midia * midia);
         void imprimeMidias();
         Midia* ProcuraMidia(int codigo);
         int Fav_in(vector <Midia*> favoritos, Midia* favorito);

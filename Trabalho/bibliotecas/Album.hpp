@@ -2,7 +2,7 @@
 #define _ALBUM_HPP
 #include<iostream>
 #include <string>
-#include "Artista.hpp"
+// #include "Artista.hpp"
 #include "Musica.hpp"
 #include <vector>
 using namespace std;
@@ -10,10 +10,11 @@ using namespace std;
 class Album{
     private:
         string nome;
-        int duracao;
+        float duracao;
+        int codigo;
         int anoLancamento;
         int qtdMusicas;
-        Produtor artista;
+        // Produtor artista;
         vector<Musica*> Musicas;
     public:
         string getnome();
@@ -25,8 +26,9 @@ class Album{
         int getanoLancamento();
         void setanoLancamento(int anoLancamento);
         Album();
-        Album(string nome, float duracao, int anoLancamento, int qtdMusicas);
+        Album(string nome, int codigo, int anoLancamento);
         void imprimeNoArquivo(ofstream &outfile);
+        void musicaNoAlbum(Musica * musica);
 };
 
 #endif
