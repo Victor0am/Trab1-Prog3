@@ -277,6 +277,13 @@ void PlataformaDigital::fix_string(string *s){
  * Saidas
  *************************/
 
+void PlataformaDigital::gerarRelatorios(){
+    Estatisticas();
+    lista_favoritos();
+    Backup();
+}
+
+
 void PlataformaDigital::Estatisticas(){
     ofstream outfile("1-estatisticas.txt");
     Horas_consumidas(outfile);

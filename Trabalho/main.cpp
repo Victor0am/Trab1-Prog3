@@ -71,9 +71,7 @@ int main(int argc, char** argv){
     spotify->carregaArquivoUsuarios(usuarios);
     spotify->carregaArquivoMidia(midias);
     spotify->carregaArquivoFavoritos(favoritos);
-    spotify->Estatisticas();
-    spotify->lista_favoritos();
-    spotify->Backup();
+    spotify->gerarRelatorios();
 
     // cout << endl;
     

@@ -62,6 +62,7 @@ class PlataformaDigital{
         void midias_por_g(ofstream &outfile);
 
         //arquivos
+        void gerarRelatorios();
         void Estatisticas();
         void Backup();
         void lista_favoritos();

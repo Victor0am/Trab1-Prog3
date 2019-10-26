@@ -37,6 +37,7 @@ vector <Midia*> Assinante::getFavoritos(){
 list <Midia*> Assinante::getFavoritos2(){
     return this->fav;
 }
+
 void Assinante::ordenaFavoritos(){
     // list<Midia*>::iterator it = this->fav.begin();
     // sort(Favoritos.begin(), Favoritos.end(), [](Midia * lhs, Midia * rhs) {return lhs->getcodigo() < rhs->getcodigo();});
