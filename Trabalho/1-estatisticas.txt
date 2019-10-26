@@ -2,14 +2,14 @@ Horas Consumidas: 6447,91 minutos
 
 Gênero mais ouvido: ST - 51
 
-RO:39
-IN:25
-PP:17
-HH:30
-KP:7
-FK:43
 ST:51
-EL:24
+FK:43
+RO:39
+HH:30
 GK:30
 AT:26
+IN:25
+EL:24
+PP:17
 NT:14
+KP:7

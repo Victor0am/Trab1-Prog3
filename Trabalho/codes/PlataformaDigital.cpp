@@ -324,14 +324,19 @@ void PlataformaDigital::G_mais_ouvido(ofstream &outfile){
                 }
             }
         }
-        if (total > maistocado){
+       if (total > maistocado){
             maistocado = total;
             maior = generosCadastrados[i]->getsigla();
         }
     }
     outfile << "Gênero mais ouvido: " << maior << " - " << maistocado << endl << endl;
+}
+
+
+void PlataformaDigital::Top_midias(ofstream &outfile){
 
 }
+
 
 /* ********************
  * NÃO APAGAR
@@ -352,23 +357,42 @@ int PlataformaDigital::midias_por_g(){
 ********************* */
 
 
+// void PlataformaDigital::midias_por_g(ofstream &outfile){
+//     for (int i = 0; i < generosCadastrados.size(); i++){
+//         int total = 0;
+//         for (int j = 0; j < assinantesCadastrados.size(); j++){
+//             for (int k = 0; k < assinantesCadastrados[j]->getFavoritos().size(); k++){
+//                 if (assinantesCadastrados[j]->getFavoritos()[k]->getgenero().getnome() == generosCadastrados[i]->getnome()){
+//                     total++;
+//                 }
+//             }
+//         }
+//         if (total != 0){
+//             outfile << generosCadastrados[i]->getsigla();
+//             outfile << ":" << total << endl;
+//         }
+//     }
+// }
+
 void PlataformaDigital::midias_por_g(ofstream &outfile){
-    for (int i = 0; i < generosCadastrados.size(); i++){
-        int total = 0;
-        for (int j = 0; j < assinantesCadastrados.size(); j++){
-            for (int k = 0; k < assinantesCadastrados[j]->getFavoritos().size(); k++){
-                if (assinantesCadastrados[j]->getFavoritos()[k]->getgenero().getnome() == generosCadastrados[i]->getnome()){
-                    total++;
+    for(Genero *g : generosCadastrados){
+        for(Assinante* a : assinantesCadastrados){
+            for(Midia*m : a->getFavoritos2()){
+                if(g->getsigla() == m->getgenero().getsigla()){
+                    g->contaFavoritos();
                 }
             }
         }
-        if (total != 0){
-            outfile << generosCadastrados[i]->getsigla();
-            outfile << ":" << total << endl;
+    }
+    sort(generosCadastrados.begin(), generosCadastrados.end(), [](Genero * lhs, Genero * rhs) {return lhs->getcontador() > rhs->getcontador();});
+    for (Genero* g : generosCadastrados){
+        int aux = 0;
+        if(g->getcontador() != 0){
+            outfile << g->getsigla();
+            outfile << ":" << g->getcontador() << endl;
         }
     }
 }
-
 
 
 void PlataformaDigital::Backup(){

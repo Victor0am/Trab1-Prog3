@@ -60,7 +60,7 @@ class PlataformaDigital{
         void Horas_consumidas(ofstream &outfile);
         void G_mais_ouvido(ofstream &outfile);
         void midias_por_g(ofstream &outfile);
-
+        void Top_midias(ofstream &outfile);
         //arquivos
         void gerarRelatorios();
         void Estatisticas();

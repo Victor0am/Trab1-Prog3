@@ -7,6 +7,7 @@ class Genero{
     private:
         std::string nome;
         std::string sigla;
+        int contador_de_favoritos;
     public:
         Genero(std::string nome, std::string sigla);
         Genero();
@@ -15,6 +16,8 @@ class Genero{
         std::string getsigla();
         void setsigla(std::string sigla);
         void imprimeGenero();
+        void contaFavoritos();
+        int getcontador();
 };
 
 #endif
