@@ -15,6 +15,7 @@ class Midia{
         float duracao;
         int anoLancamento;
         char tipo;
+        string duracao_virgula;
         //vector<Produtor *> produtores;
         //vector<Assinante *> assinantes;
         Genero genero;
@@ -32,13 +33,15 @@ class Midia{
         void setcodigo(int codigo);
         float getduracao();
         void setduracao(float duracao);
+        string getduracao_virgula();
+        void setduracao_virgula(string duracao);
         int getanoLancamento();
         void setanoLancamento(int anoLancamento);
         Genero getgenero();
         void setgenero(Genero genero);
         char gettipo();
         void settipo(char tipo);
-        void imprime_duracao_com_virgula();
+        // string duracao_virgula();
         // void formataDuracao();
 };
 // int Midia::qtdProdutos = 0;

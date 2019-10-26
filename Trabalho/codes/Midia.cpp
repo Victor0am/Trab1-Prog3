@@ -57,7 +57,31 @@ Genero Midia::getgenero(){
 void Midia::setgenero(Genero genero){
     this->genero = genero;
 }
-void imprime_duracao_com_virgula(){}
+
+string Midia::getduracao_virgula(){
+    return this->duracao_virgula;
+}
+void Midia::setduracao_virgula(string duracao){
+    this->duracao_virgula = duracao;
+}
+
+// string Midia::duracao_virgula(){
+//     string s = to_string(duracao);
+//     cout << duracao << endl;
+//     for (int i = 0; i < 4; i++){
+//         s.pop_back();
+//     }
+//     for (int i = 0; i < s.size(); i++){
+//         if (s[i] == '.'){
+//             s[i] = ',';
+//         }
+//     }
+//     while(s.back() == '0' || s.back() == ',')
+//         s.pop_back();
+//     cout << s << endl;
+//     return s;
+// }
+
 // void Midia::imprimeInfoMidia(){
     //prints na ordem que quiser depois...
 // }

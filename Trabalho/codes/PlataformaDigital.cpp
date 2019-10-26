@@ -81,6 +81,7 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
     char tipo;
     string produtor;
     float duracao;
+    string duracao_virgula;
     string dtemp;
     string genero;
     int temporada;
@@ -102,6 +103,7 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         getline(infile, produtor, ';');
         // cout << produtor << endl;
         getline(infile, dtemp, ';');
+        duracao_virgula = dtemp;
         for (int i = 0; i < dtemp.size(); i++){
             if (dtemp[i] == ',')
                 dtemp[i] = '.';
@@ -128,12 +130,14 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         if (tipo == 'M'){
             Musica * musica = new Musica(nome, codigo, duracao, publicacao, tipo);
             // musica->imprimeInfoMidia();
+            musica->setduracao_virgula(duracao_virgula);
             musica->setgenero(sigla_genero(genero));
             // musica->setcodigo(codigo);
             midiasCadastradas.push_back(musica);
         }
         if(tipo == 'P'){
             Podcast * podcast = new Podcast(codigo, nome, duracao, publicacao, temporada, tipo);
+            podcast->setduracao_virgula(duracao_virgula);
             podcast->setgenero(sigla_genero(genero));
             midiasCadastradas.push_back(podcast);
         }
@@ -386,7 +390,7 @@ void PlataformaDigital::lista_favoritos(){ // V.Victor
             outfile << m->gettipo() << ';';
             outfile << m->getcodigo() << ';';
             outfile << m->getgenero().getnome() << ';';
-            outfile << m->getduracao() << endl;
+            outfile << m->getduracao_virgula() << endl;
         }
     }
     outfile.close();
