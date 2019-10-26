@@ -57,6 +57,7 @@ Genero Midia::getgenero(){
 void Midia::setgenero(Genero genero){
     this->genero = genero;
 }
+void imprime_duracao_com_virgula(){}
 // void Midia::imprimeInfoMidia(){
     //prints na ordem que quiser depois...
 // }
