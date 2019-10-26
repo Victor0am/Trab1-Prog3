@@ -57,11 +57,12 @@ class PlataformaDigital{
         //
 
         // Calculos
-        string Horas_consumidas();
-        string G_mais_ouvido();
-        int midias_por_g();
+        void Horas_consumidas(ofstream &outfile);
+        void G_mais_ouvido(ofstream &outfile);
+        void midias_por_g(ofstream &outfile);
 
         //arquivos
+        void Estatisticas();
         void Backup();
         void lista_favoritos();
 };

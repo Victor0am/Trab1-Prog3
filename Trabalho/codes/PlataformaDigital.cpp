@@ -277,17 +277,35 @@ void PlataformaDigital::fix_string(string *s){
  * Saidas
  *************************/
 
-string PlataformaDigital::Horas_consumidas(){
+void PlataformaDigital::Estatisticas(){
+    ofstream outfile("1-estatisticas.txt");
+    Horas_consumidas(outfile);
+    G_mais_ouvido(outfile);
+    midias_por_g(outfile);
+}
+
+
+
+void PlataformaDigital::Horas_consumidas(ofstream &outfile){
     float total = 0;
     for (int i = 0; i < assinantesCadastrados.size(); i++){
         for (int j = 0; j < assinantesCadastrados[i]->getFavoritos().size(); j++){
             total = assinantesCadastrados[i]->getFavoritos()[j]->getduracao() + total;
         }
     }
-    return to_string(total);
+    string s(to_string(total));
+    for (int i = 0; i < 4; i++){
+        s.pop_back();
+    }
+    for (int i = 0; i < s.size(); i++){
+        if (s[i] == '.'){
+            s[i] = ',';
+        }
+    }
+    outfile << "Horas Consumidas: " << s << " minutos\n" << endl;
 }
 
-string PlataformaDigital::G_mais_ouvido(){
+void PlataformaDigital::G_mais_ouvido(ofstream &outfile){
     string maior = generosCadastrados[0]->getsigla();
     int maistocado = 0;
     for (int i = 0; i < generosCadastrados.size(); i++){
@@ -304,7 +322,7 @@ string PlataformaDigital::G_mais_ouvido(){
             maior = generosCadastrados[i]->getsigla();
         }
     }
-    cout << "Gênero mais ouvido: " << maior << " - " << maistocado << endl;
+    outfile << "Gênero mais ouvido: " << maior << " - " << maistocado << endl << endl;
 
 }
 
@@ -327,9 +345,8 @@ int PlataformaDigital::midias_por_g(){
 ********************* */
 
 
-int PlataformaDigital::midias_por_g(){
+void PlataformaDigital::midias_por_g(ofstream &outfile){
     for (int i = 0; i < generosCadastrados.size(); i++){
-        cout << generosCadastrados[i]->getsigla();
         int total = 0;
         for (int j = 0; j < assinantesCadastrados.size(); j++){
             for (int k = 0; k < assinantesCadastrados[j]->getFavoritos().size(); k++){
@@ -338,7 +355,10 @@ int PlataformaDigital::midias_por_g(){
                 }
             }
         }
-        cout << ":" << total << endl;
+        if (total != 0){
+            outfile << generosCadastrados[i]->getsigla();
+            outfile << ":" << total << endl;
+        }
     }
 }
 
