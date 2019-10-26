@@ -46,6 +46,7 @@ class PlataformaDigital{
         Genero sigla_genero(string sigla);
         void imprimeMidias();
         Midia* ProcuraMidia(int codigo);
+        int Fav_in(vector <Midia*> favoritos, Midia* favorito);
         // void inserirProduto(Midia* novoProduto, vector<Produtor*> produtores);
         // void imprimeNoArquivo(ofstream &outfile);
         // void exportarBiblioteca();
@@ -56,7 +57,7 @@ class PlataformaDigital{
         //
 
         // Calculos
-        float Horas_consumidas();
+        string Horas_consumidas();
         string G_mais_ouvido();
         int midias_por_g();
 

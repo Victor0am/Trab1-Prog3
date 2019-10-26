@@ -208,7 +208,15 @@ void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
         if (linha.size()!= 1){
             stringstream convert(linha);
             while(getline(convert, aux, ',')){
-                favs.push_back(stoi(aux));
+                bool check = false;
+                for (int i = 0 ; i < favs.size(); i++){
+                    if (stoi(aux) == favs[i]){
+                        check = true;
+                        break;   
+                    }
+                }
+                if (!check)
+                    favs.push_back(stoi(aux));
             }
         }
         else
@@ -243,23 +251,61 @@ PlataformaDigital::PlataformaDigital(string nome){//lembrar que os arquivos vao 
     this->nome = nome;
 }
 
+// int PlataformaDigital::Fav_in(vector <Midia*> favoritos, Midia* favorito){
+//     for (int i = 0; i < favoritos.size(); i++){
+//         if (favoritos[i]->getcodigo == favorito->getcodigo()){
+//             return 1;
+//         }
+//     }
+//     return 0;
+// }
+
+void PlataformaDigital::fix_string(string *s){
+    for (int i = 0; i < (*s).size(); i++){
+        if ((*s)[i] == '\r'){
+            (*s).erase(i, 1);
+            break;
+        }
+    }
+}
+
 /***********************
  * Saidas
  *************************/
 
-float PlataformaDigital::Horas_consumidas(){
+string PlataformaDigital::Horas_consumidas(){
     float total = 0;
     for (int i = 0; i < assinantesCadastrados.size(); i++){
         for (int j = 0; j < assinantesCadastrados[i]->getFavoritos().size(); j++){
             total = assinantesCadastrados[i]->getFavoritos()[j]->getduracao() + total;
         }
     }
-    return total;
+    return to_string(total);
 }
 
 string PlataformaDigital::G_mais_ouvido(){
-    
+    string maior = generosCadastrados[0]->getsigla();
+    int maistocado = 0;
+    for (int i = 0; i < generosCadastrados.size(); i++){
+        int total = 0;
+        for (int j = 0; j < assinantesCadastrados.size(); j++){
+            for (int k = 0; k < assinantesCadastrados[j]->getFavoritos().size(); k++){
+                if (assinantesCadastrados[j]->getFavoritos()[k]->getgenero().getnome() == generosCadastrados[i]->getnome()){
+                    total++;
+                }
+            }
+        }
+        if (total > maistocado){
+            maistocado = total;
+            maior = generosCadastrados[i]->getsigla();
+        }
+    }
+    cout << "Gênero mais ouvido: " << maior << " - " << maistocado << endl;
+
 }
+
+/* ********************
+ * NÃO APAGAR
 
 int PlataformaDigital::midias_por_g(){
     for (int i = 0; i < generosCadastrados.size(); i++){
@@ -273,6 +319,25 @@ int PlataformaDigital::midias_por_g(){
         cout << ":" << total << endl;
     }
 }
+
+********************* */
+
+
+int PlataformaDigital::midias_por_g(){
+    for (int i = 0; i < generosCadastrados.size(); i++){
+        cout << generosCadastrados[i]->getsigla();
+        int total = 0;
+        for (int j = 0; j < assinantesCadastrados.size(); j++){
+            for (int k = 0; k < assinantesCadastrados[j]->getFavoritos().size(); k++){
+                if (assinantesCadastrados[j]->getFavoritos()[k]->getgenero().getnome() == generosCadastrados[i]->getnome()){
+                    total++;
+                }
+            }
+        }
+        cout << ":" << total << endl;
+    }
+}
+
 
 
 void PlataformaDigital::Backup(){
@@ -299,6 +364,7 @@ void PlataformaDigital::Backup(){
 }
 
 void PlataformaDigital::lista_favoritos(){
+    //precisa ordenar
     ofstream outfile("3-favoritos.csv");
     for (int i = 0; i < assinantesCadastrados.size(); i++){
         for (int j = 0; j < assinantesCadastrados[i]->getFavoritos().size(); j++){
@@ -312,14 +378,6 @@ void PlataformaDigital::lista_favoritos(){
     outfile.close();
 }
 
-void PlataformaDigital::fix_string(string *s){
-    for (int i = 0; i < (*s).size(); i++){
-        if ((*s)[i] == '\r'){
-            (*s).erase(i, 1);
-            break;
-        }
-    }
-}
 
 
 
