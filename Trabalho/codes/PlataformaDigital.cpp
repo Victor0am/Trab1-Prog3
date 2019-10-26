@@ -27,6 +27,7 @@ void PlataformaDigital::carregaArquivoGeneros(ifstream &infile){
                 break;
             }
             getline(infile, nome);
+            fix_string(&nome);
             genre = new Genero(nome, sigla);
             generosCadastrados.push_back(genre);
     }
@@ -275,7 +276,7 @@ int PlataformaDigital::midias_por_g(){
 
 
 void PlataformaDigital::Backup(){
-    ofstream outfile("backup.txt");
+    ofstream outfile("4-backup.txt");
     outfile << "Usuarios" << endl;
     for (int i = 0; i < usuariosCadastrados.size(); i++){
         outfile << usuariosCadastrados[i]->getnome() << endl;
@@ -285,11 +286,11 @@ void PlataformaDigital::Backup(){
     for (int i = 0; i < midiasCadastradas.size(); i++){
         outfile << midiasCadastradas[i]->getnome() << ';';
         outfile << midiasCadastradas[i]->gettipo() << ';';
-        //Tipo
         //falta produtores
         outfile << midiasCadastradas[i]->getduracao() << ';';
         outfile << midiasCadastradas[i]->getgenero().getsigla() << ';';
         //temporada
+        //nome do album
         //codigo album
         outfile << midiasCadastradas[i]->getanoLancamento() << ';';
         outfile << endl;
@@ -297,7 +298,28 @@ void PlataformaDigital::Backup(){
     outfile.close();
 }
 
+void PlataformaDigital::lista_favoritos(){
+    ofstream outfile("3-favoritos.csv");
+    for (int i = 0; i < assinantesCadastrados.size(); i++){
+        for (int j = 0; j < assinantesCadastrados[i]->getFavoritos().size(); j++){
+            outfile << assinantesCadastrados[i]->getcodigo() << ';';
+            outfile << assinantesCadastrados[i]->getFavoritos()[j]->gettipo() << ';';
+            outfile << assinantesCadastrados[i]->getFavoritos()[j]->getcodigo() << ';';
+            outfile << assinantesCadastrados[i]->getFavoritos()[j]->getgenero().getnome() << ';';
+            outfile << assinantesCadastrados[i]->getFavoritos()[j]->getduracao() << endl;
+        }
+    }
+    outfile.close();
+}
 
+void PlataformaDigital::fix_string(string *s){
+    for (int i = 0; i < (*s).size(); i++){
+        if ((*s)[i] == '\r'){
+            (*s).erase(i, 1);
+            break;
+        }
+    }
+}
 
 
 

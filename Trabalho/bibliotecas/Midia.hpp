@@ -37,7 +37,7 @@ class Midia{
         Genero getgenero();
         void setgenero(Genero genero);
         char gettipo();
-        void settipo();
+        void settipo(char tipo);
         // void formataDuracao();
 };
 // int Midia::qtdProdutos = 0;

@@ -51,6 +51,10 @@ class PlataformaDigital{
         // void exportarBiblioteca();
         // void gerarRelatorios();
 
+        //string
+        void fix_string(string *s);
+        //
+
         // Calculos
         float Horas_consumidas();
         string G_mais_ouvido();
@@ -58,6 +62,7 @@ class PlataformaDigital{
 
         //arquivos
         void Backup();
+        void lista_favoritos();
 };
 
 #endif

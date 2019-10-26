@@ -34,13 +34,13 @@ void Midia::settipo(char tipo){
 Midia::Midia(){
     // cout << "Midia criada com sucesso... nem tanto né...";
 }
-Midia::Midia(string nome, int codigo, Genero genero, float duracao){
-    this->genero = genero;
-    this->nome = nome;
-    this->codigo = codigo;
-    this->duracao = duracao;
-    qtdProdutos++;
-}
+// Midia::Midia(string nome, int codigo, Genero genero, float duracao){
+//     this->genero = genero;
+//     this->nome = nome;
+//     this->codigo = codigo;
+//     this->duracao = duracao;
+//     qtdProdutos++;
+// }
 
 Midia::Midia(string nome, int codigo, Genero genero, float duracao, char tipo){
     this->genero = genero;
