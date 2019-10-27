@@ -1,6 +1,7 @@
 #ifndef _PRODUTOR_HPP
 #define _PRODUTOR_HPP
 #include <vector>
+#include <algorithm>
 #include "Usuario.hpp"
 #include "Midia.hpp"
 //#include "PlataformaDigital.hpp"
@@ -19,6 +20,7 @@ class Produtor: public Usuario{
         // virtual void produzir(Midia* m) = 0;
         vector<Midia *> getprodutosDesenvolvidos();
         void desenvolverProdutos(Midia* midia);
+        void ordenaProdutos();
         void calculaLikes();
         int getqtdLikes();
 };

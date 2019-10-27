@@ -81,10 +81,10 @@ string Midia::getnometipo(){
     }
     return aux;
 }
-string Midia::getnomelow(){
+string Midia::getnome_low(){
     return this->nome_low;
 }
-void Midia::setnomelow(){
+void Midia::setnome_low(){
     nome_low = nome;
     for (int i = 0; i < this->nome_low.size(); i++){
         if(nome_low[i] >= 'A' && nome_low[i]<='Z'){

@@ -32,3 +32,6 @@ int Produtor::getqtdLikes(){
 void Produtor::imprimeNoArquivo(ofstream &outfile){
     
 }
+void Produtor::ordenaProdutos(){
+    sort(produtosDesenvolvidos.begin(), produtosDesenvolvidos.end(), [](Midia * lhs, Midia * rhs) {return lhs->getnome_low() < rhs->getnome_low();});
+}

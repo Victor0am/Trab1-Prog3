@@ -126,6 +126,7 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         infile >> publicacao;
         if (tipo == 'M'){
             Musica * musica = new Musica(nome, codigo, duracao, publicacao, tipo);
+            musica->setnome_low();
             musica->setduracao_virgula(duracao_virgula);
             musica->setgenero(sigla_genero(genero));
             midiasCadastradas.push_back(musica);
@@ -140,6 +141,7 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         }
         if(tipo == 'P'){
             Podcast * podcast = new Podcast(codigo, nome, duracao, publicacao, temporada, tipo);
+            podcast->setnome_low();
             podcast->setduracao_virgula(duracao_virgula);
             podcast->setgenero(sigla_genero(genero));
             midiasCadastradas.push_back(podcast);
@@ -212,18 +214,18 @@ void PlataformaDigital::codigo_produtor(string codigos, Midia * midia){
         //     }
         // }
         // if (!check)
-        // codigos_produtores.push_back(stoi(aux));
-        codigo = stoi(aux);
-        break;
+        codigos_produtores.push_back(stoi(aux));
+        // codigo = stoi(aux);
+        // break;
     }
-    // for(int codigo : codigos_produtores){
-    for(Produtor* p : produtoresCadastrados){
-        if(p->getcodigo()==codigo){
-            // midia->setprodutores(p);
-            p->desenvolverProdutos(midia);
+    for(int codigo : codigos_produtores){
+        for(Produtor* p : produtoresCadastrados){
+            if(p->getcodigo()==codigo){
+                // midia->setprodutores(p);
+                p->desenvolverProdutos(midia);
+            }
         }
     }
-    // }
 }
 void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
     string codigo;
@@ -434,9 +436,10 @@ void PlataformaDigital::lista_produtores(){ // V.Victor
     sort(produtoresCadastrados.begin(), produtoresCadastrados.end(), [](Produtor * lhs, Produtor * rhs) {return lhs->getnomelow()<rhs->getnomelow();});
     for (Produtor* p : produtoresCadastrados){
         outfile << p->getnome() << ";";
-        // vector<Midia*> midias = p->getprodutosDesenvolvidos();
-        aux = 12-p->getprodutosDesenvolvidos().size();
-        for(Midia* m : p->getprodutosDesenvolvidos()){
+        p->ordenaProdutos();
+        vector<Midia*> midias = p->getprodutosDesenvolvidos();
+        aux = 12-midias.size();
+        for(Midia* m : midias){
             outfile << m->getnome() << ';';
         }
         while(aux>0){

@@ -34,8 +34,8 @@ class Midia{
         int getcodigo();
         void setcodigo(int codigo);
         float getduracao();
-        string getnomelow();
-        void setnomelow();
+        string getnome_low();
+        void setnome_low();
         void setduracao(float duracao);
         string getduracao_virgula();
         void setduracao_virgula(string duracao);

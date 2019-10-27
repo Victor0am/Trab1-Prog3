@@ -29,6 +29,7 @@ All the Lies:Eletrônica:5
 Top 10 Produtores:
 John Mayer:39
 Alexandre Ottoni:30
+Deive Pazos:30
 MC Kevinho:27
 Caue Moura:26
 Lana Del Rey:25
@@ -36,5 +37,4 @@ Wesley Safadão:23
 Lil Nas X:19
 Phelipe Cruz:17
 MC Livinho:16
-Allok:15
 
