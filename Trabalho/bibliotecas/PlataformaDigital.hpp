@@ -32,6 +32,7 @@ class PlataformaDigital{
         string getnome();
         vector<Genero*> getgenero();
         vector<Usuario*> getusuario();
+        Produtor * getProdutor(string produtor);
         // vector<Assinante*> getassinante();
         void carregaArquivoUsuarios(ifstream &infile);
         void carregaArquivoGeneros(ifstream &infile);

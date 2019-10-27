@@ -2,16 +2,17 @@
 #define _ARTISTA_HPP
 #include <vector>
 #include "Produtor.hpp"
-// #include "Musica.hpp"
+#include "Album.hpp"
 using namespace std;
 
 class Artista: public Produtor{
     private:
-        // vector<Musica* > musicasLancadas;
+        vector<Album* > albumsLancados;
     public:
         Artista(string nome, int codigo);
         void imprimirNoArquivo(ofstream &outfile);
-        // void produzir(Midia* m);
+        void lancarAlbum(Album*album);
+        
 };
 
 #endif

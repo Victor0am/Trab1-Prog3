@@ -8,6 +8,7 @@ using namespace std;
 class Usuario{
     protected:
         string nome; 
+        string nome_low;
         int codigo;
         char tipo;
     public:
@@ -16,6 +17,8 @@ class Usuario{
         int getcodigo();
         void setnome(string nome);
         string getnome();
+        string getnomelow();
+        void setnomelow();
         Usuario();
         Usuario(string _nome, int codigo);
 };

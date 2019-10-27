@@ -71,6 +71,27 @@ void Midia::foiFavoritado(){
 int Midia::getvezesFavoritado(){
     return this->vezesFavoritado;
 }
+string Midia::getnometipo(){
+    string aux;
+    if (tipo == 'P'){
+        aux = "Podcast";
+    }
+    if(tipo  == 'M'){
+        aux = "Música";
+    }
+    return aux;
+}
+string Midia::getnomelow(){
+    return this->nome_low;
+}
+void Midia::setnomelow(){
+    nome_low = nome;
+    for (int i = 0; i < this->nome_low.size(); i++){
+        if(nome_low[i] >= 'A' && nome_low[i]<='Z'){
+            nome_low[i]+=32;
+        }
+    }
+}
 // void Midia:: setprodutores(Produtor * p){
 //     produtores.push_back(p);
 // }

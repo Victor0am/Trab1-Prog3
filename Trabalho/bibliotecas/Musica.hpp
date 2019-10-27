@@ -4,10 +4,7 @@
 
 using namespace std;
 
-class Musica: public Midia{
-    private:
-        // Album* album;
-        
+class Musica: public Midia{        
     public:
         Musica();
         Musica(string nome, int codigo, float duracao, int anoLancamento, char tipo);

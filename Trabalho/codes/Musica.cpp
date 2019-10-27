@@ -17,5 +17,7 @@ void Musica::imprimeInfoMidia(){
     cout << this->nome << ";";
     cout << this->duracao<< endl;
 }
-// void Musica::imprimeNoArquivo(ofstream &outfile);
+// void Musica::imprimeNoArquivo(ofstream &outfile){
+//     outfile << codigo << ";";
+// }
 // void Musica::formataDuracao();

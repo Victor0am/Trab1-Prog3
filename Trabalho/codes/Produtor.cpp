@@ -29,3 +29,6 @@ void Produtor::calculaLikes(){
 int Produtor::getqtdLikes(){
     return this->qtdLikes;
 }
+void Produtor::imprimeNoArquivo(ofstream &outfile){
+    
+}

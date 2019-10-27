@@ -41,7 +41,7 @@ list <Midia*> Assinante::getFavoritos2(){
 void Assinante::ordenaFavoritos(){
     // list<Midia*>::iterator it = this->fav.begin();
     // sort(Favoritos.begin(), Favoritos.end(), [](Midia * lhs, Midia * rhs) {return lhs->getcodigo() < rhs->getcodigo();});
-    fav.sort([](Midia * lhs, Midia * rhs) {return lhs->getcodigo() < rhs->getcodigo();});
+    fav.sort([](Midia * lhs, Midia * rhs) {return lhs->getcodigo() > rhs->getcodigo();});
     fav.sort([](Midia * lhs, Midia * rhs) {return lhs->gettipo() < rhs->gettipo();});
     fav.reverse();
 }

@@ -59,12 +59,12 @@ int main(int argc, char** argv){
     }
     ofstream saida, saida2;
     spotify->carregaArquivoGeneros(generos);
-    generos.close();
     spotify->carregaArquivoUsuarios(usuarios);
-    usuarios.close();
     spotify->carregaArquivoMidia(midias);
-    midias.close();
     spotify->carregaArquivoFavoritos(favoritos);
+    generos.close();
+    usuarios.close();
+    midias.close();
     favoritos.close();
     spotify->gerarRelatorios();
 }
