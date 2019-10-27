@@ -1,66 +1,66 @@
 Usuarios
-Muriel Ailen
-Max Éowyn
-Reena Blejan
-Jouni Ferdo
-Edith Frank
-Libbie Dipika
-Shun Elkanah
-Matas Roxana
-Rasmus Takeshi
-Abacuc Mamadou
-Netuno Caitlin
-Constantin Buddha
-Ninoslav Selma
-Caelia Steinarr
-Baxter José Manuel
-Nélida Firdos
-Chikere Nikusha
-Kadek Cowhauler
-Ganzorig Gobind
-Tanu Roderick
-Eamon Cyneweard
-Moritz Anastasios
-Teobaldo Tadija
-Yuliana Wafula
-Klara Harry
-Young Kukulkan
-Patience Vasya
-Alexandros Berinhard
-Samuel Herberto
-Tymoteusz Elfreda
-Alexandre Ottoni
-Deive Pazos
-Mauricio Cid Fernandez Morais
-Phelipe Cruz
-Manu Gavassi
-Luísa Sonza
-Samira Close
-IZA
-Caue Moura
-Tiago Nigro
-Renata Lo Prete
-Scalene
-Lana Del Rey
-Lil Nas X
-Adele
-Atitude 67
-O rappa
-Imagine Dragons
-Post Malone
-John Mayer
-BTS
-MC Kevinho
-MC Livinho
-Wesley Safadão
-Marilía Mendonça
-Luan Santana
-Allok
-Avicii
-Cardi B
-Billy Ray Cyrus
-Snoop Dog
-Clarisse
+1;Muriel Ailen
+2;Max Éowyn
+3;Reena Blejan
+4;Jouni Ferdo
+5;Edith Frank
+6;Libbie Dipika
+7;Shun Elkanah
+8;Matas Roxana
+9;Rasmus Takeshi
+10;Abacuc Mamadou
+11;Netuno Caitlin
+12;Constantin Buddha
+13;Ninoslav Selma
+14;Caelia Steinarr
+15;Baxter José Manuel
+16;Nélida Firdos
+17;Chikere Nikusha
+18;Kadek Cowhauler
+19;Ganzorig Gobind
+20;Tanu Roderick
+21;Eamon Cyneweard
+22;Moritz Anastasios
+23;Teobaldo Tadija
+24;Yuliana Wafula
+25;Klara Harry
+26;Young Kukulkan
+27;Patience Vasya
+28;Alexandros Berinhard
+29;Samuel Herberto
+30;Tymoteusz Elfreda
+31;Alexandre Ottoni
+32;Deive Pazos
+33;Mauricio Cid Fernandez Morais
+34;Phelipe Cruz
+35;Manu Gavassi
+36;Luísa Sonza
+37;Samira Close
+38;IZA
+39;Caue Moura
+40;Tiago Nigro
+41;Renata Lo Prete
+42;Scalene
+43;Lana Del Rey
+44;Lil Nas X
+45;Adele
+46;Atitude 67
+47;O rappa
+48;Imagine Dragons
+49;Post Malone
+50;John Mayer
+51;BTS
+52;MC Kevinho
+53;MC Livinho
+54;Wesley Safadão
+55;Marilía Mendonça
+56;Luan Santana
+57;Allok
+58;Avicii
+59;Cardi B
+60;Billy Ray Cyrus
+61;Snoop Dog
+62;Clarisse
 Midias
 Credo que delicia;M;2.05;FK;2019;
 Shades Of Cool;M;5.7;IN;2014;

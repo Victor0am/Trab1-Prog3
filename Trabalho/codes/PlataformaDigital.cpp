@@ -391,6 +391,7 @@ void PlataformaDigital::Backup(){
     ofstream outfile("4-backup.txt");
     outfile << "Usuarios" << endl;
     for (int i = 0; i < usuariosCadastrados.size(); i++){
+        outfile << usuariosCadastrados[i]->getcodigo() << ';';
         outfile << usuariosCadastrados[i]->getnome() << endl;
     }
 
