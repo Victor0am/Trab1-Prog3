@@ -1,17 +1,17 @@
 #ifndef _ARTISTA_HPP
 #define _ARTISTA_HPP
-#include "Produtor.hpp"
-#include "Album.hpp"
 #include <vector>
+#include "Produtor.hpp"
+// #include "Musica.hpp"
 using namespace std;
 
 class Artista: public Produtor{
     private:
-        //vector<Album*> AlbumsLancados;
+        // vector<Musica* > musicasLancadas;
     public:
         Artista(string nome, int codigo);
         void imprimirNoArquivo(ofstream &outfile);
-        //void lancarAlbum(Album* album);
+        // void produzir(Midia* m);
 };
 
 #endif

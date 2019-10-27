@@ -7,10 +7,11 @@ using namespace std;
 
 class Podcaster: public Produtor{
     private:
-        vector<Podcast*> PodcastsLancados;
+        // vector<Podcast*> podcastsLancados;
     public:
         Podcaster(string nome, int codigo);
         void imprimirNoArquivo(ofstream &outfile);
+        // void produzir(Midia* m);
 };
 
 #endif

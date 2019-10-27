@@ -27,6 +27,15 @@ void Album::setanoLancamento(int anoLancamento){
 Album::Album(){
 
 }
-Album::Album(string nome, float duracao, int anoLancamento, int qtdMusicas){
-    this->setnome(nome);
+Album::Album(string nome, int codigo, int anoLancamento){
+    this->nome = nome;
+    this->codigo = codigo;
+    this->anoLancamento = anoLancamento;
+    this->qtdMusicas = 0;
+    this->duracao = 0;
+}
+void Album::musicaNoAlbum(Musica* musica){
+    this->duracao += musica->getduracao();
+    this->qtdMusicas++;
+    Musicas.push_back(musica);
 }

@@ -4,6 +4,7 @@ Produtor::Produtor(){
 
 }
 Produtor::Produtor(string nome, int codigo):Usuario(nome, codigo){
+    this->qtdLikes = 0;
 }
 
 //void Produtor::imprimeNoArquivo(ofstream &outfile);
@@ -16,4 +17,15 @@ void Produtor::imprimeProdutosDesenvolvidos(){
 }
 void Produtor::desenvolverProdutos(Midia* midia){
     this->produtosDesenvolvidos.push_back(midia);
+}
+vector<Midia*> Produtor::getprodutosDesenvolvidos(){
+    return this->produtosDesenvolvidos;
+}
+void Produtor::calculaLikes(){
+    for(Midia* m : produtosDesenvolvidos){
+        this->qtdLikes += m->getvezesFavoritado();
+    }
+}
+int Produtor::getqtdLikes(){
+    return this->qtdLikes;
 }
