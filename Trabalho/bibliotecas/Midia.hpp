@@ -14,6 +14,7 @@ class Midia{
         int vezesFavoritado;
         string nome;
         string nome_low;
+        string backup;
         float duracao;
         int anoLancamento;
         char tipo;
@@ -40,6 +41,8 @@ class Midia{
         string getduracao_virgula();
         void setduracao_virgula(string duracao);
         int getanoLancamento();
+        void setbackup(string backup);
+        string getbackup();
         void setanoLancamento(int anoLancamento);
         Genero getgenero();
         void foiFavoritado();

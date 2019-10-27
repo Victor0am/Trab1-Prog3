@@ -89,6 +89,7 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
     int codigo, codigo_album;
     string nome;
     string lixo;
+    string backup;
     string codigo_albums;
     char tipo;
     string produtor;
@@ -106,27 +107,43 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         infile >> codigo;
         infile.ignore(1);
         getline(infile, nome, ';');
+        backup.append(nome);
+        backup.append(1u,';');
         infile >> tipo;
+        backup.append(1u, tipo);
+        backup.append(1u,';');
         infile.ignore(1);
         getline(infile, produtor, ';');
+        backup.append(produtor);
+        backup.append(1u,';');
         getline(infile, dtemp, ';');
         duracao_virgula = dtemp;
+        backup.append(duracao_virgula);
+        backup.append(1u,';');
         for (int i = 0; i < dtemp.size(); i++){
             if (dtemp[i] == ',')
                 dtemp[i] = '.';
         }
         duracao = atof(dtemp.c_str());
         getline(infile, genero, ';');
+        backup.append(genero);
+        backup.append(1u,';');
         getline(infile, ttemp, ';');
+        backup.append(ttemp);
+        backup.append(1u,';');
         if (!ttemp.empty()){
             temporada = atoi(ttemp.c_str());
         }
         getline(infile, nome_album, ';');
         getline(infile, codigo_albums, ';');
+        backup.append(codigo_albums);
+        backup.append(1u,';');
         infile >> publicacao;
+        backup.append(to_string(publicacao));
         if (tipo == 'M'){
             Musica * musica = new Musica(nome, codigo, duracao, publicacao, tipo);
             musica->setnome_low();
+            musica->setbackup(backup);
             musica->setduracao_virgula(duracao_virgula);
             musica->setgenero(sigla_genero(genero));
             midiasCadastradas.push_back(musica);
@@ -142,12 +159,14 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         if(tipo == 'P'){
             Podcast * podcast = new Podcast(codigo, nome, duracao, publicacao, temporada, tipo);
             podcast->setnome_low();
+            podcast->setbackup(backup);
             podcast->setduracao_virgula(duracao_virgula);
             podcast->setgenero(sigla_genero(genero));
             midiasCadastradas.push_back(podcast);
             codigo_produtor(produtor, podcast);
         }
         tipo = 'z';
+        backup.clear();
     }
 }
 
@@ -303,10 +322,10 @@ void PlataformaDigital::fix_string(string *s){
  *************************/
 
 void PlataformaDigital::gerarRelatorios(){
+    Backup();
     Estatisticas();
     lista_favoritos();
     lista_produtores();
-    Backup();
 }
 
 
@@ -394,23 +413,23 @@ void PlataformaDigital::Backup(){
         outfile << usuariosCadastrados[i]->getcodigo() << ';';
         outfile << usuariosCadastrados[i]->getnome() << endl;
     }
-
-    // for(Produtor * p : produtoresCadastrados){
-
-    // }
+    outfile << endl;
     outfile << "Midias" << endl;
-    for (int i = 0; i < midiasCadastradas.size(); i++){
-        outfile << midiasCadastradas[i]->getnome() << ';';
-        outfile << midiasCadastradas[i]->gettipo() << ';';
-        //falta produtores
-        outfile << midiasCadastradas[i]->getduracao() << ';';
-        outfile << midiasCadastradas[i]->getgenero().getsigla() << ';';
-        //temporada
-        //nome do album
-        //codigo album
-        outfile << midiasCadastradas[i]->getanoLancamento() << ';';
-        outfile << endl;
+    for(Midia* m : midiasCadastradas){
+        outfile << m->getbackup() << endl;
     }
+    // for (int i = 0; i < midiasCadastradas.size(); i++){
+    //     outfile << midiasCadastradas[i]->getnome() << ';';
+    //     outfile << midiasCadastradas[i]->gettipo() << ';';
+    //     //falta produtores
+    //     outfile << midiasCadastradas[i]->getduracao() << ';';
+    //     outfile << midiasCadastradas[i]->getgenero().getsigla() << ';';
+    //     //temporada
+    //     //nome do album
+    //     //codigo album
+    //     outfile << midiasCadastradas[i]->getanoLancamento() << ';';
+    //     outfile << endl;
+    // }
     outfile.close();
 }
 

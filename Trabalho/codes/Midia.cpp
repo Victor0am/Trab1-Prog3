@@ -92,6 +92,12 @@ void Midia::setnome_low(){
         }
     }
 }
+void Midia::setbackup(string backup){
+    this->backup = backup;
+}
+string Midia::getbackup(){
+    return this->backup;
+}
 // void Midia:: setprodutores(Produtor * p){
 //     produtores.push_back(p);
 // }
