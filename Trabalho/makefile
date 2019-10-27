@@ -1,18 +1,19 @@
-all: compile clean exec showresult
+CC=g++
+
+all: compile
 
 compile:
+	@clear
 	@echo "Compilando . . ."
-	g++ -c main.cpp codes/*.cpp -std=c++17
-	g++ -o trabalho *.o 
+	@$(CC) -c main.cpp codes/*.cpp -std=c++17
+	@$(CC) -o trabalho *.o
+	@clear && echo "Pronto!"
 
 clean:
-	rm *.o
+	@clear 
+	@echo "Limpando arquivos . . ."
+	@rm *.o
 
-exec: 
-	./trabalho -g entradas/generos.csv -u entradas/usuarios.csv -m entradas/midias_corrigidas.csv -f entradas/favoritos.csv
-
-showresult:
-	#@echo "Tada:"
-	#@cat saida.txt
-	#@echo "==========================="
-	#@cat saida2.txt
+run: 
+	@./trabalho -g entradas/generos.csv -u entradas/usuarios.csv -m entradas/midias_corrigidas.csv -f entradas/favoritos.csv
+	@echo "Relatorios gerados com sucesso!"
