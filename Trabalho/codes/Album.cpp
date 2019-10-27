@@ -39,3 +39,6 @@ void Album::musicaNoAlbum(Musica* musica){
     this->qtdMusicas++;
     Musicas.push_back(musica);
 }
+Album::~Album(){
+    
+}

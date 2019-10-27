@@ -7,6 +7,7 @@ using namespace std;
 class Musica: public Midia{        
     public:
         Musica();
+        ~Musica();
         Musica(string nome, int codigo, float duracao, int anoLancamento, char tipo);
         void imprimeInfoMidia();
         void imprimeNoArquivo(ofstream &outfile);

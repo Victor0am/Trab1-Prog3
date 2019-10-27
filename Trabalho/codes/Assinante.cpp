@@ -45,4 +45,7 @@ void Assinante::ordenaFavoritos(){
     fav.sort([](Midia * lhs, Midia * rhs) {return lhs->gettipo() < rhs->gettipo();});
     fav.reverse();
 }
+Assinante::~Assinante(){
+    
+}
 // void Assinante::imprimeNoArquivo(ofstream &outfile);

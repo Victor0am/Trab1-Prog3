@@ -29,3 +29,6 @@ void Genero::contaFavoritos(){
 int Genero::getcontador(){
     return this->contador_de_favoritos;
 }
+Genero::~Genero(){
+    
+}

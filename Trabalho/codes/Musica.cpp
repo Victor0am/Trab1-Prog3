@@ -21,3 +21,6 @@ void Musica::imprimeInfoMidia(){
 //     outfile << codigo << ";";
 // }
 // void Musica::formataDuracao();
+Musica::~Musica(){
+    
+}

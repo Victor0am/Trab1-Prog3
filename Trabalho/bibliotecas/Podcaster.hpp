@@ -10,6 +10,7 @@ class Podcaster: public Produtor{
         // vector<Podcast*> podcastsLancados;
     public:
         Podcaster(string nome, int codigo);
+        ~Podcaster();
         void imprimirNoArquivo(ofstream &outfile);
         // void produzir(Midia* m);
 };

@@ -1,5 +1,8 @@
 #include "../bibliotecas/PlataformaDigital.hpp"
 using namespace std;
+PlataformaDigital::~PlataformaDigital(){
+    
+}
 void PlataformaDigital::setnome(string nome){
     this->nome = nome;
 }

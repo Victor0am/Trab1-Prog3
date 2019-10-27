@@ -15,3 +15,6 @@ void Podcast::imprimeInfoMidia(){
     cout << this->nome << ";";
     cout << this->duracao<< endl;
 }
+Podcast::~Podcast(){
+    
+}

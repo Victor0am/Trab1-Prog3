@@ -27,6 +27,7 @@ class PlataformaDigital{
         vector<Usuario*> usuariosCadastrados;
     public:
         PlataformaDigital();
+        ~PlataformaDigital();
         PlataformaDigital(string nome);
         void setnome(string nome);
         string getnome();

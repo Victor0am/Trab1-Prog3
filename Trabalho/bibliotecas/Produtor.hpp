@@ -14,6 +14,7 @@ class Produtor: public Usuario{
         //PlataformaDigital Plat;
     public:
         Produtor();
+        ~Produtor();
         Produtor(string nome,int codigo);
         void imprimeNoArquivo(ofstream &outfile);
         void imprimeProdutosDesenvolvidos();

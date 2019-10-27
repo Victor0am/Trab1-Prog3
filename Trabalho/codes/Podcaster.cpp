@@ -5,3 +5,6 @@ Podcaster::Podcaster(string nome, int codigo):Produtor(nome, codigo){
 //     podcastsLancados.push_back((Podcast*)m);
 // }
 //void Podcaster::imprimirNoArquivo(ofstream &outfile);
+Podcaster::~Podcaster(){
+    
+}

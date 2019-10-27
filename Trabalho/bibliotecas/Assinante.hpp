@@ -15,6 +15,7 @@ class Assinante: public Usuario{
         list<Midia*> fav;
     public:
         Assinante();
+        ~Assinante();
         Assinante(string nome, int codigo);
         void imprimeFavoritos();
         void inserirFavorito(Midia* favorito);

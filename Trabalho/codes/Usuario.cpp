@@ -38,3 +38,6 @@ void Usuario::setnomelow(){
         }
     }
 }
+Usuario::~Usuario(){
+    
+}

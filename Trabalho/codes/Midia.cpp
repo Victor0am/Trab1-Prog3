@@ -98,6 +98,9 @@ void Midia::setbackup(string backup){
 string Midia::getbackup(){
     return this->backup;
 }
+Midia::~Midia(){
+    
+}
 // void Midia:: setprodutores(Produtor * p){
 //     produtores.push_back(p);
 // }

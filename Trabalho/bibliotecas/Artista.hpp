@@ -10,6 +10,7 @@ class Artista: public Produtor{
         vector<Album* > albumsLancados;
     public:
         Artista(string nome, int codigo);
+        ~Artista();
         void imprimirNoArquivo(ofstream &outfile);
         void lancarAlbum(Album*album);
         

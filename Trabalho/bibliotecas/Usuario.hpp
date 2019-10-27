@@ -20,6 +20,7 @@ class Usuario{
         string getnomelow();
         void setnomelow();
         Usuario();
+        ~Usuario();
         Usuario(string _nome, int codigo);
 };
 

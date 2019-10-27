@@ -26,6 +26,7 @@ class Midia{
         static int qtdProdutos;
         static void imprimeQtdProdutos();
         Midia();
+        ~Midia();
         // Midia(string nome, int codigo, Genero genero, float duracao);
         Midia(string nome, int codigo, Genero genero, float duracao, char tipo);
         virtual void imprimeInfoMidia() = 0;

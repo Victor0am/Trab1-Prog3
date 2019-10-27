@@ -11,6 +11,7 @@ class Genero{
     public:
         Genero(std::string nome, std::string sigla);
         Genero();
+        ~Genero();
         std::string getnome();
         void setnome(std::string nome);
         std::string getsigla();

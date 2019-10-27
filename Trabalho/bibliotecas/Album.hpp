@@ -26,6 +26,7 @@ class Album{
         int getanoLancamento();
         void setanoLancamento(int anoLancamento);
         Album();
+        ~Album();
         Album(string nome, int codigo, int anoLancamento);
         void imprimeNoArquivo(ofstream &outfile);
         void musicaNoAlbum(Musica * musica);
