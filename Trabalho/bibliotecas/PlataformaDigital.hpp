@@ -66,6 +66,7 @@ class PlataformaDigital{
         void G_mais_ouvido(ofstream &outfile);
         void midias_por_g(ofstream &outfile);
         void Top_midias(ofstream &outfile);
+        void Top_produtores(ofstream &outfile);
         //arquivos
         void gerarRelatorios();
         void Estatisticas();

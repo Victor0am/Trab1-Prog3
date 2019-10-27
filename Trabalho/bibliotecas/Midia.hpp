@@ -11,6 +11,7 @@ using namespace std;
 class Midia{
     protected:
         int codigo;
+        int vezesFavoritado;
         string nome;
         float duracao;
         int anoLancamento;
@@ -38,10 +39,12 @@ class Midia{
         int getanoLancamento();
         void setanoLancamento(int anoLancamento);
         Genero getgenero();
+        void foiFavoritado();
         // void setprodutores(Produtor * p);
         void setgenero(Genero genero);
         char gettipo();
         void settipo(char tipo);
+        int getvezesFavoritado();
         // string duracao_virgula();
         // void formataDuracao();
 };

@@ -49,6 +49,7 @@ Midia::Midia(string nome, int codigo, Genero genero, float duracao, char tipo){
     this->duracao = duracao;
     this->tipo = tipo;
     qtdProdutos++;
+    this->vezesFavoritado = 0;
 }
 
 Genero Midia::getgenero(){
@@ -63,6 +64,12 @@ string Midia::getduracao_virgula(){
 }
 void Midia::setduracao_virgula(string duracao){
     this->duracao_virgula = duracao;
+}
+void Midia::foiFavoritado(){
+    this->vezesFavoritado++;
+}
+int Midia::getvezesFavoritado(){
+    return this->vezesFavoritado;
 }
 // void Midia:: setprodutores(Produtor * p){
 //     produtores.push_back(p);

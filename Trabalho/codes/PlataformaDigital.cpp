@@ -271,6 +271,7 @@ void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
             if (assinantesCadastrados[i]->getcodigo() == code && !favs.empty()){
                 for (int j = 0; j < favs.size(); j++){
                     assinantesCadastrados[i]->inserirFavorito(ProcuraMidia(favs[j]));
+                    ProcuraMidia(favs[j])->foiFavoritado();
                 }
             }
         }
@@ -330,6 +331,9 @@ void PlataformaDigital::Estatisticas(){
     Horas_consumidas(outfile);
     G_mais_ouvido(outfile);
     midias_por_g(outfile);
+    Top_midias(outfile);
+    Top_produtores(outfile);
+    outfile.close();
 }
 
 
@@ -374,9 +378,7 @@ void PlataformaDigital::G_mais_ouvido(ofstream &outfile){
 }
 
 
-void PlataformaDigital::Top_midias(ofstream &outfile){
 
-}
 
 
 /* ********************
@@ -433,6 +435,7 @@ void PlataformaDigital::midias_por_g(ofstream &outfile){
             outfile << ":" << g->getcontador() << endl;
         }
     }
+    outfile << endl;
 }
 
 
@@ -508,3 +511,36 @@ void PlataformaDigital::lista_produtores(){ // V.Victor
     outfile.close();
 }
 
+void PlataformaDigital::Top_midias(ofstream &outfile){
+    int aux = 0;
+    outfile << "Top 10 Mídias:" << endl;
+    sort(midiasCadastradas.begin(), midiasCadastradas.end(), [](Midia * lhs, Midia * rhs) {return lhs->getvezesFavoritado() > rhs->getvezesFavoritado();});
+    for(Midia* m : midiasCadastradas){
+        outfile << m->getnome() << ":";
+        outfile << m->getgenero().getnome() << ':';
+        outfile << m->getvezesFavoritado() << endl;
+        aux++;
+        if(aux>= 10){
+            break;
+        }
+    }
+    outfile << endl;
+}
+
+void PlataformaDigital::Top_produtores(ofstream &outfile){
+    int aux = 0;
+    outfile << "Top 10 Produtores:" << endl;
+    for(Produtor* p: produtoresCadastrados){
+        p->calculaLikes();
+    }
+    sort(produtoresCadastrados.begin(), produtoresCadastrados.end(), [](Produtor * lhs, Produtor * rhs) {return lhs->getqtdLikes() > rhs->getqtdLikes();});
+    for(Produtor* p: produtoresCadastrados){
+        outfile << p->getnome() << ':';
+        outfile << p->getqtdLikes() << endl;
+        aux ++;
+        if(aux >= 10){
+            break;
+        }
+    }
+    outfile << endl;
+}

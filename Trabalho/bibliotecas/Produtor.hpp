@@ -9,6 +9,7 @@ using namespace std;
 class Produtor: public Usuario{
     private:
         vector<Midia*> produtosDesenvolvidos;
+        int qtdLikes;
         //PlataformaDigital Plat;
     public:
         Produtor();
@@ -18,6 +19,8 @@ class Produtor: public Usuario{
         // virtual void produzir(Midia* m) = 0;
         vector<Midia *> getprodutosDesenvolvidos();
         void desenvolverProdutos(Midia* midia);
+        void calculaLikes();
+        int getqtdLikes();
 };
 
 
