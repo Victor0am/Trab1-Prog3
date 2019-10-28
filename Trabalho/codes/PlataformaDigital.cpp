@@ -16,9 +16,6 @@ PlataformaDigital::~PlataformaDigital(){
     for(Assinante * a : assinantesCadastrados){
         delete a;
     }
-    // for(Usuario * u : usuariosCadastrados){
-    //     delete u;
-    // }
     for(Podcaster* p : podcastersCadastrados){
         delete p;
     }
@@ -213,7 +210,6 @@ void PlataformaDigital::imprimeMidias(){
 void PlataformaDigital::cadastrarProdutor(Produtor*p){
     produtoresCadastrados.push_back(p);
     p->setqtdLikes();
-    // cout << p->getqtdLikes() << endl;
 }
 void PlataformaDigital::inserirAssinante(Assinante* a){
     assinantesCadastrados.push_back(a);
@@ -248,7 +244,7 @@ Genero PlataformaDigital::sigla_genero(string sigla){
             return *g;
         }
     }
-    cerr << "Inconsistências na entrada" << endl;
+    cerr << "Inconsistências na entrada3" << endl;
     exit(1);
 }
 void PlataformaDigital::codigo_produtor(string codigos, Midia * midia){
@@ -257,22 +253,11 @@ void PlataformaDigital::codigo_produtor(string codigos, Midia * midia){
     string aux;
     stringstream convert(codigos);
     while(getline(convert, aux, ',')){
-        // bool check = false;
-        // for (int i = 0 ; i < codigos_produtores.size(); i++){
-        //     if (stoi(aux) == codigos_produtores[i]){
-        //         check = true;
-        //         break;   
-        //     }
-        // }
-        // if (!check)
         codigos_produtores.push_back(stoi(aux));
-        // codigo = stoi(aux);
-        // break;
     }
     for(int codigo : codigos_produtores){
         for(Produtor* p : produtoresCadastrados){
             if(p->getcodigo()==codigo){
-                // midia->setprodutores(p);
                 p->desenvolverProdutos(midia);
             }
         }
@@ -284,12 +269,15 @@ void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
     getline(infile, codigo, ';');
     getline(infile, favoritos);
     int code;
+    int temp = -1;
     while(infile.good()){
+        bool verificacao = false;
         vector <int> favs;
         infile >> code;
+        cout << code << endl;
         infile.ignore(1);
         getline(infile, linha);
-        if (!infile.good())
+        if (!infile.good() && temp == code)
             break;
         if (linha.size()!= 1){
             stringstream convert(linha);
@@ -307,25 +295,35 @@ void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
         }
         else
             continue;
-        int i;
         /******** importanteee *********/
-        for (i = 0; i < assinantesCadastrados.size(); i++){
+        // if(code >= assinantesCadastrados.size()){
+            // cerr << "Inconsistencias na entrada" << endl;
+            // exit(1);
+        // }
+        for (int i = 0; i < assinantesCadastrados.size(); i++){
             if (assinantesCadastrados[i]->getcodigo() == code && !favs.empty()){
                 for (int j = 0; j < favs.size(); j++){
                     assinantesCadastrados[i]->inserirFavorito(ProcuraMidia(favs[j]));
                     ProcuraMidia(favs[j])->foiFavoritado();
+                    verificacao = true;
                 }
             }
+            if (assinantesCadastrados[i]->getcodigo() == code && favs.empty()){
+                verificacao = true;
+            }
         }
-        if(i == assinantesCadastrados.size()){
+        temp = code;
+        if (verificacao){
+            continue;
+            }
+        else{
             cerr << "Inconsistencias na entrada" << endl;
             exit(1);
         }
     }
     /******************************************** 
      FALTA TRATAMENTO DE ERRO PARA O CASO DE NÃO TER UM USUARIO COM AQUELE CODIGO,
-     LINHA TERMINADA COM VIRGULA, 2 VIRGULAS SEGUIDAS, E NÃO TER UM FAVORITO CADASTRADO,
-     2 OU MAIS FAVORITOS DE MESMO CODIGO, ESPAÇO EM BRANCO
+     LINHA TERMINADA COM VIRGULA, 2 VIRGULAS SEGUIDAS, ESPAÇO EM BRANCO
      ********************************************/
 }
 
@@ -335,12 +333,12 @@ Midia* PlataformaDigital::ProcuraMidia(int codigo){
             return m;
         }
     }
-    cerr << "Inconsistencias na entrada" << endl;
+    cerr << "Inconsistencias na entrada1" << endl;
     exit(1);
 }
 
 PlataformaDigital::PlataformaDigital(){}
-PlataformaDigital::PlataformaDigital(string nome){//lembrar que os arquivos vao estar em ordem "aleatória" nos arv lá
+PlataformaDigital::PlataformaDigital(string nome){
     this->nome = nome;
 }
 
@@ -381,17 +379,11 @@ void PlataformaDigital::Estatisticas(){
 
 void PlataformaDigital::Horas_consumidas(ofstream &outfile){
     float total = 0;
-    // for (int i = 0; i < assinantesCadastrados.size(); i++){
-    //     for (int j = 0; j < assinantesCadastrados[i]->getFavoritos().size(); j++){
-    //         total = assinantesCadastrados[i]->getFavoritos()[j]->getduracao() + total;
-    //     }
-    // }
     for(Assinante*a : assinantesCadastrados){
         for(Midia*m : a->getFavoritos2()){
             total += m->getduracao();
         }
     }
-    // cout << "aaaaaaaaaaaaaaaaaaaaaaaa" << total << endl;
     string s(to_string(total));
     for (int i = 0; i < 4; i++){
         s.pop_back();
@@ -461,18 +453,6 @@ void PlataformaDigital::Backup(){
     for(Midia* m : midiasCadastradas){
         outfile << m->getbackup() << endl;
     }
-    // for (int i = 0; i < midiasCadastradas.size(); i++){
-    //     outfile << midiasCadastradas[i]->getnome() << ';';
-    //     outfile << midiasCadastradas[i]->gettipo() << ';';
-    //     //falta produtores
-    //     outfile << midiasCadastradas[i]->getduracao() << ';';
-    //     outfile << midiasCadastradas[i]->getgenero().getsigla() << ';';
-    //     //temporada
-    //     //nome do album
-    //     //codigo album
-    //     outfile << midiasCadastradas[i]->getanoLancamento() << ';';
-    //     outfile << endl;
-    // }
     outfile.close();
 }
 
@@ -493,7 +473,7 @@ void PlataformaDigital::lista_favoritos(){ // V.Victor
 }
 
 
-void PlataformaDigital::lista_produtores(){ // V.Victor
+void PlataformaDigital::lista_produtores(){ 
     ofstream outfile("2-produtores.csv");
     int aux;
     sort(produtoresCadastrados.begin(), produtoresCadastrados.end(), [](Produtor * lhs, Produtor * rhs) {return lhs->getnomelow()<rhs->getnomelow();});
