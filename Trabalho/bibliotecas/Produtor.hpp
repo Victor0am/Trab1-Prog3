@@ -23,6 +23,7 @@ class Produtor: public Usuario{
         void desenvolverProdutos(Midia* midia);
         void ordenaProdutos();
         void calculaLikes();
+        void setqtdLikes();
         int getqtdLikes();
 };
 

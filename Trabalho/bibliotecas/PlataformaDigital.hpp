@@ -6,6 +6,7 @@
 #include <vector>
 #include <list>
 #include <sstream>
+#include <algorithm>
 #include "Artista.hpp"
 #include "Assinante.hpp"
 #include "Produtor.hpp"

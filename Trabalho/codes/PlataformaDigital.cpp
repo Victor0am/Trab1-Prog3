@@ -168,6 +168,7 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         backup.append(to_string(publicacao));
         if (tipo == 'M'){
             Musica * musica = new Musica(nome, codigo, duracao, publicacao, tipo);
+            musica->setvezesFavoritado();
             musica->setnome_low();
             musica->setbackup(backup);
             musica->setduracao_virgula(duracao_virgula);
@@ -185,6 +186,7 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         if(tipo == 'P'){
             Podcast * podcast = new Podcast(codigo, nome, duracao, publicacao, temporada, tipo);
             podcast->setnome_low();
+            podcast->setvezesFavoritado();
             podcast->setbackup(backup);
             podcast->setduracao_virgula(duracao_virgula);
             podcast->setgenero(sigla_genero(genero));
@@ -210,6 +212,8 @@ void PlataformaDigital::imprimeMidias(){
 }
 void PlataformaDigital::cadastrarProdutor(Produtor*p){
     produtoresCadastrados.push_back(p);
+    p->setqtdLikes();
+    // cout << p->getqtdLikes() << endl;
 }
 void PlataformaDigital::inserirAssinante(Assinante* a){
     assinantesCadastrados.push_back(a);
@@ -360,8 +364,8 @@ void PlataformaDigital::Estatisticas(){
     Horas_consumidas(outfile);
     G_mais_ouvido(outfile);
     midias_por_g(outfile);
-    // Top_midias(outfile);
-    // Top_produtores(outfile);
+    Top_midias(outfile);
+    Top_produtores(outfile);
     outfile.close();
 }
 

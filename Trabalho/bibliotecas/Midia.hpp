@@ -53,6 +53,7 @@ class Midia{
         void settipo(char tipo);
         string getnometipo();
         int getvezesFavoritado();
+        void setvezesFavoritado();
         // string duracao_virgula();
         // void formataDuracao();
 };

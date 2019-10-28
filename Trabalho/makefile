@@ -3,11 +3,11 @@ CC=g++
 all: compile
 
 compile:
-	
+	@clear
 	@echo "Compilando . . ."
 	@$(CC) -c main.cpp codes/*.cpp -std=c++17
 	@$(CC) -o trabalho *.o
-	
+	@clear && echo "Pronto"
 
 clean:
 	@clear 

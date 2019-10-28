@@ -49,7 +49,7 @@ Midia::Midia(string nome, int codigo, Genero genero, float duracao, char tipo){
     this->duracao = duracao;
     this->tipo = tipo;
     qtdProdutos++;
-    this->vezesFavoritado = 0;
+    // this->vezesFavoritado = 0;
 }
 
 Genero Midia::getgenero(){
@@ -70,6 +70,9 @@ void Midia::foiFavoritado(){
 }
 int Midia::getvezesFavoritado(){
     return this->vezesFavoritado;
+}
+void Midia::setvezesFavoritado(){
+    this->vezesFavoritado = 0;
 }
 string Midia::getnometipo(){
     string aux;
