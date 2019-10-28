@@ -248,6 +248,8 @@ Genero PlataformaDigital::sigla_genero(string sigla){
             return *g;
         }
     }
+    cerr << "Inconsistências na entrada" << endl;
+    exit(1);
 }
 void PlataformaDigital::codigo_produtor(string codigos, Midia * midia){
     int codigo;
@@ -305,15 +307,19 @@ void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
         }
         else
             continue;
-
+        int i;
         /******** importanteee *********/
-        for (int i = 0; i < assinantesCadastrados.size(); i++){
+        for (i = 0; i < assinantesCadastrados.size(); i++){
             if (assinantesCadastrados[i]->getcodigo() == code && !favs.empty()){
                 for (int j = 0; j < favs.size(); j++){
                     assinantesCadastrados[i]->inserirFavorito(ProcuraMidia(favs[j]));
                     ProcuraMidia(favs[j])->foiFavoritado();
                 }
             }
+        }
+        if(i == assinantesCadastrados.size()){
+            cerr << "Inconsistencias na entrada" << endl;
+            exit(1);
         }
     }
     /******************************************** 
@@ -329,6 +335,8 @@ Midia* PlataformaDigital::ProcuraMidia(int codigo){
             return m;
         }
     }
+    cerr << "Inconsistencias na entrada" << endl;
+    exit(1);
 }
 
 PlataformaDigital::PlataformaDigital(){}
