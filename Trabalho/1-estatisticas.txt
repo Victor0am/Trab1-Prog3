@@ -1,76 +1,35 @@
-Horas Consumidas: 7311,87 minutos
+Horas Consumidas: 379,18 minutos
 
-Gênero mais ouvido: WA - 98,48 minutos
+Gênero mais ouvido: KP - 177,16 minutos
 
 Mídias por Gênero:
-WA:12
-PB:11
-ED:10
-AU:9
-HI:9
-MD:9
-OM:8
-SP:8
-TA:8
-FA:8
-AN:7
-CA:7
-IN:6
-RG:5
-VG:5
-TE:5
-RA:5
-SF:5
-KW:4
-MU:4
-SR:4
-DS:4
-SM:4
-HP:4
-FE:4
-ML:3
-JM:3
-SH:3
-GO:3
-MS:3
-LL:3
-AD:3
-PO:3
-PH:3
-SE:2
-AR:2
-BA:2
-KA:2
-HO:2
-LA:2
-SC:2
-IR:2
-KH:2
-LG:1
-GB:1
-GU:1
+KP:56
+LF:24
+JR:18
+PP:11
+VM:9
 
 Top 10 Mídias:
-Est facere velit labore:Automobile:4
-Dolores mollitia:Educational:4
-Quasi:Progressive bluegrass:4
-Ab magni veritatis:Waltz:3
-Corrupti:Go-go:3
-Rerum voluptatem:Film and television:3
-Quia quos magni ducimus:Film and television:3
-Voluptate cumque optio qui:Advice:3
-Voluptates assumenda esse:Ars nova:3
-Rem:Video game:3
+Different:K-Pop:6
+Like Always:K-Pop:5
+インフェルノ:j-Rock:5
+Animals:Pop:5
+Highlight:K-Pop:5
+BET BET:K-Pop:5
+FLASH:K-Pop:5
+ONE SHOT, TWO SHOT:K-Pop:4
+MASAYUME CHASING:j-Rock:4
+Fire:j-Rock:4
 
 Top 10 Produtores:
-Luana da Cruz:15
-Sra. Sophie Freitas:15
-Leandro das Neves:14
-Enzo da Cunha:14
-Srta. Mirella da Conceição:14
-Sr. Rafael Cardoso:13
-Elisa Jesus:13
-Davi Lucas Porto:13
-Marcelo Silva:13
-Augusto Teixeira:13
+NU'EST:17
+IZ*ONE:14
+Maroon 5:11
+X1:10
+City Girl:9
+BoA:8
+Yoko Shimomura:6
+SEVENTEEN:6
+TWICE:5
+Mrs. GREEN APPLE:5
 

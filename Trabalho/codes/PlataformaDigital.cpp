@@ -149,6 +149,10 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         }
         duracao = atof(dtemp.c_str());
         getline(infile, genero, ';');
+        if (!ingenero(genero)){
+            cerr << "Inconsistências na entrada\n"; 
+            exit(1);
+        }
         backup.append(genero);
         backup.append(1u,';');
         getline(infile, ttemp, ';');
@@ -193,6 +197,24 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         tipo = 'z';
         backup.clear();
     }
+}
+
+bool PlataformaDigital::ingenero(string genero){
+    for (Genero *G : generosCadastrados){
+        if (genero == G->getsigla()){
+            return true;
+        }
+    }
+    return false;
+}
+
+bool PlataformaDigital::inprodutores(int produtor){
+    for (Produtor *P : produtoresCadastrados){
+        if (produtor == P->getcodigo()){
+            return true;
+        }
+    }
+    return false;
 }
 
 void PlataformaDigital::imprimeAssinantes(){
@@ -244,7 +266,7 @@ Genero PlataformaDigital::sigla_genero(string sigla){
             return *g;
         }
     }
-    cerr << "Inconsistências na entrada3" << endl;
+    cerr << "Inconsistências na entrada" << endl;
     exit(1);
 }
 void PlataformaDigital::codigo_produtor(string codigos, Midia * midia){
@@ -256,10 +278,15 @@ void PlataformaDigital::codigo_produtor(string codigos, Midia * midia){
         codigos_produtores.push_back(stoi(aux));
     }
     for(int codigo : codigos_produtores){
-        for(Produtor* p : produtoresCadastrados){
-            if(p->getcodigo()==codigo){
-                p->desenvolverProdutos(midia);
+        if (inprodutores(codigo))
+            for(Produtor* p : produtoresCadastrados){
+                if(p->getcodigo()==codigo){
+                    p->desenvolverProdutos(midia);
+                }
             }
+        else{
+            cerr << "Inconsistências na entrada" << endl;
+            exit(1);
         }
     }
 }
@@ -294,11 +321,6 @@ void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
         }
         else
             continue;
-        /******** importanteee *********/
-        // if(code >= assinantesCadastrados.size()){
-            // cerr << "Inconsistencias na entrada" << endl;
-            // exit(1);
-        // }
         for (int i = 0; i < assinantesCadastrados.size(); i++){
             if (assinantesCadastrados[i]->getcodigo() == code && !favs.empty()){
                 for (int j = 0; j < favs.size(); j++){
@@ -321,7 +343,6 @@ void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
         }
     }
     /******************************************** 
-     FALTA TRATAMENTO DE ERRO PARA O CASO DE NÃO TER UM USUARIO COM AQUELE CODIGO,
      LINHA TERMINADA COM VIRGULA, 2 VIRGULAS SEGUIDAS, ESPAÇO EM BRANCO
      ********************************************/
 }

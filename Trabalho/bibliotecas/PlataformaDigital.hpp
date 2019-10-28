@@ -55,7 +55,8 @@ class PlataformaDigital{
         void codigo_produtor(string codigos, Midia * midia);
         void imprimeMidias();
         Midia* ProcuraMidia(int codigo);
-        int Fav_in(vector <Midia*> favoritos, Midia* favorito);
+        bool ingenero(string genero);
+        bool inprodutores(int produtor);
         // void inserirProduto(Midia* novoProduto, vector<Produtor*> produtores);
         // void imprimeNoArquivo(ofstream &outfile);
         // void exportarBiblioteca();
