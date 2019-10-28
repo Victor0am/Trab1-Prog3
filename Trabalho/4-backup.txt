@@ -1,165 +1,253 @@
 Usuarios
-1;Muriel Ailen
-2;Max Éowyn
-3;Reena Blejan
-4;Jouni Ferdo
-5;Edith Frank
-6;Libbie Dipika
-7;Shun Elkanah
-8;Matas Roxana
-9;Rasmus Takeshi
-10;Abacuc Mamadou
-11;Netuno Caitlin
-12;Constantin Buddha
-13;Ninoslav Selma
-14;Caelia Steinarr
-15;Baxter José Manuel
-16;Nélida Firdos
-17;Chikere Nikusha
-18;Kadek Cowhauler
-19;Ganzorig Gobind
-20;Tanu Roderick
-21;Eamon Cyneweard
-22;Moritz Anastasios
-23;Teobaldo Tadija
-24;Yuliana Wafula
-25;Klara Harry
-26;Young Kukulkan
-27;Patience Vasya
-28;Alexandros Berinhard
-29;Samuel Herberto
-30;Tymoteusz Elfreda
-31;Alexandre Ottoni
-32;Deive Pazos
-33;Mauricio Cid Fernandez Morais
-34;Phelipe Cruz
-35;Manu Gavassi
-36;Luísa Sonza
-37;Samira Close
-38;IZA
-39;Caue Moura
-40;Tiago Nigro
-41;Renata Lo Prete
-42;Scalene
-43;Lana Del Rey
-44;Lil Nas X
-45;Adele
-46;Atitude 67
-47;O rappa
-48;Imagine Dragons
-49;Post Malone
-50;John Mayer
-51;BTS
-52;MC Kevinho
-53;MC Livinho
-54;Wesley Safadão
-55;Marilía Mendonça
-56;Luan Santana
-57;Allok
-58;Avicii
-59;Cardi B
-60;Billy Ray Cyrus
-61;Snoop Dog
-62;Clarisse
+1;Lucca Lima
+2;Luana Moura
+3;Helena Azevedo
+4;Maysa Farias
+5;Maria Julia Alves
+6;Davi Lucas Porto
+7;Sophia Castro
+8;Murilo Costela
+9;Clarice Fernandes
+10;Leandro das Neves
+11;Maria Eduarda Nascimento
+12;Gustavo Cunha
+13;Bernardo Araújo
+14;Ana Laura Campos
+15;Eloah Moreira
+16;Luna Freitas
+17;João Felipe Campos
+18;Bianca Castro
+19;Isis Nogueira
+20;Alice Carvalho
+21;Alícia Sales
+22;Augusto Teixeira
+23;Evelyn Pinto
+24;Srta. Mirella da Conceição
+25;Nicolas Teixeira
+26;Laís Gonçalves
+27;Sra. Pietra Ferreira
+28;Arthur Silveira
+29;Benício Aragão
+30;Marcelo Silva
+31;Danilo Duarte
+32;Arthur Novaes
+33;Enzo da Cunha
+34;Sra. Sophie Freitas
+35;Natália Porto
+36;Maria Julia Silva
+37;Carlos Eduardo Rodrigues
+38;Alana Cardoso
+39;Matheus Almeida
+40;Maria Luiza Jesus
+41;João Vitor Costela
+42;Luana da Cruz
+43;Leonardo Nunes
+44;Lorenzo Gonçalves
+45;Elisa Jesus
+46;Isis Teixeira
+47;Bárbara Rocha
+48;Davi Gomes
+49;Sr. Rafael Cardoso
+50;Juliana Ferreira
 
 Midias
-Queen of California;M;50;4,17;RO, BL;;1;2012
-The Age of Worry;M;50;2,62;RO, BL;;1;2012
-Shadow Days;M;50;3,8;RO, BL;;1;2012
-Speak For Me;M;50;3,73;RO, BL;;1;2012
-Something Like Olivia;M;50;3;RO, BL;;1;2012
-Born and Raised;M;50;4,78;RO, BL;;1;2012
-Still Feel Like Your Man;M;50;3,9;RO, BL;;2;2017
-Emoji of a Wave;M;50;3,98;RO, BL;;2;2017
-Helpless;M;50;4,15;RO, BL;;2;2017
-Love on the Weekend;M;50;3,53;RO, BL;;2;2017
-Rosie;M;50;4;RO, BL;;2;2017
-Changing;M;50;3,55;RO, BL;;2;2017
-Moving On and Getting Over;M;50;4,42;RO, BL;;2;2017
-Born To Die;M;43;4,77;IN, PP;;3;2012
-Blue Jeans;M;43;3,48;IN, PP;;3;2012
-Dark Paradise;M;43;4,05;IN, PP;;3;2012
-Carmen;M;43;4,13;IN, PP;;3;2012
-Summertime Sadness;M;43;4,4;IN, PP;;3;2012
-Cruel World;M;43;6,65;IN, PP;;4;2014
-Ultraviolence;M;43;4,18;IN, PP;;4;2014
-Shades Of Cool;M;43;5,7;IN, PP;;4;2014
-Sad Girl;M;43;5,28;IN, PP;;4;2014
-Blood Sweat & Tears;M;51;3,62;KP;;5;2016
-Begin;M;51;3,82;KP;;5;2016
-Lie;M;51;3,58;KP;;5;2016
-NerdCast 692 - Era uma vez um... Tarantino;P;31, 32;131,73;GK;70;;2019
-Speak English 19 - Connected Speech;P;31, 32;40,38;GK;70;;2019
-NerdCash 15 - Objetivos e consciência financeira;P;31, 32;59,23;GK;70;;2019
-NerdTech 43 - Profissão: Programador 4.0;P;31, 32;42,45;GK;70;;2019
-NerdCast 688 - A batalha dos Crossovers 8;P;31, 32;80,67;GK;70;;2019
-Speak English 18 - Armadilhas das traduções;P;31, 32;47,57;GK;70;;2019
-NerdCast 685 - MCU Fase 4;P;31, 32;79,5;GK;70;;2019
-NerdTech 42 - Tecnologias da corrida espacial;P;31, 32;44,5;GK;70;;2019
-Reinaldo Azevedo // POUCAS #43;P;39;62,5;AT;3;;2019
-Damiani // POUCAS $42;P;39;63,42;AT;3;;2019
-Luisa Mell  // POUCAS #41;P;39;56,35;AT;3;;2019
-Wendel Bezerra // POUCAS #40;P;39;58,02;AT;3;;2019
-Érico Borgo // POUCAS #39;P;39;50,22;AT;3;;2019
-Gordox // POUCAS #38;P;39;47,2;AT;3;;2019
-Mauricio Meirelles // POUCAS #37;P;39;65;AT;3;;2019
-Uma nora pra cada dia;M;52;2,18;FK;;;2019
-Credo que delicia;M;52;2,05;FK;;;2019
-Facilita;M;52;2,63;FK;;;2019
-Agora é tudo meu;M;52;2,85;FK;;;2019
-Terremoto;M;52;2,43;FK;;;2019
-Reboladinha;M;52;2,37;FK;;;2019
-O bebê;M;52;2,97;FK;;;2019
-Cheio de Marra;M;53;3,77;FK;;6;2016
-Tudo de Bom;M;53;2,32;FK;;6;2016
-Foi bom;M;53;3,78;FK;;6;2016
-Bandida;M;53;2,87;FK;;6;2016
-Tocar sua Pele;M;53;4,2;FK;;6;2016
-Minha Nega;M;53;2,88;FK;;6;2016
-Casado, Namorando, Solteiro;M;54;3,33;ST;;7;2017
-Ar-condicionado no 15;M;54;2,8;ST;;7;2017
-Ressaca de Saudade;M;54;3,15;ST;;7;2017
-Decreto Liberado;M;54;3,1;ST;;7;2017
-Quem Bate Também Chora;M;54;2,5;ST;;7;2017
-Ninguém é de Ferro;M;54;2,3;ST;;7;2017
-Sonhei que tava me casando;M;54;2,7;ST;;7;2017
-Se esconder Ela Não Chora;M;54;2,33;ST;;7;2017
-Eu sei de Cor;M;55;3,08;ST;;8;2017
-A Gente não se Aguenta;M;55;2,47;ST;;8;2017
-Traição Não tem Perdão;M;55;2,7;ST;;8;2017
-Nem Foi e Já voltou;M;55;2,83;ST;;8;2017
-Amante não tem Lar;M;55;2,88;ST;;8;2017
-Dia, Lugar e Hora;M;56;4,18;ST;;9;2016
-Primeira Semana;M;56;3,13;ST;;9;2016
-Eu, você, o Mar e Ela;M;56;3,12;ST;;9;2016
-Estava Zero;M;56;2,77;ST;;9;2016
-Hear Me Now;M;57;3,23;EL;;;2016
-All the Lies;M;57;2;EL;;;2016
-Favela;M;57;3,08;EL;;;2016
-Fuego;M;57;3,13;EL;;;2016
-Peace Of Mind;M;58;3;EL;;10;2019
-Heaven;M;58;4,62;EL;;10;2019
-SOS;M;58;2,62;EL;;10;2019
-Bad Reputation;M;58;3,42;EL;;10;2019
-Old Town Road - Remix;M;44, 60;2,62;HH;;11;2019
-Panini;M;44;1,9;HH;;12;2019
-Rodeo;M;44, 59;2,63;HH;;13;2019
-Bring U Down;M;44;2,18;HH;;13;2019
-C7osure;M;44;2,47;HH;;13;2019
-Kick It;M;44;2,35;HH;;13;2019
-Always Got Something to Say;M;61;4,08;HH;;14;2018
-Going Home;M;61;4,22;HH;;14;2018
-Pure Gold;M;61;5,62;HH;;14;2018
-Pain;M;61;4,73;HH;;14;2018
-#259 - Loucos por boyband (feat. Manu Gavassi);P;34, 35;144,33;PP;2;;2019
-#258 - Wanda Morning Show: Bolsinha da Rihanna;P;34;141,02;PP;2;;2019
-#257 - Não Queira;P;34;151,8;PP;2;;2019
-#253 - Luí­sa Sonza: diva sensata do pop;P;34, 36;113,23;PP;2;;2019
-#237 - A sexta-feira é Santa Mas eu Não;P;34, 37;101,7;PP;2;;2019
-#229 - Wanda Morning Show 2;P;34, 62;107,33;PP;2;;2019
-#216 - Papo Sobre Fama e Artistas Incríveis;P;34, 38;120,77;PP;2;;2019
-O Assunto #22: Como a morte da menina Ágatha reabriu...;P;41;20,6;NT;1;;2019
-O Assunto #21: A emergência do clima - ainda dá tempo para salvar o planeta?;P;41;22,93;NT;1;;2019
-O Assunto #20: As contradições do caso Flordelis e como a deputada passou...;P;41;21,27;NT;1;;2019
-O Assunto #19: Dinheiro para campanhas eleitorais;P;41;24,07;NT;1;;2019
-O Assunto #18: Existe risco de guerra após os ataques na Arábia Saudita?;P;41;23,7;NT;1;;2019
+Quam;M;18;7,85;PB;;1;2070
+Temporibus architecto voluptas facilis sint rerum quod doloribus similique;P;29;51,75;FE;13;;2041
+Voluptates sint;P;50, 27;98,79;SP;18;;2077
+Placeat;P;33, 14;64,97;TA;10;;2039
+Quisquam eligendi culpa quas qui molestias sit dolorem tenetur;P;23;98,15;AU;18;;2025
+Asperiores sed laboriosam laboriosam;P;22, 17;31,12;HI;4;;2072
+Maiores;P;33, 20;75,5;TA;2;;2058
+Amet expedita eos aliquam;P;8, 29;33,24;CB;3;;2029
+Ipsam blanditiis consequatur nam;M;45;8,86;PB, DS, AN;;2;2026
+Voluptates est aliquid aut voluptatum sapiente dolores consequuntur;P;50;87,62;MU;17;;2009
+Iste sint animi;P;16;104,32;FE;18;;2054
+Adipisci;M;35;10,73;OM, SH, KW;;3;2030
+Nam sunt impedit sed;P;8;80,42;TA;1;;2069
+Cumque;P;6;73,15;ED;8;;2030
+Provident perspiciatis eius explicabo laborum recusandae;M;19;4,73;SE;;4;2016
+Sit dignissimos perspiciatis ad deserunt molestiae id dignissimos;P;14;44,26;SC;3;;2061
+Qui quae totam corrupti ducimus;P;33;93,35;ED;12;;2025
+Omnis corporis saepe;P;14, 21;44,43;SP;6;;2055
+Delectus laudantium ipsam doloremque nisi ipsam;P;11;114,51;IN;14;;1996
+Nobis impedit voluptatem;M;34;7,91;SE, GU;;5;2050
+Adipisci voluptatibus error;P;8;56,84;SF, IN;9;;2039
+Recusandae debitis dolor qui;M;10, 7;5,82;KA;;6;2012
+Quos minima corrupti quisquam vero excepturi;P;23, 21;10,53;VG;18;;2060
+Sapiente sequi dignissimos;P;33;4,57;AU;14;;2073
+Est facere velit labore;P;50, 49;5,89;AU;4;;2024
+Odio quibusdam;M;30, 35;8,59;PB;;7;2033
+Quae neque in atque;M;45;6,90;SH;;8;2022
+Doloribus recusandae nesciunt voluptatibus fugiat dolore error ut;P;33;2,55;TE;1;;2004
+Eligendi doloribus reprehenderit porro dolorem consequatur;M;34;6,84;SR;;9;2061
+Quis dolor et commodi ex dolorum nemo autem optio;P;20, 29;73,80;SP;9;;2048
+Sint magnam odit quam numquam;M;18;6,94;KW;;10;2064
+Voluptatibus;P;8;23,24;AU;18;;2055
+Dignissimos accusantium sit ipsam nemo minus officiis dolorum;M;34;4,31;SR;;11;2014
+Rerum;M;36, 34;9,2;DS, SR, SH;;12;1991
+Minima deserunt;P;47;12,88;CA, PH;2;;2009
+Aspernatur nostrum delectus iste;M;10, 45;8,82;MD;;13;2028
+Tempore;P;33, 8;76,36;RA;1;;2011
+Enim aliquam quaerat quia accusamus mollitia;M;19;7,29;WA;;14;2029
+Harum nisi accusantium distinctio aut eveniet;M;10, 30;4,0;ML, LL;;15;2010
+Quos nostrum temporibus sapiente est;P;50, 14;11,63;CA;16;;2070
+Dolorum;P;27;6,93;FE;13;;2057
+Reprehenderit magni dolor fuga fuga vero tempora;M;45, 36;8,65;WA, MS;;16;2071
+Nostrum a vitae sit;P;27;19,65;HI;20;;2046
+Dolorem;P;8;105,10;CR;7;;2053
+Molestias a quibusdam;M;10;3,9;HP;;17;1999
+Sunt modi tempora nesciunt;P;4;93,16;HO, IN;16;;2041
+Vitae provident enim perferendis veritatis praesentium;P;22;113,61;TA;18;;2045
+Ut quod quia laboriosam architecto quia ullam;M;10;8,20;OM;;18;1998
+A;P;20;37,10;LG;18;;2020
+Dolores mollitia;P;24, 49;46,78;ED;20;;2062
+Vitae praesentium est pariatur veritatis rem;P;20;8,35;PO;19;;2039
+Quaerat facere;P;11;45,41;RA;16;;2062
+Consequuntur sequi quas facere aut itaque;M;19;8,90;WA, SH, RG;;19;2020
+Veniam velit dolorum dolores quam;M;42;1,93;GU;;20;2072
+Odio;M;36;5,82;KH;;21;2055
+Voluptas architecto consequatur quas hic voluptate omnis;P;14;61,46;CA;16;;2059
+Corrupti;M;30;2,12;GO, SE;;22;2061
+Repellendus repellendus quo accusamus;P;21, 4;9,62;BA;19;;2043
+Est voluptate porro cupiditate;M;31;2,76;AN, CO;;23;1990
+Corporis inventore tenetur;M;7, 34;5,7;SM;;24;2017
+Ducimus mollitia itaque repellat odio;M;42;5,63;GU;;25;2016
+Inventore ut libero adipisci iusto;P;27, 17;70,46;SF;3;;2005
+Optio ut optio fuga;M;42, 7;8,89;WA, DS, RG;;26;2030
+Culpa maxime;M;34;3,1;JM, WA;;27;2064
+Perspiciatis dicta suscipit;P;46;62,9;SF;16;;2009
+Accusantium;P;50, 20, 11;64,24;AR;18;;2001
+Tenetur minima excepturi laudantium vitae;M;18;3,87;GU;;28;2004
+Voluptates;M;36;5,23;ML;;29;2055
+Repellat;M;31;5,83;PB;;30;2019
+Accusantium quasi deleniti architecto;M;10;6,3;LL, OM;;31;2047
+Placeat a delectus;M;42;6,19;KW, AN, SH, GO, MS;;32;2022
+Tenetur eligendi in a soluta;M;30, 9;5,24;AN;;33;2004
+Asperiores;P;21;30,76;IN;19;;2042
+Adipisci sunt repellat fugit;P;21;108,66;IN;16;;2004
+Temporibus eaque maxime repudiandae omnis;P;50;75,73;LG, IN;6;;2044
+Eius commodi voluptatum;M;36;4,38;KH, GB;;34;2005
+Debitis cum placeat sint;M;19;10,49;RG;;35;2041
+Totam repellat eius ex quibusdam architecto a provident dolore;M;5, 42;6,18;OM, MS;;36;2073
+Aspernatur;P;24, 4;57,35;CA;4;;2034
+Blanditiis consequatur ullam;P;23, 6;81,43;VG;16;;2019
+Cumque;M;45, 36;3,9;DS;;37;2009
+Beatae perspiciatis nesciunt ipsum sequi architecto;M;36, 31;10,97;MS, KW, PB, SH;;38;2026
+Molestias corrupti;M;19;10,38;LL, SR;;39;2003
+Sed doloribus;M;31, 5;3,78;CO;;40;2056
+Harum illum suscipit dolorem consequatur;M;36;3,35;CO;;41;2058
+Accusantium maiores voluptas eos nisi;P;49;40,5;AU, AR;19;;2050
+Necessitatibus voluptatum;P;24, 22;9,94;CA;16;;2050
+Quae earum in porro explicabo;M;31, 19;8,96;LL;;42;2059
+Nisi molestiae perspiciatis nemo delectus voluptas incidunt eveniet;M;5, 18;1,86;GU, KW, AN;;43;2027
+Optio qui;P;47, 21;9,19;LA;19;;2004
+Voluptates;P;23;26,92;HI;19;;1992
+Quidem sequi ad vel molestiae facere veniam eos atque;P;17;117,79;HI;16;;2061
+Ducimus repudiandae a odit;M;18, 9;6,9;AN, WA, KA;;44;2040
+Animi illum aliquid beatae;P;33;56,50;HO;11;;2018
+Nisi;M;19;7,17;KA, SR;;45;2062
+Delectus inventore illum;M;42;9,59;PB, KH, SE, HP, CO;;46;1992
+Tempora necessitatibus repellendus ipsa mollitia;M;19;1,19;LL, AN;;47;2044
+Temporibus sint consequuntur quam nostrum;M;45;9,48;MD;;48;2007
+Asperiores porro voluptatem nostrum quod saepe tenetur modi;P;29, 24;32,19;HI;19;;2032
+Est doloremque cum;M;36;3,30;SH;;49;2043
+Ipsa;M;5;1,76;PS, DS, HP;;50;2031
+Voluptates assumenda esse;M;5, 31;8,11;AN;;51;2061
+Nulla aperiam perspiciatis;M;30;1,34;OM;;52;1995
+Minima numquam pariatur vel;P;23;43,73;TA;14;;2001
+Praesentium;P;20, 22;93,7;LA;8;;2026
+Laboriosam voluptates nam;M;7;4,87;SR;;53;2075
+Labore at reprehenderit cumque eligendi accusantium vel quos nemo;P;24;47,77;TE;5;;2043
+Laboriosam in dolor;M;10;4,81;LL;;54;2057
+Quia quos magni ducimus;P;21, 16;85,80;FA;1;;2077
+Saepe voluptate vero debitis fuga;M;31;2,45;PS, HP;;55;2033
+Quam;M;9;4,41;PB;;56;2016
+Ab magni veritatis;M;10, 18;6,1;WA, OM, HP, MS, ML;;57;2023
+Sed quam qui quia quis;P;16;17,90;LG, HO;7;;1997
+Recusandae architecto accusamus itaque placeat distinctio accusantium;P;11;29,50;TE;5;;2047
+Suscipit sed;P;47;57,54;TE;19;;2055
+Fuga accusantium excepturi dolores;P;24;95,68;TA;14;;2053
+Magnam veniam necessitatibus molestias esse;M;9;6,2;KA, MS, PB;;58;2028
+Soluta;P;8;37,86;LG;1;;1994
+Ut nam impedit;P;20;28,74;HI;5;;2039
+Consectetur eius adipisci;M;7, 45;4,84;DS, KA;;59;2029
+Quasi quisquam modi;M;5;9,83;CO;;60;2064
+Officia exercitationem qui doloremque vel eos;M;42;5,87;GO;;61;2066
+Quia officiis maxime nulla earum;M;18, 7;7,62;SE, AN, OM, PB;;62;2074
+At eos voluptas officiis vero atque;P;6;98,5;IN;17;;2022
+Itaque consectetur earum omnis facilis;M;9;5,42;LL;;63;2037
+Animi consequatur;M;30, 42;8,29;IR, PB;;64;2005
+Pariatur quam animi;M;36, 35;9,96;OM, SH, SR;;65;2011
+Maxime ipsa nihil id;P;47, 33;23,12;SP, SC;19;;2018
+Modi quae necessitatibus labore;P;6;56,88;RA;4;;2063
+Saepe optio;M;34, 45;2,70;HP;;66;2069
+Fuga consequuntur;P;17, 29;81,54;MU;11;;2077
+Vitae eveniet iste similique ducimus iusto;P;22;74,18;FA;18;;2032
+Ipsa corrupti deserunt;P;29;11,40;FE;18;;1995
+Temporibus beatae consequuntur vitae;P;46;41,99;FE, SF;15;;2055
+Excepturi fuga tempora possimus;P;29;38,95;PH, TE;12;;2067
+Hic porro officiis;P;33, 6;76,69;HI;3;;2018
+Laudantium quibusdam;P;46, 49;59,5;SP, TE;13;;2015
+Consequuntur iure minus consequatur;P;22, 49;87,43;CA;16;;2065
+Officia doloribus animi;M;7, 34;6,29;IR;;67;2045
+Ipsum doloremque;M;45;10,87;SM, CO;;68;2058
+Rem;P;50;112,22;VG;10;;2033
+At odit error ex;M;9;7,13;SM;;69;2056
+Laudantium laborum;P;4, 46;17,83;IN;2;;2060
+Ea;M;7;2,29;GB, JM, IR;;70;2031
+Rerum minus nisi;M;35, 5, 34;8,5;RG, SM, GO;;71;2060
+Exercitationem assumenda odit provident quod rerum reprehenderit;P;24;46,37;MU;12;;2009
+Molestiae quis aliquam ut itaque;P;17;92,5;RA;18;;2047
+Quisquam suscipit;M;36, 31, 7;9,32;KH;;72;2063
+Illo doloribus est voluptatum quos placeat;P;23, 49;92,99;VG;3;;2075
+Excepturi;M;42;8,11;MD, OM, GU;;73;2029
+Nam tempora dolores quae;M;9;4,14;ML;;74;2067
+Pariatur quidem animi occaecati;M;9;2,85;OM, KW;;75;2048
+Possimus porro illum;M;30, 36;8,30;SE;;76;2017
+Occaecati reiciendis dignissimos accusamus recusandae;M;34;3,31;OM;;77;2038
+Provident excepturi dolores cupiditate;P;27;19,27;ED;4;;2027
+Rerum voluptatem;P;22;71,19;FA;12;;2037
+Perferendis consequatur aliquid;M;9;5,5;OM;;78;2058
+Quod;P;16;103,10;CA;5;;2049
+Ea impedit aperiam magnam;P;50;79,86;CR;4;;2037
+Dolores eos voluptates earum repellat eius quasi;P;22, 6;89,46;SF;19;;2041
+Repudiandae;P;27, 33;105,84;SF, FA;9;;2072
+Voluptatum voluptas;M;5, 34;3,0;MD;;79;2033
+Odio;P;50;51,58;FE;12;;2048
+Porro debitis distinctio inventore fugiat dolore natus voluptatibus;M;45;6,46;KH;;80;2048
+Officiis;P;23;108,94;SF;8;;2027
+Doloremque tempore;P;23;81,67;BA;2;;1999
+Culpa;M;30;8,16;ML, AN;;81;1994
+Necessitatibus optio laudantium;M;18;6,41;CO, LL;;82;1991
+Iusto eius ea distinctio;M;5, 31;4,48;MD, GB;;83;2043
+Dolor praesentium perferendis blanditiis odit;P;27;83,89;PO;12;;1994
+Distinctio ea optio est alias magnam ea;P;21, 33;96,86;SC;8;;2005
+Quasi;M;10;9,55;PB;;84;2057
+Quia enim sapiente adipisci ducimus dolor quod eaque;P;8, 50;7,17;RA;16;;2044
+Necessitatibus possimus molestias;P;8;73,75;AR;9;;2066
+Suscipit fugit corporis unde;M;7;5,54;KA, AN;;85;2039
+Provident porro explicabo dicta;M;31, 42;5,75;MD;;86;2046
+Veritatis nam nostrum nulla ipsum;M;19, 36;7,69;PB, JM;;87;1992
+Ad ipsum minima mollitia;P;21;113,17;SF;15;;2024
+Recusandae;P;14;3,46;LG;1;;2059
+Non aspernatur ut modi distinctio molestiae;P;22;116,47;AU;18;;2004
+Neque;P;17, 22;30,20;SP, AD;7;;2077
+Ipsam quo;P;27, 50, 46;91,96;AU;7;;1997
+Debitis nesciunt qui;P;47;56,23;AU;10;;2027
+Voluptate cumque optio qui;P;6, 8;30,19;AD;8;;2020
+Tempora praesentium nobis culpa perspiciatis optio;P;27;40,40;PH;17;;2041
+Consequuntur;P;49, 17;69,27;TE, RA;9;;2002
+Alias rem;P;20;6,43;HI;9;;2074
+Veritatis;M;42;3,64;JM, MS;;88;2016
+Dolorem qui;P;20, 8;108,77;TA, TE;10;;2008
+Corrupti consequuntur deserunt;M;19;10,37;SH;;89;2051
+Eos;P;17;6,30;CA, AU;18;;2013
+Quod optio;M;10, 7;10,81;WA;;90;2000
+Praesentium iste id ratione nobis mollitia;P;21;24,78;FE;14;;2032
+Molestias maxime ratione nihil odio;M;30, 18;4,34;HP;;91;1990
+Fugiat cum;P;6;70,81;CA;16;;2069
+Culpa laboriosam voluptas;P;24;41,79;RA;12;;2025
+Architecto soluta;M;35, 7;10,82;OM, RG, JM;;92;2055
+Voluptatem numquam aliquid blanditiis;P;4, 27;33,15;AR;19;;2001
+Libero accusantium;P;49, 4;66,90;TA;12;;2071
+Porro distinctio ipsam at numquam voluptatum dicta;M;35, 42;9,29;AN;;93;2057

@@ -274,7 +274,6 @@ void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
         bool verificacao = false;
         vector <int> favs;
         infile >> code;
-        cout << code << endl;
         infile.ignore(1);
         getline(infile, linha);
         if (!infile.good() && temp == code)
@@ -365,6 +364,23 @@ void PlataformaDigital::gerarRelatorios(){
 }
 
 
+// 
+void PlataformaDigital::Backup(){
+    ofstream outfile("4-backup.txt");
+    outfile << "Usuarios" << endl;
+    for (int i = 0; i < usuariosCadastrados.size(); i++){
+        outfile << usuariosCadastrados[i]->getcodigo() << ';';
+        outfile << usuariosCadastrados[i]->getnome() << endl;
+    }
+    outfile << endl;
+    outfile << "Midias" << endl;
+    for(Midia* m : midiasCadastradas){
+        outfile << m->getbackup() << endl;
+    }
+    outfile.close();
+}
+
+
 void PlataformaDigital::Estatisticas(){
     ofstream outfile("1-estatisticas.txt");
     Horas_consumidas(outfile);
@@ -375,8 +391,7 @@ void PlataformaDigital::Estatisticas(){
     outfile.close();
 }
 
-
-
+//
 void PlataformaDigital::Horas_consumidas(ofstream &outfile){
     float total = 0;
     for(Assinante*a : assinantesCadastrados){
@@ -396,29 +411,43 @@ void PlataformaDigital::Horas_consumidas(ofstream &outfile){
     outfile << "Horas Consumidas: " << s << " minutos\n" << endl;
 }
 
+//
 void PlataformaDigital::G_mais_ouvido(ofstream &outfile){
     string maior = generosCadastrados[0]->getsigla();
     int maistocado = 0;
+    float totalmin = 0;
     for (int i = 0; i < generosCadastrados.size(); i++){
+        float minutos = 0;
         int total = 0;
         for (int j = 0; j < assinantesCadastrados.size(); j++){
             for (int k = 0; k < assinantesCadastrados[j]->getFavoritos().size(); k++){
                 if (assinantesCadastrados[j]->getFavoritos()[k]->getgenero().getnome() == generosCadastrados[i]->getnome()){
                     total++;
+                    minutos += assinantesCadastrados[j]->getFavoritos()[k]->getduracao();
                 }
             }
         }
-       if (total > maistocado){
+        if (total > maistocado){
+            totalmin = minutos;
             maistocado = total;
             maior = generosCadastrados[i]->getsigla();
         }
     }
-    outfile << "Gênero mais ouvido: " << maior << " - " << maistocado << endl << endl;
+    string s(to_string(totalmin));
+    for (int i = 0; i < 4; i++){
+        s.pop_back();
+    }
+    for (int i = 0; i < s.size(); i++){
+        if (s[i] == '.'){
+            s[i] = ',';
+        }
+    }
+    outfile << "Gênero mais ouvido: " << maior << " - " << s << " minutos\n\n";
 }
 
 
 
-
+//
 void PlataformaDigital::midias_por_g(ofstream &outfile){
     for(Genero *g : generosCadastrados){
         for(Assinante* a : assinantesCadastrados){
@@ -430,6 +459,7 @@ void PlataformaDigital::midias_por_g(ofstream &outfile){
         }
     }
     sort(generosCadastrados.begin(), generosCadastrados.end(), [](Genero * lhs, Genero * rhs) {return lhs->getcontador() > rhs->getcontador();});
+    outfile << "Mídias por Gênero:\n";
     for (Genero* g : generosCadastrados){
         int aux = 0;
         if(g->getcontador() != 0){
@@ -438,60 +468,6 @@ void PlataformaDigital::midias_por_g(ofstream &outfile){
         }
     }
     outfile << endl;
-}
-
-
-void PlataformaDigital::Backup(){
-    ofstream outfile("4-backup.txt");
-    outfile << "Usuarios" << endl;
-    for (int i = 0; i < usuariosCadastrados.size(); i++){
-        outfile << usuariosCadastrados[i]->getcodigo() << ';';
-        outfile << usuariosCadastrados[i]->getnome() << endl;
-    }
-    outfile << endl;
-    outfile << "Midias" << endl;
-    for(Midia* m : midiasCadastradas){
-        outfile << m->getbackup() << endl;
-    }
-    outfile.close();
-}
-
-void PlataformaDigital::lista_favoritos(){ // V.Victor
-    ofstream outfile("3-favoritos.csv");
-    outfile << "CódigoAssinante;Tipo Mídia;Código Mídia;Gênero;Duração" << endl;
-    for (Assinante* a : assinantesCadastrados){
-        a->ordenaFavoritos();
-        for(Midia* m : a->getFavoritos2()){
-            outfile << a->getcodigo() << ';';
-            outfile << m->getnometipo() << ';';
-            outfile << m->getcodigo() << ';';
-            outfile << m->getgenero().getnome() << ';';
-            outfile << m->getduracao_virgula() << endl;
-        }
-    }
-    outfile.close();
-}
-
-
-void PlataformaDigital::lista_produtores(){ 
-    ofstream outfile("2-produtores.csv");
-    int aux;
-    sort(produtoresCadastrados.begin(), produtoresCadastrados.end(), [](Produtor * lhs, Produtor * rhs) {return lhs->getnomelow()<rhs->getnomelow();});
-    for (Produtor* p : produtoresCadastrados){
-        outfile << p->getnome() << ";";
-        p->ordenaProdutos();
-        vector<Midia*> midias = p->getprodutosDesenvolvidos();
-        aux = 12-midias.size();
-        for(Midia* m : midias){
-            outfile << m->getnome() << ';';
-        }
-        while(aux>0){
-            outfile << ';';
-            aux--;
-        }
-        outfile << endl;
-    }
-    outfile.close();
 }
 
 void PlataformaDigital::Top_midias(ofstream &outfile){
@@ -527,3 +503,42 @@ void PlataformaDigital::Top_produtores(ofstream &outfile){
     }
     outfile << endl;
 }
+
+void PlataformaDigital::lista_produtores(){ 
+    ofstream outfile("2-produtores.csv");
+    int aux;
+    sort(produtoresCadastrados.begin(), produtoresCadastrados.end(), [](Produtor * lhs, Produtor * rhs) {return lhs->getnomelow()<rhs->getnomelow();});
+    for (Produtor* p : produtoresCadastrados){
+        outfile << p->getnome() << ";";
+        p->ordenaProdutos();
+        vector<Midia*> midias = p->getprodutosDesenvolvidos();
+        aux = 12-midias.size();
+        for(Midia* m : midias){
+            outfile << m->getnome() << ';';
+        }
+        while(aux>0){
+            outfile << ';';
+            aux--;
+        }
+        outfile << endl;
+    }
+    outfile.close();
+}
+
+//
+void PlataformaDigital::lista_favoritos(){ 
+    ofstream outfile("3-favoritos.csv");
+    outfile << "CódigoAssinante;Tipo Mídia;Código Mídia;Gênero;Duração" << endl;
+    for (Assinante* a : assinantesCadastrados){
+        a->ordenaFavoritos();
+        for(Midia* m : a->getFavoritos2()){
+            outfile << a->getcodigo() << ';';
+            outfile << m->getnometipo() << ';';
+            outfile << m->getcodigo() << ';';
+            outfile << m->getgenero().getnome() << ';';
+            outfile << m->getduracao_virgula() << endl;
+        }
+    }
+    outfile.close();
+}
+

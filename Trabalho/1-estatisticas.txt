@@ -1,40 +1,76 @@
-Horas Consumidas: 6447,91 minutos
+Horas Consumidas: 7311,87 minutos
 
-Gênero mais ouvido: PP - 1977,34 minutos
+Gênero mais ouvido: WA - 98,48 minutos
 
-ST:51
-FK:43
-RO:39
-HH:30
-GK:30
-AT:26
-IN:25
-EL:24
-PP:17
-NT:14
-KP:7
+Mídias por Gênero:
+WA:12
+PB:11
+ED:10
+AU:9
+HI:9
+MD:9
+OM:8
+SP:8
+TA:8
+FA:8
+AN:7
+CA:7
+IN:6
+RG:5
+VG:5
+TE:5
+RA:5
+SF:5
+KW:4
+MU:4
+SR:4
+DS:4
+SM:4
+HP:4
+FE:4
+ML:3
+JM:3
+SH:3
+GO:3
+MS:3
+LL:3
+AD:3
+PO:3
+PH:3
+SE:2
+AR:2
+BA:2
+KA:2
+HO:2
+LA:2
+SC:2
+IR:2
+KH:2
+LG:1
+GB:1
+GU:1
 
 Top 10 Mídias:
-Credo que delicia:Funk:6
-Shades Of Cool:Indie:6
-NerdCash 15 - Objetivos e consciência financeira:Geek:6
-#253 - Luí­sa Sonza: diva sensata do pop:Pop:6
-NerdTech 42 - Tecnologias da corrida espacial:Geek:6
-Changing:Rock:6
-Gordox // POUCAS #38:Atualidades:6
-O Assunto #19: Dinheiro para campanhas eleitorais:Noticias:6
-Queen of California:Rock:6
-All the Lies:Eletrônica:5
+Est facere velit labore:Automobile:4
+Dolores mollitia:Educational:4
+Quasi:Progressive bluegrass:4
+Ab magni veritatis:Waltz:3
+Corrupti:Go-go:3
+Rerum voluptatem:Film and television:3
+Quia quos magni ducimus:Film and television:3
+Voluptate cumque optio qui:Advice:3
+Voluptates assumenda esse:Ars nova:3
+Rem:Video game:3
 
 Top 10 Produtores:
-John Mayer:39
-Alexandre Ottoni:30
-Deive Pazos:30
-MC Kevinho:27
-Caue Moura:26
-Lana Del Rey:25
-Wesley Safadão:23
-Lil Nas X:19
-Phelipe Cruz:17
-MC Livinho:16
+Luana da Cruz:15
+Sra. Sophie Freitas:15
+Leandro das Neves:14
+Enzo da Cunha:14
+Srta. Mirella da Conceição:14
+Sr. Rafael Cardoso:13
+Elisa Jesus:13
+Davi Lucas Porto:13
+Marcelo Silva:13
+Augusto Teixeira:13
 
