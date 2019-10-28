@@ -16,7 +16,7 @@ class Assinante: public Usuario{
     public:
         Assinante();
         ~Assinante();
-        Assinante(string nome, int codigo);
+        Assinante(string nome, int codigo, char tipo);
         void imprimeFavoritos();
         void inserirFavorito(Midia* favorito);
         void removerFavorito();

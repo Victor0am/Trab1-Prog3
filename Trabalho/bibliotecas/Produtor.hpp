@@ -15,7 +15,7 @@ class Produtor: public Usuario{
     public:
         Produtor();
         ~Produtor();
-        Produtor(string nome,int codigo);
+        Produtor(string nome,int codigo, char tipo);
         void imprimeNoArquivo(ofstream &outfile);
         void imprimeProdutosDesenvolvidos();
         // virtual void produzir(Midia* m) = 0;
@@ -25,6 +25,7 @@ class Produtor: public Usuario{
         void calculaLikes();
         void setqtdLikes();
         int getqtdLikes();
+        char gettipo();
 };
 
 

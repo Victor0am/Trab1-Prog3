@@ -3,7 +3,7 @@ using namespace std;
 Assinante::Assinante(){
 
 }
-Assinante::Assinante(string nome, int codigo):Usuario(nome, codigo){
+Assinante::Assinante(string nome, int codigo, char tipo):Usuario(nome, codigo, tipo){
 }
 void Assinante::imprimeFavoritos(){
     // if (Favoritos.empty()){

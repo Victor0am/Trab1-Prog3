@@ -1,5 +1,5 @@
 #include "../bibliotecas/Artista.hpp"
-Artista::Artista(string nome, int codigo): Produtor(nome, codigo){
+Artista::Artista(string nome, int codigo, char tipo): Produtor(nome, codigo, tipo){
     
 }
 void Artista::lancarAlbum(Album*album){

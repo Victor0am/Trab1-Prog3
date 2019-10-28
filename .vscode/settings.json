@@ -6,6 +6,8 @@
         "iosfwd": "cpp",
         "list": "cpp",
         "new": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "typeinfo": "cpp",
+        "stdexcept": "cpp"
     }
 }

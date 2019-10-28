@@ -18,9 +18,10 @@ void Usuario::setcodigo(int codigo){
 Usuario::Usuario(){
 }
 
-Usuario::Usuario(string _nome, int codigo){
+Usuario::Usuario(string _nome, int codigo, char tipo){
     this->setnome(_nome);
     this->setcodigo(codigo);
+    this->tipo = tipo;
     setnomelow();
 }
 void Usuario::imprimeNoArquivo(ofstream &outfile){

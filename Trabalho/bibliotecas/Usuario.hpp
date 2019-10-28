@@ -21,7 +21,7 @@ class Usuario{
         void setnomelow();
         Usuario();
         ~Usuario();
-        Usuario(string _nome, int codigo);
+        Usuario(string _nome, int codigo, char tipo);
 };
 
 #endif

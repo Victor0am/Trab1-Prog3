@@ -5,23 +5,27 @@ PlataformaDigital::~PlataformaDigital(){
         delete m;
     }
     for(Produtor* p: produtoresCadastrados){
-        delete p;
+        if(p->gettipo() == 'A'){
+            delete (Artista*)p;
+        }else{
+            delete(Podcaster*)p;
+        }
     }
     for(Genero * g: generosCadastrados){
         delete g;
     }
-    for(Usuario * u : usuariosCadastrados){
-        delete u;
-    }
+    // for(Usuario * u : usuariosCadastrados){
+    //     delete u;
+    // }
     for(Assinante * a : assinantesCadastrados){
         delete a;
     }
-    for(Podcaster* p : podcastersCadastrados){
-        delete p;
-    }
-    for(Artista* a: artistasCadastrados){
-        delete a;
-    }
+    // for(Podcaster* p : podcastersCadastrados){
+    //     delete p;
+    // }
+    // for(Artista* a: artistasCadastrados){
+    //     delete a;
+    // }
 }
 void PlataformaDigital::setnome(string nome){
     this->nome = nome;
@@ -34,9 +38,9 @@ Artista* PlataformaDigital::getArtista(string produtor){
     string aux;
     getline(convert, aux, ',');
     int codigo = stoi(aux);
-    for(Artista*a : artistasCadastrados){
-        if(a->getcodigo() == codigo){
-            return a;
+    for(Produtor*p : produtoresCadastrados){
+        if(p->getcodigo() == codigo && p->gettipo() == 'A'){
+            return (Artista *)p;
         }
     }
 }
@@ -78,33 +82,45 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &infile){
     getline(infile, tipo0, ';');
     getline(infile, nome);
     while(infile.good()){
-            infile >> codigo;
-            infile.ignore(1);
-            infile >> tipo;
-            infile.ignore(1);
-            if(infile.eof()){
-                break;
-            }
-            getline(infile, nome);
-            fix_string(&nome);
-            user = new Usuario(nome, codigo);
-            usuariosCadastrados.push_back(user);
-            if (tipo == 'U'){
-                user = new Assinante(nome, codigo);
-                inserirAssinante((Assinante*)user);
-            }else{
-                user = new Produtor(nome, codigo);
+        infile >> codigo;
+        infile.ignore(1);
+        infile >> tipo;
+        infile.ignore(1);
+        if(infile.eof()){
+            break;
+        }
+        getline(infile, nome);
+        fix_string(&nome);
+        // user = new Usuario(nome, codigo, tipo);
+        // usuariosCadastrados.push_back(user);
+        // if (tipo == 'U'){
+        //     user = new Assinante(nome, codigo, tipo);
+        //     inserirAssinante((Assinante*)user);
+        // }else{
+        //     user = new Produtor(nome, codigo, tipo);
+        //     cadastrarProdutor((Produtor*)user);
+        // }
+        // if (tipo == 'P'){
+        //     user = new Podcaster(nome, codigo, tipo);
+        //     cadastrarPodcaster((Podcaster*)user);
+        // }
+        // if(tipo == 'A'){
+        //     user = new Artista(nome, codigo, tipo);
+        //     cadastrarArtista((Artista*)user);
+        // }
+        if (tipo == 'U'){
+            user = new Assinante(nome, codigo, tipo);
+            inserirAssinante((Assinante*)user);
+        }else{
+            if (tipo == 'P'){
+                user = new Podcaster(nome, codigo, tipo);
                 cadastrarProdutor((Produtor*)user);
             }
-            if (tipo == 'P'){
-                user = new Podcaster(nome, codigo);
-
-                cadastrarPodcaster((Podcaster*)user);
-            }
             if(tipo == 'A'){
-                user = new Artista(nome, codigo);
-                cadastrarArtista((Artista*)user);
+                user = new Artista(nome, codigo, tipo);
+                cadastrarProdutor((Produtor*)user);
             }
+        }
     }
 }
 
@@ -128,49 +144,42 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
     getline(infile, lixo);
     while(infile.good()){
         try{
-            /* code */
-            infile >> codigo;
-            // cout << typeid(codigo).hash_code;
-            infile.ignore(1);
-            getline(infile, nome, ';');
-            backup.append(nome);
-            backup.append(1u,';');
-            infile >> tipo;
-            backup.append(1u, tipo);
-            backup.append(1u,';');
-            infile.ignore(1);
-            getline(infile, produtor, ';');
-            backup.append(produtor);
-            backup.append(1u,';');
-            getline(infile, dtemp, ';');
-            duracao_virgula = dtemp;
-            backup.append(duracao_virgula);
-            backup.append(1u,';');
-            for (int i = 0; i < dtemp.size(); i++){
-                if (dtemp[i] == ',')
-                    dtemp[i] = '.';
-            }
-            duracao = atof(dtemp.c_str());
-            getline(infile, genero, ';');
-            backup.append(genero);
-            backup.append(1u,';');
-            getline(infile, ttemp, ';');
-            backup.append(ttemp);
-            backup.append(1u,';');
-            if (!ttemp.empty()){
-                temporada = atoi(ttemp.c_str());
-            }
-            getline(infile, nome_album, ';');
-            getline(infile, codigo_albums, ';');
-            backup.append(codigo_albums);
-            backup.append(1u,';');
-            infile >> publicacao;
-            backup.append(to_string(publicacao));
+        infile >> codigo;
+        infile.ignore(1);
+        getline(infile, nome, ';');
+        backup.append(nome);
+        backup.append(1u,';');
+        infile >> tipo;
+        backup.append(1u, tipo);
+        backup.append(1u,';');
+        infile.ignore(1);
+        getline(infile, produtor, ';');
+        backup.append(produtor);
+        backup.append(1u,';');
+        getline(infile, dtemp, ';');
+        duracao_virgula = dtemp;
+        backup.append(duracao_virgula);
+        backup.append(1u,';');
+        for (int i = 0; i < dtemp.size(); i++){
+            if (dtemp[i] == ',')
+                dtemp[i] = '.';
         }
-        catch(invalid_argument & ti){
-            // std::cerr << e.what() << '\n';
-            cerr << "Erro de formatação" << endl;
+        duracao = atof(dtemp.c_str());
+        getline(infile, genero, ';');
+        backup.append(genero);
+        backup.append(1u,';');
+        getline(infile, ttemp, ';');
+        backup.append(ttemp);
+        backup.append(1u,';');
+        if (!ttemp.empty()){
+            temporada = atoi(ttemp.c_str());
         }
+        getline(infile, nome_album, ';');
+        getline(infile, codigo_albums, ';');
+        backup.append(codigo_albums);
+        backup.append(1u,';');
+        infile >> publicacao;
+        backup.append(to_string(publicacao));
         if (tipo == 'M'){
             Musica * musica = new Musica(nome, codigo, duracao, publicacao, tipo);
             musica->setvezesFavoritado();
@@ -188,7 +197,7 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
                 album->musicaNoAlbum(musica);
             }
         }
-        if(tipo == 'P'){
+        else if(tipo == 'P'){
             Podcast * podcast = new Podcast(codigo, nome, duracao, publicacao, temporada, tipo);
             podcast->setnome_low();
             podcast->setvezesFavoritado();
@@ -198,7 +207,15 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
             midiasCadastradas.push_back(podcast);
             codigo_produtor(produtor, podcast);
         }
-        tipo = 'z';
+        else if(tipo != ';'){
+            throw invalid_argument("Não existe esse tipo");
+        }
+        }
+        catch(invalid_argument & e){
+            cerr << "Inconsistencias na entrada" << endl;
+            exit(1);
+        }
+        tipo = ';';
         backup.clear();
     }
 }
@@ -393,9 +410,17 @@ void PlataformaDigital::gerarRelatorios(){
 void PlataformaDigital::Backup(){
     ofstream outfile("4-backup.txt");
     outfile << "Usuarios" << endl;
-    for (int i = 0; i < usuariosCadastrados.size(); i++){
-        outfile << usuariosCadastrados[i]->getcodigo() << ';';
-        outfile << usuariosCadastrados[i]->getnome() << endl;
+    // for (int i = 0; i < usuariosCadastrados.size(); i++){
+    //     outfile << usuariosCadastrados[i]->getcodigo() << ';';
+    //     outfile << usuariosCadastrados[i]->getnome() << endl;
+    // }
+    for(Assinante* a : assinantesCadastrados){
+        outfile << a->getcodigo() << ';';
+        outfile << a->getnome() << endl;
+    }
+    for(Produtor* p : produtoresCadastrados){
+        outfile << p->getcodigo() << ';';
+        outfile << p->getnome() << endl;
     }
     outfile << endl;
     outfile << "Midias" << endl;

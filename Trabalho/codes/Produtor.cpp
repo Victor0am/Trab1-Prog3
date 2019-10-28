@@ -3,7 +3,7 @@ using namespace std;
 Produtor::Produtor(){
 
 }
-Produtor::Produtor(string nome, int codigo):Usuario(nome, codigo){
+Produtor::Produtor(string nome, int codigo, char tipo):Usuario(nome, codigo, tipo){
 }
 void Produtor::setqtdLikes(){
     this->qtdLikes = 0;
@@ -37,7 +37,8 @@ void Produtor::ordenaProdutos(){
     sort(produtosDesenvolvidos.begin(), produtosDesenvolvidos.end(), [](Midia * lhs, Midia * rhs) {return lhs->getnome_low() < rhs->getnome_low();});
 }
 Produtor::~Produtor(){
-    // for(Midia*m: produtosDesenvolvidos){
-    //     delete m;
-    // }
+
+}
+char Produtor::gettipo(){
+    return this->tipo;
 }
