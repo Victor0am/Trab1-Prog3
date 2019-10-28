@@ -127,46 +127,50 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
     string fim;
     getline(infile, lixo);
     while(infile.good()){
-        infile >> codigo;
-        infile.ignore(1);
-        getline(infile, nome, ';');
-        backup.append(nome);
-        backup.append(1u,';');
-        infile >> tipo;
-        backup.append(1u, tipo);
-        backup.append(1u,';');
-        infile.ignore(1);
-        getline(infile, produtor, ';');
-        backup.append(produtor);
-        backup.append(1u,';');
-        getline(infile, dtemp, ';');
-        duracao_virgula = dtemp;
-        backup.append(duracao_virgula);
-        backup.append(1u,';');
-        for (int i = 0; i < dtemp.size(); i++){
-            if (dtemp[i] == ',')
-                dtemp[i] = '.';
+        try{
+            /* code */
+            infile >> codigo;
+            // cout << typeid(codigo).hash_code;
+            infile.ignore(1);
+            getline(infile, nome, ';');
+            backup.append(nome);
+            backup.append(1u,';');
+            infile >> tipo;
+            backup.append(1u, tipo);
+            backup.append(1u,';');
+            infile.ignore(1);
+            getline(infile, produtor, ';');
+            backup.append(produtor);
+            backup.append(1u,';');
+            getline(infile, dtemp, ';');
+            duracao_virgula = dtemp;
+            backup.append(duracao_virgula);
+            backup.append(1u,';');
+            for (int i = 0; i < dtemp.size(); i++){
+                if (dtemp[i] == ',')
+                    dtemp[i] = '.';
+            }
+            duracao = atof(dtemp.c_str());
+            getline(infile, genero, ';');
+            backup.append(genero);
+            backup.append(1u,';');
+            getline(infile, ttemp, ';');
+            backup.append(ttemp);
+            backup.append(1u,';');
+            if (!ttemp.empty()){
+                temporada = atoi(ttemp.c_str());
+            }
+            getline(infile, nome_album, ';');
+            getline(infile, codigo_albums, ';');
+            backup.append(codigo_albums);
+            backup.append(1u,';');
+            infile >> publicacao;
+            backup.append(to_string(publicacao));
         }
-        duracao = atof(dtemp.c_str());
-        getline(infile, genero, ';');
-        if (!ingenero(genero)){
-            cerr << "Inconsistências na entrada\n"; 
-            exit(1);
+        catch(invalid_argument & ti){
+            // std::cerr << e.what() << '\n';
+            cerr << "Erro de formatação" << endl;
         }
-        backup.append(genero);
-        backup.append(1u,';');
-        getline(infile, ttemp, ';');
-        backup.append(ttemp);
-        backup.append(1u,';');
-        if (!ttemp.empty()){
-            temporada = atoi(ttemp.c_str());
-        }
-        getline(infile, nome_album, ';');
-        getline(infile, codigo_albums, ';');
-        backup.append(codigo_albums);
-        backup.append(1u,';');
-        infile >> publicacao;
-        backup.append(to_string(publicacao));
         if (tipo == 'M'){
             Musica * musica = new Musica(nome, codigo, duracao, publicacao, tipo);
             musica->setvezesFavoritado();
@@ -353,7 +357,7 @@ Midia* PlataformaDigital::ProcuraMidia(int codigo){
             return m;
         }
     }
-    cerr << "Inconsistencias na entrada1" << endl;
+    cerr << "Inconsistencias na entrada" << endl;
     exit(1);
 }
 

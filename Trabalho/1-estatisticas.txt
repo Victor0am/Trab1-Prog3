@@ -1,35 +1,41 @@
-Horas Consumidas: 379,18 minutos
+Horas Consumidas: 6447,91 minutos
 
-Gênero mais ouvido: KP - 177,16 minutos
+Gênero mais ouvido: ST - 149,97 minutos
 
 Mídias por Gênero:
-KP:56
-LF:24
-JR:18
-PP:11
-VM:9
+ST:51
+FK:43
+RO:39
+HH:30
+GK:30
+AT:26
+IN:25
+EL:24
+PP:17
+NT:14
+KP:7
 
 Top 10 Mídias:
-Different:K-Pop:6
-Like Always:K-Pop:5
-インフェルノ:j-Rock:5
-Animals:Pop:5
-Highlight:K-Pop:5
-BET BET:K-Pop:5
-FLASH:K-Pop:5
-ONE SHOT, TWO SHOT:K-Pop:4
-MASAYUME CHASING:j-Rock:4
-Fire:j-Rock:4
+Credo que delicia:Funk:6
+Shades Of Cool:Indie:6
+NerdCash 15 - Objetivos e consciência financeira:Geek:6
+#253 - Luí­sa Sonza: diva sensata do pop:Pop:6
+NerdTech 42 - Tecnologias da corrida espacial:Geek:6
+Changing:Rock:6
+Gordox // POUCAS #38:Atualidades:6
+O Assunto #19: Dinheiro para campanhas eleitorais:Noticias:6
+Queen of California:Rock:6
+All the Lies:Eletrônica:5
 
 Top 10 Produtores:
-NU'EST:17
-IZ*ONE:14
-Maroon 5:11
-X1:10
-City Girl:9
-BoA:8
-Yoko Shimomura:6
-SEVENTEEN:6
-TWICE:5
-Mrs. GREEN APPLE:5
+John Mayer:39
+Alexandre Ottoni:30
+Deive Pazos:30
+MC Kevinho:27
+Caue Moura:26
+Lana Del Rey:25
+Wesley Safadão:23
+Lil Nas X:19
+Phelipe Cruz:17
+MC Livinho:16
 
