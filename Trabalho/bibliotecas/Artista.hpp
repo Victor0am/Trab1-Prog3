@@ -7,7 +7,7 @@ using namespace std;
 
 class Artista: public Produtor{
     private:
-        vector<Album* > albumsLancados;
+        vector<Album*> albumsLancados;
     public:
         Artista(string nome, int codigo);
         ~Artista();

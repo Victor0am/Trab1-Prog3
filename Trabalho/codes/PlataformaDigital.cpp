@@ -1,7 +1,30 @@
 #include "../bibliotecas/PlataformaDigital.hpp"
 using namespace std;
 PlataformaDigital::~PlataformaDigital(){
-    
+    for(Midia* m : midiasCadastradas){
+        delete m;
+    }
+    for(Produtor* p: produtoresCadastrados){
+        delete p;
+    }
+    for(Genero * g: generosCadastrados){
+        delete g;
+    }
+    for(Usuario * u : usuariosCadastrados){
+        delete u;
+    }
+    for(Assinante * a : assinantesCadastrados){
+        delete a;
+    }
+    // for(Usuario * u : usuariosCadastrados){
+    //     delete u;
+    // }
+    for(Podcaster* p : podcastersCadastrados){
+        delete p;
+    }
+    for(Artista* a: artistasCadastrados){
+        delete a;
+    }
 }
 void PlataformaDigital::setnome(string nome){
     this->nome = nome;
@@ -9,14 +32,14 @@ void PlataformaDigital::setnome(string nome){
 string PlataformaDigital::getnome(){
     return this->nome;
 }
-Produtor* PlataformaDigital::getProdutor(string produtor){
+Artista* PlataformaDigital::getArtista(string produtor){
     stringstream convert(produtor);
     string aux;
     getline(convert, aux, ',');
     int codigo = stoi(aux);
-    for(Produtor*p : produtoresCadastrados){
-        if(p->getcodigo() == codigo){
-            return p;
+    for(Artista*a : artistasCadastrados){
+        if(a->getcodigo() == codigo){
+            return a;
         }
     }
 }
@@ -154,9 +177,9 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
             if (!codigo_albums.empty()){
                 codigo_album = atoi(codigo_albums.c_str());
                 Album *album = new Album(nome_album, codigo_album, publicacao);
+                Artista * artista = getArtista(produtor);
+                artista->lancarAlbum(album);
                 album->musicaNoAlbum(musica);
-                // Artista * artista = (Artista*)getProdutor(produtor);
-                // artista->lancarAlbum(album);
             }
         }
         if(tipo == 'P'){
@@ -337,8 +360,8 @@ void PlataformaDigital::Estatisticas(){
     Horas_consumidas(outfile);
     G_mais_ouvido(outfile);
     midias_por_g(outfile);
-    Top_midias(outfile);
-    Top_produtores(outfile);
+    // Top_midias(outfile);
+    // Top_produtores(outfile);
     outfile.close();
 }
 
@@ -346,9 +369,14 @@ void PlataformaDigital::Estatisticas(){
 
 void PlataformaDigital::Horas_consumidas(ofstream &outfile){
     float total = 0;
-    for (int i = 0; i < assinantesCadastrados.size(); i++){
-        for (int j = 0; j < assinantesCadastrados[i]->getFavoritos().size(); j++){
-            total = assinantesCadastrados[i]->getFavoritos()[j]->getduracao() + total;
+    // for (int i = 0; i < assinantesCadastrados.size(); i++){
+    //     for (int j = 0; j < assinantesCadastrados[i]->getFavoritos().size(); j++){
+    //         total = assinantesCadastrados[i]->getFavoritos()[j]->getduracao() + total;
+    //     }
+    // }
+    for(Assinante*a : assinantesCadastrados){
+        for(Midia*m : a->getFavoritos2()){
+            total += m->getduracao();
         }
     }
     // cout << "aaaaaaaaaaaaaaaaaaaaaaaa" << total << endl;

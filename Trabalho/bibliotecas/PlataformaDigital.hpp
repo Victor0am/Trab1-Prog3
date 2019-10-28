@@ -4,6 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <list>
 #include <sstream>
 #include "Artista.hpp"
 #include "Assinante.hpp"
@@ -33,7 +34,7 @@ class PlataformaDigital{
         string getnome();
         vector<Genero*> getgenero();
         vector<Usuario*> getusuario();
-        Produtor * getProdutor(string produtor);
+        Artista * getArtista(string produtor);
         // vector<Assinante*> getassinante();
         void carregaArquivoUsuarios(ifstream &infile);
         void carregaArquivoGeneros(ifstream &infile);

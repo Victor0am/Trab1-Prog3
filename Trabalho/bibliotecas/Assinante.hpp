@@ -2,7 +2,7 @@
 #define _ASSINANTE_HPP
 #include <vector>
 #include <list>
-#include <algorithm>
+// #include <algorithm>
 #include <string>
 #include "Usuario.hpp"
 #include "Midia.hpp"

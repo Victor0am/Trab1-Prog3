@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+// #include<algorithm>
 #include <vector>
 #include "bibliotecas/PlataformaDigital.hpp"
 #include "bibliotecas/Genero.hpp"
@@ -57,7 +58,6 @@ int main(int argc, char** argv){
             i++;
         }
     }
-    ofstream saida, saida2;
     spotify->carregaArquivoGeneros(generos);
     spotify->carregaArquivoUsuarios(usuarios);
     spotify->carregaArquivoMidia(midias);
@@ -67,4 +67,5 @@ int main(int argc, char** argv){
     midias.close();
     favoritos.close();
     spotify->gerarRelatorios();
+    delete spotify;
 }

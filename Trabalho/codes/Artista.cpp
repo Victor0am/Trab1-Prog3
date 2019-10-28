@@ -7,7 +7,9 @@ void Artista::lancarAlbum(Album*album){
 }
 
 Artista::~Artista(){
-    
+    for(Album * a: albumsLancados){
+        delete a;
+    }
 }
 
 void Artista::imprimirNoArquivo(ofstream &outfile){
