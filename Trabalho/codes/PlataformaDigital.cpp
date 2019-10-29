@@ -70,7 +70,16 @@ void PlataformaDigital::carregaArquivoGeneros(ifstream &infile){
         generosCadastrados.push_back(genre);
     }
 }
-
+void verifica_produtor(string produtor){
+    string aux;
+    stringstream convert(produtor);
+    while(getline(convert, aux, ',')){
+        if (stoi(aux)){
+            cerr << "Erro de formatação" << endl;
+            exit(1);
+        }
+    }
+}
 void PlataformaDigital::carregaArquivoUsuarios(ifstream &infile){
     int codigo;
     char tipo;
@@ -84,6 +93,10 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &infile){
     while(infile.good()){
         infile >> codigo;
         infile.ignore(1);
+        if(codigo == 0){
+            cerr << "Erro de formatação" << endl;
+            exit(1);
+        }
         infile >> tipo;
         infile.ignore(1);
         if(infile.eof()){
@@ -146,6 +159,10 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         try{
         infile >> codigo;
         infile.ignore(1);
+        if(codigo == 0){
+            cerr << "Erro de formatação" << endl;
+            exit(1);
+        }
         getline(infile, nome, ';');
         backup.append(nome);
         backup.append(1u,';');
@@ -212,7 +229,7 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         }
         }
         catch(invalid_argument & e){
-            cerr << "Inconsistencias na entrada" << endl;
+            cerr << "Erro de formatação" << endl;
             exit(1);
         }
         tipo = ';';
@@ -363,9 +380,6 @@ void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
             exit(1);
         }
     }
-    /******************************************** 
-     LINHA TERMINADA COM VIRGULA, 2 VIRGULAS SEGUIDAS, ESPAÇO EM BRANCO
-     ********************************************/
 }
 
 Midia* PlataformaDigital::ProcuraMidia(int codigo){

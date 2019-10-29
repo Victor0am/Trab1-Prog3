@@ -58,6 +58,7 @@ class PlataformaDigital{
         Midia* ProcuraMidia(int codigo);
         bool ingenero(string genero);
         bool inprodutores(int produtor);
+        void verifica_produtor(string produtor);
         // void inserirProduto(Midia* novoProduto, vector<Produtor*> produtores);
         // void imprimeNoArquivo(ofstream &outfile);
         // void exportarBiblioteca();
