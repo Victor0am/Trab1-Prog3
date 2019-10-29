@@ -56,7 +56,8 @@ vector<Usuario*> PlataformaDigital::getusuario(){
 void PlataformaDigital::carregaArquivoGeneros(ifstream &infile){
     string nome;
     string sigla;
-    Genero* genre;
+    vector<string> lista_generos;
+    Genero* genero;
     getline(infile, sigla, ';');
     getline(infile, nome);
     while(infile.good()){
@@ -64,24 +65,34 @@ void PlataformaDigital::carregaArquivoGeneros(ifstream &infile){
         if(infile.eof()){
             break;
         }
+        for(string s : lista_generos){
+            if(s==sigla){
+                cerr << "Inconsistências na entrada" << endl; 
+                exit(1);
+            }
+        }
         getline(infile, nome);
         fix_string(&nome);
-        genre = new Genero(nome, sigla);
-        generosCadastrados.push_back(genre);
+        genero = new Genero(nome, sigla);
+        generosCadastrados.push_back(genero);
+        lista_generos.push_back(genero->getsigla());
     }
 }
-void verifica_produtor(string produtor){
+
+void PlataformaDigital::verifica_produtor(string produtor){
     string aux;
     stringstream convert(produtor);
     while(getline(convert, aux, ',')){
-        if (stoi(aux)){
+        if (stoi(aux)== 0){
             cerr << "Erro de formatação" << endl;
             exit(1);
         }
     }
 }
+
 void PlataformaDigital::carregaArquivoUsuarios(ifstream &infile){
     int codigo;
+    vector <int> lista_codigos;
     char tipo;
     string nome;
     string code;
@@ -101,6 +112,12 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &infile){
         infile.ignore(1);
         if(infile.eof()){
             break;
+        }
+        for(int i: lista_codigos){
+            if(i == codigo){
+                cerr << "Inconsistências na entrada" << endl;
+                exit(1);
+            }
         }
         getline(infile, nome);
         fix_string(&nome);
@@ -128,17 +145,21 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &infile){
             if (tipo == 'P'){
                 user = new Podcaster(nome, codigo, tipo);
                 cadastrarProdutor((Produtor*)user);
-            }
-            if(tipo == 'A'){
+            }else if(tipo == 'A'){
                 user = new Artista(nome, codigo, tipo);
                 cadastrarProdutor((Produtor*)user);
+            } else{
+                cerr << "Inconsistências na entrada" << endl;
+                exit(1);
             }
         }
+        lista_codigos.push_back(codigo);
     }
 }
 
 void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
     int codigo, codigo_album;
+    vector<int>lista_codigos;
     string nome;
     string lixo;
     string backup;
@@ -159,9 +180,16 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         try{
         infile >> codigo;
         infile.ignore(1);
+        if(!infile.good()){
+            break;
+        }
+        for(int i : lista_codigos){
+            if(i == codigo){
+                cerr << "Inconsistências na entrada" << endl;
+            }
+        }
         if(codigo == 0){
-            cerr << "Erro de formatação" << endl;
-            exit(1);
+            throw invalid_argument("codigo invalido");
         }
         getline(infile, nome, ';');
         backup.append(nome);
@@ -171,6 +199,7 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         backup.append(1u,';');
         infile.ignore(1);
         getline(infile, produtor, ';');
+        verifica_produtor(produtor);
         backup.append(produtor);
         backup.append(1u,';');
         getline(infile, dtemp, ';');
@@ -182,6 +211,9 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
                 dtemp[i] = '.';
         }
         duracao = atof(dtemp.c_str());
+        if (duracao == 0){
+            throw invalid_argument("Duração precisa ser um número");
+        }
         getline(infile, genero, ';');
         backup.append(genero);
         backup.append(1u,';');
@@ -190,6 +222,9 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
         backup.append(1u,';');
         if (!ttemp.empty()){
             temporada = atoi(ttemp.c_str());
+            if(temporada == 0){
+                throw invalid_argument("temporada não existente");
+            }
         }
         getline(infile, nome_album, ';');
         getline(infile, codigo_albums, ';');
@@ -208,6 +243,9 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
             codigo_produtor(produtor, musica);
             if (!codigo_albums.empty()){
                 codigo_album = atoi(codigo_albums.c_str());
+                if(codigo_album == 0){
+                    throw invalid_argument("codigo de album não existe");
+                }
                 Album *album = new Album(nome_album, codigo_album, publicacao);
                 Artista * artista = getArtista(produtor);
                 artista->lancarAlbum(album);
@@ -224,7 +262,7 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
             midiasCadastradas.push_back(podcast);
             codigo_produtor(produtor, podcast);
         }
-        else if(tipo != ';'){
+        else{
             throw invalid_argument("Não existe esse tipo");
         }
         }
@@ -232,7 +270,7 @@ void PlataformaDigital::carregaArquivoMidia(ifstream &infile){
             cerr << "Erro de formatação" << endl;
             exit(1);
         }
-        tipo = ';';
+        lista_codigos.push_back(codigo);
         backup.clear();
     }
 }
@@ -339,6 +377,10 @@ void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
         bool verificacao = false;
         vector <int> favs;
         infile >> code;
+        if (code == 0){
+            cerr << "Erro de formatação" << endl;
+            exit(1);
+        }
         infile.ignore(1);
         getline(infile, linha);
         if (!infile.good() && temp == code)
@@ -353,8 +395,13 @@ void PlataformaDigital::carregaArquivoFavoritos(ifstream &infile){
                         break;   
                     }
                 }
-                if (!check)
+                if (!check){
                     favs.push_back(stoi(aux));
+                    if(stoi(aux) == 0){
+                        cerr << "Erro de formatação" << endl;
+                        exit(1);
+                    }
+                }
             }
         }
         else
@@ -422,7 +469,7 @@ void PlataformaDigital::gerarRelatorios(){
 
 // 
 void PlataformaDigital::Backup(){
-    ofstream outfile("4-backup.txt");
+    ofstream outfile("saidas/4-backup.txt");
     outfile << "Usuarios" << endl;
     // for (int i = 0; i < usuariosCadastrados.size(); i++){
     //     outfile << usuariosCadastrados[i]->getcodigo() << ';';
@@ -446,7 +493,7 @@ void PlataformaDigital::Backup(){
 
 
 void PlataformaDigital::Estatisticas(){
-    ofstream outfile("1-estatisticas.txt");
+    ofstream outfile("saidas/1-estatisticas.txt");
     Horas_consumidas(outfile);
     G_mais_ouvido(outfile);
     midias_por_g(outfile);
@@ -569,7 +616,7 @@ void PlataformaDigital::Top_produtores(ofstream &outfile){
 }
 
 void PlataformaDigital::lista_produtores(){ 
-    ofstream outfile("2-produtores.csv");
+    ofstream outfile("saidas/2-produtores.csv");
     int aux;
     sort(produtoresCadastrados.begin(), produtoresCadastrados.end(), [](Produtor * lhs, Produtor * rhs) {return lhs->getnomelow()<rhs->getnomelow();});
     for (Produtor* p : produtoresCadastrados){
@@ -591,7 +638,7 @@ void PlataformaDigital::lista_produtores(){
 
 //
 void PlataformaDigital::lista_favoritos(){ 
-    ofstream outfile("3-favoritos.csv");
+    ofstream outfile("saidas/3-favoritos.csv");
     outfile << "CódigoAssinante;Tipo Mídia;Código Mídia;Gênero;Duração" << endl;
     for (Assinante* a : assinantesCadastrados){
         a->ordenaFavoritos();
