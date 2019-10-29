@@ -1,4 +1,5 @@
 CC=g++
+EXE=trabalho
 
 all: compile
 
@@ -15,7 +16,7 @@ clean:
 	@rm *.o
 
 # run: 
-# 	@ ./trabalho -g entradas/generos.csv -u entradas/usuarios.csv -m entradas/midias_corrigidas.csv -f entradas/favoritos.csv
+# 	@ ./$(EXE) -g entradas/generos.csv -u entradas/usuarios.csv -m entradas/midias_corrigidas.csv -f entradas/favoritos.csv
 # 	@echo "Relatorios gerados com sucesso!"
 	
 runv:
