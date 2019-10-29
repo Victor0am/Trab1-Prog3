@@ -9,7 +9,7 @@ using namespace std;
 int main(int argc, char** argv){
     PlataformaDigital *spotify = new PlataformaDigital("Spotify");
     vector <string> flags;
-    if (argc == 1 ){
+    if (argc != 9){
         cerr << "Erro de I/O" << endl;
         exit(1);
     }
