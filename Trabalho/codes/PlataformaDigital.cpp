@@ -14,18 +14,9 @@ PlataformaDigital::~PlataformaDigital(){
     for(Genero * g: generosCadastrados){
         delete g;
     }
-    // for(Usuario * u : usuariosCadastrados){
-    //     delete u;
-    // }
     for(Assinante * a : assinantesCadastrados){
         delete a;
     }
-    // for(Podcaster* p : podcastersCadastrados){
-    //     delete p;
-    // }
-    // for(Artista* a: artistasCadastrados){
-    //     delete a;
-    // }
 }
 void PlataformaDigital::setnome(string nome){
     this->nome = nome;
@@ -121,23 +112,6 @@ void PlataformaDigital::carregaArquivoUsuarios(ifstream &infile){
         }
         getline(infile, nome);
         fix_string(&nome);
-        // user = new Usuario(nome, codigo, tipo);
-        // usuariosCadastrados.push_back(user);
-        // if (tipo == 'U'){
-        //     user = new Assinante(nome, codigo, tipo);
-        //     inserirAssinante((Assinante*)user);
-        // }else{
-        //     user = new Produtor(nome, codigo, tipo);
-        //     cadastrarProdutor((Produtor*)user);
-        // }
-        // if (tipo == 'P'){
-        //     user = new Podcaster(nome, codigo, tipo);
-        //     cadastrarPodcaster((Podcaster*)user);
-        // }
-        // if(tipo == 'A'){
-        //     user = new Artista(nome, codigo, tipo);
-        //     cadastrarArtista((Artista*)user);
-        // }
         if (tipo == 'U'){
             user = new Assinante(nome, codigo, tipo);
             inserirAssinante((Assinante*)user);
@@ -456,7 +430,7 @@ void PlataformaDigital::fix_string(string *s){
 }
 
 /***********************
- * Saidas
+ * Métodos das Saidas
  *************************/
 
 void PlataformaDigital::gerarRelatorios(){
@@ -467,14 +441,10 @@ void PlataformaDigital::gerarRelatorios(){
 }
 
 
-// 
+
 void PlataformaDigital::Backup(){
     ofstream outfile("saidas/4-backup.txt");
     outfile << "Usuarios" << endl;
-    // for (int i = 0; i < usuariosCadastrados.size(); i++){
-    //     outfile << usuariosCadastrados[i]->getcodigo() << ';';
-    //     outfile << usuariosCadastrados[i]->getnome() << endl;
-    // }
     for(Assinante* a : assinantesCadastrados){
         outfile << a->getcodigo() << ';';
         outfile << a->getnome() << endl;
@@ -527,21 +497,21 @@ void PlataformaDigital::G_mais_ouvido(ofstream &outfile){
     string maior = generosCadastrados[0]->getsigla();
     int maistocado = 0;
     float totalmin = 0;
-    for (int i = 0; i < generosCadastrados.size(); i++){
+    for(Genero* g : generosCadastrados){
         float minutos = 0;
         int total = 0;
-        for (int j = 0; j < assinantesCadastrados.size(); j++){
-            for (int k = 0; k < assinantesCadastrados[j]->getFavoritos().size(); k++){
-                if (assinantesCadastrados[j]->getFavoritos()[k]->getgenero().getnome() == generosCadastrados[i]->getnome()){
-                    total++;
-                    minutos += assinantesCadastrados[j]->getFavoritos()[k]->getduracao();
+        for (Assinante *a: assinantesCadastrados){
+            for(Midia * m : a->getFavoritos2()){
+                if(m->getgenero().getnome() == g->getnome()){
+                    total ++;
+                    minutos += m->getduracao();
                 }
             }
         }
-        if (total > maistocado){
+        if(total > maistocado){
             totalmin = minutos;
             maistocado = total;
-            maior = generosCadastrados[i]->getsigla();
+            maior = g->getnome();
         }
     }
     string s(to_string(totalmin));
@@ -574,7 +544,7 @@ void PlataformaDigital::midias_por_g(ofstream &outfile){
     for (Genero* g : generosCadastrados){
         int aux = 0;
         if(g->getcontador() != 0){
-            outfile << g->getsigla();
+            outfile << g->getnome();
             outfile << ":" << g->getcontador() << endl;
         }
     }

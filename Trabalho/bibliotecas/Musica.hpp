@@ -10,7 +10,7 @@ class Musica: public Midia{
         ~Musica();
         Musica(string nome, int codigo, float duracao, int anoLancamento, char tipo);
         void imprimeInfoMidia();
-        void imprimeNoArquivo(ofstream &outfile);
+
 };
 
 #endif

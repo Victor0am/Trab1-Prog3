@@ -11,7 +11,6 @@ class Podcast:public Midia{
         ~Podcast();
         Podcast(int codigo, string nome, float duracao, int anoLancamento, int qtdTemporadas, char tipo);
         void imprimeInfoMidia();
-        void imprimeNoArquivo(ofstream &outfile);
 };
 
 #endif

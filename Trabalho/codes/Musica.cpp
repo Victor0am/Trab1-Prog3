@@ -3,7 +3,7 @@
 Musica::Musica(){
     cout << "Musica Publicada"<<endl;
 }
-Musica::Musica(string nome, int codigo, float duracao, int anoLancamento, char tipo)/*:Midia(nome, codigo, genero, duracao)*/{
+Musica::Musica(string nome, int codigo, float duracao, int anoLancamento, char tipo){
     this->nome = nome;
     this->codigo = codigo;
     this->duracao = duracao;
@@ -17,10 +17,7 @@ void Musica::imprimeInfoMidia(){
     cout << this->nome << ";";
     cout << this->duracao<< endl;
 }
-// void Musica::imprimeNoArquivo(ofstream &outfile){
-//     outfile << codigo << ";";
-// }
-// void Musica::formataDuracao();
+
 Musica::~Musica(){
     
 }

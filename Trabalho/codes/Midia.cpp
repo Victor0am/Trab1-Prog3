@@ -32,15 +32,7 @@ void Midia::settipo(char tipo){
     this->tipo = tipo;
 }
 Midia::Midia(){
-    // cout << "Midia criada com sucesso... nem tanto né...";
 }
-// Midia::Midia(string nome, int codigo, Genero genero, float duracao){
-//     this->genero = genero;
-//     this->nome = nome;
-//     this->codigo = codigo;
-//     this->duracao = duracao;
-//     qtdProdutos++;
-// }
 
 Midia::Midia(string nome, int codigo, Genero genero, float duracao, char tipo){
     this->genero = genero;
@@ -49,7 +41,6 @@ Midia::Midia(string nome, int codigo, Genero genero, float duracao, char tipo){
     this->duracao = duracao;
     this->tipo = tipo;
     qtdProdutos++;
-    // this->vezesFavoritado = 0;
 }
 
 Genero Midia::getgenero(){
@@ -104,31 +95,3 @@ string Midia::getbackup(){
 Midia::~Midia(){
     
 }
-// void Midia:: setprodutores(Produtor * p){
-//     produtores.push_back(p);
-// }
-
-// string Midia::duracao_virgula(){
-//     string s = to_string(duracao);
-//     cout << duracao << endl;
-//     for (int i = 0; i < 4; i++){
-//         s.pop_back();
-//     }
-//     for (int i = 0; i < s.size(); i++){
-//         if (s[i] == '.'){
-//             s[i] = ',';
-//         }
-//     }
-//     while(s.back() == '0' || s.back() == ',')
-//         s.pop_back();
-//     cout << s << endl;
-//     return s;
-// }
-
-// void Midia::imprimeInfoMidia(){
-    //prints na ordem que quiser depois...
-// }
-// void formataDuracao(){
-//     //this->duracao= algo
-// }
-//void Midia::imprimeNoArquivo(ofstream &outfile);

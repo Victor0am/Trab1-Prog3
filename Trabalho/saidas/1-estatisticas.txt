@@ -1,19 +1,19 @@
 Horas Consumidas: 6447,91 minutos
 
-Gênero mais ouvido: ST - 149,97 minutos
+Gênero mais ouvido: Sertanejo - 149,97 minutos
 
 Mídias por Gênero:
-ST:51
-FK:43
-RO:39
-HH:30
-GK:30
-AT:26
-IN:25
-EL:24
-PP:17
-NT:14
-KP:7
+Sertanejo:51
+Funk:43
+Rock:39
+Hip-Hop:30
+Geek:30
+Atualidades:26
+Indie:25
+Eletrônica:24
+Pop:17
+Noticias:14
+K-Pop:7
 
 Top 10 Mídias:
 Credo que delicia:Funk:6

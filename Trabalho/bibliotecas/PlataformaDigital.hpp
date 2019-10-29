@@ -37,15 +37,12 @@ class PlataformaDigital{
         vector<Genero*> getgenero();
         vector<Usuario*> getusuario();
         Artista * getArtista(string produtor);
-        // vector<Assinante*> getassinante();
         void carregaArquivoUsuarios(ifstream &infile);
         void carregaArquivoGeneros(ifstream &infile);
         void carregaArquivoMidia(ifstream &infile);
         void carregaArquivoFavoritos(ifstream &infile);
-        // void imprimeProdutos(string genero);
         void imprimeAssinantes();
         void inserirAssinante(Assinante* a);
-        // void removerAssinante(Assinante* a);
         void imprimePodcasters();
         void cadastrarPodcaster(Podcaster* p);
         void imprimeArtistas();
@@ -59,10 +56,6 @@ class PlataformaDigital{
         bool ingenero(string genero);
         bool inprodutores(int produtor);
         void verifica_produtor(string produtor);
-        // void inserirProduto(Midia* novoProduto, vector<Produtor*> produtores);
-        // void imprimeNoArquivo(ofstream &outfile);
-        // void exportarBiblioteca();
-        // void gerarRelatorios();
 
         //string
         void fix_string(string *s);

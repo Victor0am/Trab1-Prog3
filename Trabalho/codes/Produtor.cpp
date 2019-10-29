@@ -8,12 +8,9 @@ Produtor::Produtor(string nome, int codigo, char tipo):Usuario(nome, codigo, tip
 void Produtor::setqtdLikes(){
     this->qtdLikes = 0;
 }
-//void Produtor::imprimeNoArquivo(ofstream &outfile);
 void Produtor::imprimeProdutosDesenvolvidos(){
-    vector<Midia*>::iterator it = this->produtosDesenvolvidos.begin();
-    while(this->produtosDesenvolvidos.end() != it){
-        //colocar a formatação que a jordana pedir aqui...
-        it++;
+    for(Midia * m : produtosDesenvolvidos){
+        m->imprimeInfoMidia();
     }
 }
 void Produtor::desenvolverProdutos(Midia* midia){

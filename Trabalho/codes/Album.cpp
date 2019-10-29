@@ -10,7 +10,7 @@ int Album::getduracao(){
     return this->duracao;
 }
 void Album::setduracao(int duracao){
-    this->duracao = duracao;//olhar como que faz para colocar musicas no album e entao a duracao será a soma das duracoes...
+    this->duracao = duracao;
 }
 int Album::getqtdMusicas(){
     return this->qtdMusicas; 
