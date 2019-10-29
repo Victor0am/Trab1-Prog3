@@ -1,41 +1,35 @@
-Horas Consumidas: 6447,91 minutos
+Horas Consumidas: 311,90 minutos
 
-Gênero mais ouvido: Sertanejo - 149,97 minutos
+Gênero mais ouvido: K-Pop - 169,53 minutos
 
 Mídias por Gênero:
-Sertanejo:51
-Funk:43
-Rock:39
-Hip-Hop:30
-Geek:30
-Atualidades:26
-Indie:25
-Eletrônica:24
-Pop:17
-Noticias:14
-K-Pop:7
+K-Pop:55
+Lo-fi:21
+j-Rock:13
+Pop:9
+Video game music:5
 
 Top 10 Mídias:
-Credo que delicia:Funk:6
-Shades Of Cool:Indie:6
-NerdCash 15 - Objetivos e consciência financeira:Geek:6
-#253 - Luí­sa Sonza: diva sensata do pop:Pop:6
-NerdTech 42 - Tecnologias da corrida espacial:Geek:6
-Changing:Rock:6
-Gordox // POUCAS #38:Atualidades:6
-O Assunto #19: Dinheiro para campanhas eleitorais:Noticias:6
-Queen of California:Rock:6
-All the Lies:Eletrônica:5
+Rain:j-Rock:6
+Dímelo:K-Pop:5
+Uso:j-Rock:5
+Feel Special:K-Pop:5
+Ride on the wind:K-Pop:5
+Hola Hola:K-Pop:4
+Black Suit:K-Pop:4
+My Love:Lo-fi:4
+Townie:Lo-fi:4
+GET LOUD:K-Pop:4
 
 Top 10 Produtores:
-John Mayer:39
-Alexandre Ottoni:30
-Deive Pazos:30
-MC Kevinho:27
-Caue Moura:26
-Lana Del Rey:25
-Wesley Safadão:23
-Lil Nas X:19
-Phelipe Cruz:17
-MC Livinho:16
+TWICE:17
+KARD:14
+SUPER JUNIOR:12
+junior state:12
+SID:11
+Weki Meki:9
+Kupla:9
+Nobuo Uematsu:5
+Ariana Grande:5
+Red Velvet:4
 
